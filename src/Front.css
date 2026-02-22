@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
   min-height: 100vh;
   margin: 0;
@@ -17,12 +21,13 @@
   position: fixed;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #121212;
   padding: 15px 30px;
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .site-title {
@@ -107,20 +112,23 @@
 
 /* Left Section */
 .left-section {
-  flex: 0 0 250px;
+  flex: 0 0 350px;
+  padding-right: 100px;
 }
 
 .pro-card {
+  position: sticky;
+  top: 80px;
   background: #fff;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .face {
-  height: 150px;
+  height: 200px;
   background: #ccc;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .name, .title, .links {
@@ -135,6 +143,28 @@
 /* Right Section */
 .right-section {
   flex: 1;
+}
+
+.Welcome {
+  text-align: left;
+}
+
+.Welcome h2,
+.Welcome h3 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.Experience h2,
+.Organizations h2 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.Experience h3,
+.Organizations h3 {
+  margin: 0;
+  padding: 0;
 }
 
 .main-title {
@@ -177,7 +207,7 @@
   flex-direction: row;
   height: 100vh;
 
-  padding-up: 100px; 
+  padding-top: 100px; 
   padding-left: 10vw;
   padding-right: 10vw;
   padding-bottom: 10vw;

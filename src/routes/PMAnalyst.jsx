@@ -1,5 +1,5 @@
 import React from "react";
-import FullStackPage from "../components/FullStackPage.jsx";
+import PMAnalystPage from "../components/PMAnalystPage.jsx";
 
 const PMAnalyst = () => {
   return (
@@ -8,3 +8,5 @@ const PMAnalyst = () => {
     </div>
   );
 };
+
+export default PMAnalyst;

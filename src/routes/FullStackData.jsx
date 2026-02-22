@@ -8,3 +8,5 @@ const FullStackData = () => {
     </div>
   );
 };
+
+export default FullStackData;

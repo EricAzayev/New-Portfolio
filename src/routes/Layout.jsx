@@ -6,26 +6,25 @@ const Layout = () => {
     <div>
       {/* Navbar Section */}
       <nav className="navbar">
-        <div className="navbar-left">
-          <h2 className="site-title">MySite</h2>
-        </div>
         <div className="navbar-right">
-          {/* <div className="nav-section">
-            <img src="#" alt="Game Dev Icon" />
-            <span>Featured</span>
-          </div> */}
-          <div className="nav-section">
-            <img src="src\assets\dataSci.png" alt="Full-Stack Icon" />
-            <span>Full-Stack</span>
-          </div>
-          <div className="nav-section">
-            <img src="#" alt="Data Icon" />
-            <span>Data</span>
-          </div>
-          {/* <div className="nav-section">
-            <img src="#" alt="Game Dev Icon" />
-            <span>Game Development</span>
-          </div> */}
+          <Link to="/fullstack" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="nav-section">
+              <img src="src\assets\dataSci.png" alt="Full-Stack Icon" />
+              <span>Full-Stack</span>
+            </div>
+          </Link>
+          <Link to="/data" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="nav-section">
+              <img src="#" alt="Data Icon" />
+              <span>Data</span>
+            </div>
+          </Link>
+          <Link to="/blog" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="nav-section">
+              <img src="#" alt="Blog Icon" />
+              <span>Blog</span>
+            </div>
+          </Link>
         </div>
       </nav>
       <Outlet />
