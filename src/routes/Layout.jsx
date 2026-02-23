@@ -7,6 +7,12 @@ const Layout = () => {
       {/* Navbar Section */}
       <nav className="navbar">
         <div className="navbar-right">
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="nav-section">
+              <img src="#" alt="Home Icon" />
+              <span>Home</span>
+            </div>
+          </Link>
           <Link to="/fullstack" style={{ textDecoration: 'none', color: 'inherit' }}>
             <div className="nav-section">
               <img src="src\assets\dataSci.png" alt="Full-Stack Icon" />
@@ -17,6 +23,12 @@ const Layout = () => {
             <div className="nav-section">
               <img src="#" alt="Data Icon" />
               <span>Data</span>
+            </div>
+          </Link>
+          <Link to="/programmatics" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="nav-section">
+              <img src="#" alt="Programmatics Icon" />
+              <span>Programmatics</span>
             </div>
           </Link>
           <Link to="/blog" style={{ textDecoration: 'none', color: 'inherit' }}>

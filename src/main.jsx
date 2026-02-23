@@ -9,6 +9,7 @@ import Layout from "./routes/Layout.jsx";
 import NotFound from "./routes/NotFound.jsx";
 import FullStack from "./routes/FullStackData.jsx";
 import PMAnalyst from "./routes/PMAnalyst.jsx";
+import Programmatics from "./routes/Programmatics.jsx";
 import Blog from "./routes/Blog.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")).render(
           <Route index={true} element={<Index />} />
           <Route path="/fullstack" element={<FullStack />} />
           <Route path="/data" element={<PMAnalyst />} />
+          <Route path="/programmatics" element={<Programmatics />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="*" element={<NotFound />} />
         </Route>
