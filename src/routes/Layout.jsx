@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import { Home, Code, Database, Cpu, Pen } from "lucide-react";
 import "../Front.css";
 
 const Layout = () => {
@@ -7,33 +8,33 @@ const Layout = () => {
       {/* Navbar Section */}
       <nav className="navbar">
         <div className="navbar-right">
-          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <div className="nav-section">
-              <img src="#" alt="Home Icon" />
+              <Home />
               <span>Home</span>
             </div>
           </Link>
-          <Link to="/fullstack" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/fullstack" style={{ textDecoration: 'none' }}>
             <div className="nav-section">
-              <img src="src\assets\dataSci.png" alt="Full-Stack Icon" />
+              <Code />
               <span>Full-Stack</span>
             </div>
           </Link>
-          <Link to="/data" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/data" style={{ textDecoration: 'none' }}>
             <div className="nav-section">
-              <img src="#" alt="Data Icon" />
+              <Database />
               <span>Data</span>
             </div>
           </Link>
-          <Link to="/programmatics" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/programmatics" style={{ textDecoration: 'none' }}>
             <div className="nav-section">
-              <img src="#" alt="Programmatics Icon" />
+              <Cpu />
               <span>Programmatics</span>
             </div>
           </Link>
-          <Link to="/blog" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/blog" style={{ textDecoration: 'none' }}>
             <div className="nav-section">
-              <img src="#" alt="Blog Icon" />
+              <Pen />
               <span>Blog</span>
             </div>
           </Link>
