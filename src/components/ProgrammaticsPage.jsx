@@ -83,11 +83,12 @@ const ProgrammaticsPage = () => {
             <h2 className="text-3xl font-bold text-slate-900 mb-8">
               Featured Programmatics Projects
             </h2>
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ProjectHeader
                 title="NASA LSPACE MCA"
                 date="2023"
                 status="Completed"
+                mediaSrc="/photos/Profile_Photos/LSPACEMCA.png"
                 githubLink="#"
                 docsLink="#"
                 tags={["Mission Design", "Systems Engineering", "NASA", "Aerospace"]}
@@ -96,6 +97,7 @@ const ProgrammaticsPage = () => {
                 title="Unadat Final Product"
                 date="2024"
                 status="Production"
+                mediaSrc="/photos/Profile_Photos/UnadatFinal.png"
                 githubLink="#"
                 demoLink="#"
                 docsLink="#"
@@ -105,76 +107,13 @@ const ProgrammaticsPage = () => {
                 title="NASA Proposal Writing"
                 date="2023"
                 status="Published"
+                mediaSrc="/photos/Profile_Photos/LSPACEProposal.jpg"
                 docsLink="#"
                 tags={["Technical Writing", "Proposal Development", "NASA", "Research"]}
-              />
-              <ProjectHeader
-                title="Strategic Planning"
-                date="2024"
-                status="Ongoing"
-                docsLink="#"
-                tags={["Leadership", "Cross-functional", "Strategy", "Execution"]}
               />
             </div>
           </div>
         </motion.div>
-
-        {/* Projects Section */}
-        <section className="mb-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Work</h2>
-            <p className="text-gray-600 text-lg">Strategic initiatives and program management</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((project, index) => {
-              const Icon = project.icon;
-              return (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-                >
-                  {/* Project gradient header */}
-                  <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-black/20" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Icon className="text-white/80" size={64} />
-                    </div>
-                  </div>
-
-                  {/* Project content */}
-                  <div className="p-6">
-                    <div className="mb-3">
-                      <span className="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">
-                        {project.organization}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">
-                      {project.description}
-                    </p>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <Calendar size={16} />
-                      <span className="text-sm font-semibold">{project.role}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </section>
 
         {/* Skills Section */}
         <motion.section
