@@ -170,6 +170,7 @@ const PMAnalystPage = () => {
                 title="Spring Foliage Map"
                 date="2024"
                 status="Completed"
+                mediaSrc="/photos/Profile_Photos/SpringFoliageMap.png"
                 githubLink="#"
                 demoLink="#"
                 docsLink="#"
@@ -179,6 +180,7 @@ const PMAnalystPage = () => {
                 title="StellarSearch"
                 date="2023"
                 status="Completed"
+                mediaSrc="/photos/Profile_Photos/StellarSearch.png"
                 githubLink="#"
                 demoLink="#"
                 tags={["TensorFlow", "Scikit-learn", "NumPy", "Matplotlib"]}
@@ -193,9 +195,10 @@ const PMAnalystPage = () => {
                 tags={["NLP", "Python", "FastAPI", "PostgreSQL"]}
               />
               <ProjectHeader
-                title="Climate Analysis"
+                title="LetterBuddy"
                 date="2023"
-                status="Research"
+                status="Hackathon"
+                mediaSrc="/photos/Profile_Photos/LetterBuddy.png"
                 githubLink="#"
                 tags={["Python", "Time Series", "ARIMA", "Visualization"]}
               />
