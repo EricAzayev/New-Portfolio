@@ -199,14 +199,186 @@ const RightSection = () => {
           <div className="md:col-span-3">
             <div className="prose prose-slate">
               <p className="text-slate-600 leading-relaxed mb-4"> 
-                I love to explore! While my primary experience is in technical work, my inspiration comes from learning as much about the world as I can.
+                I love to explore! Ever since high school freshman year, I've been fascinated by biking, hiking, and exploring nature to my greatest capacity.
+                While my primary experience is in technical work, my inspiration comes from learning as much about the world as I can. 
+                
+                Through Software Engineering, I have discovered that exploration can come not just from my legs 🚶‍♂️, but also from data and the way we interact with it 💻.
+                My work has reflected these goals, from developing software that visualizes complex data to participating in diverse tech communities.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Through my experiences at NASA, Morgan Stanley, and various tech initiatives, I've developed a unique blend of 
-                technical expertise and strategic thinking. I'm always excited to tackle complex challenges and create meaningful solutions.
+                Through my experiences at NASA, Morgan Stanley, and various tech initiatives, I've developed a systems-level approach to my work. I'm always excited to tackle complex challenges and create meaningful solutions.
                 My journey in Computer Science has led me to explore Full-Stack Engineering, Data Science, and Remote Sensing technologies.
               </p>
             </div>
+
+            {/* Interactive Icons */}
+            <div className="mt-8 flex gap-6 justify-center items-center">
+              {/* Saturn Icon */}
+              <motion.div 
+                className="relative w-40 h-40 cursor-pointer group"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Space Background */}
+                <div className="absolute inset-0 bg-gradient-to-b from-indigo-950 via-purple-900 to-black rounded-2xl overflow-hidden">
+                  {/* Animated Stars */}
+                  {[...Array(20)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-1 h-1 bg-white rounded-full"
+                      style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                        opacity: Math.random() * 0.7 + 0.3,
+                      }}
+                      animate={{
+                        y: [0, -20, 0],
+                        x: [0, Math.random() * 10 - 5, 0],
+                        opacity: [0.3, 1, 0.3],
+                      }}
+                      transition={{
+                        duration: Math.random() * 3 + 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: Math.random() * 2,
+                      }}
+                    />
+                  ))}
+                  
+                  {/* Saturn Planet */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <svg width="80" height="80" viewBox="0 0 100 100">
+                      {/* Saturn Body */}
+                      <defs>
+                        <radialGradient id="saturnGradient">
+                          <stop offset="0%" stopColor="#f4e4c1" />
+                          <stop offset="50%" stopColor="#e8d4a0" />
+                          <stop offset="100%" stopColor="#d4b483" />
+                        </radialGradient>
+                      </defs>
+                      <ellipse cx="50" cy="50" rx="25" ry="25" fill="url(#saturnGradient)" />
+                      
+                      {/* Saturn Rings */}
+                      <ellipse 
+                        cx="50" 
+                        cy="50" 
+                        rx="42" 
+                        ry="12" 
+                        fill="none" 
+                        stroke="#d4b483" 
+                        strokeWidth="2"
+                        opacity="0.6"
+                      />
+                      <ellipse 
+                        cx="50" 
+                        cy="50" 
+                        rx="38" 
+                        ry="10" 
+                        fill="none" 
+                        stroke="#c4a473" 
+                        strokeWidth="1.5"
+                        opacity="0.8"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Click Me Text */}
+                  <motion.div
+                    className="absolute inset-0 flex items-center justify-center"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <span className="text-white font-bold text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                      Click Me ✨
+                    </span>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Bike Icon */}
+              <motion.div 
+                className="relative w-40 h-40 cursor-pointer group"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Nature Background */}
+                <div className="absolute inset-0 bg-gradient-to-b from-sky-400 via-green-300 to-green-600 rounded-2xl overflow-hidden">
+                  {/* Animated Background Elements (clouds/trees) */}
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute rounded-full"
+                      style={{
+                        width: i < 3 ? '30px' : '20px',
+                        height: i < 3 ? '15px' : '10px',
+                        backgroundColor: i < 3 ? 'rgba(255,255,255,0.7)' : 'rgba(34,139,34,0.6)',
+                        left: `${Math.random() * 100}%`,
+                        top: i < 3 ? `${Math.random() * 30}%` : `${70 + Math.random() * 20}%`,
+                      }}
+                      animate={{
+                        x: [-10, 10, -10],
+                      }}
+                      transition={{
+                        duration: Math.random() * 4 + 3,
+                        repeat: Infinity,
+                        ease: "linear",
+                        delay: Math.random() * 2,
+                      }}
+                    />
+                  ))}
+
+                  {/* Bike SVG */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <svg width="90" height="60" viewBox="0 0 120 80">
+                      {/* Back Wheel */}
+                      <g className="group-hover:animate-spin-slow" style={{ transformOrigin: '25px 50px' }}>
+                        <circle cx="25" cy="50" r="15" fill="none" stroke="#333" strokeWidth="3" />
+                        <line x1="25" y1="35" x2="25" y2="65" stroke="#333" strokeWidth="2" />
+                        <line x1="10" y1="50" x2="40" y2="50" stroke="#333" strokeWidth="2" />
+                        <line x1="15" y1="40" x2="35" y2="60" stroke="#333" strokeWidth="1.5" />
+                        <line x1="35" y1="40" x2="15" y2="60" stroke="#333" strokeWidth="1.5" />
+                      </g>
+                      
+                      {/* Front Wheel */}
+                      <g className="group-hover:animate-spin-slow" style={{ transformOrigin: '85px 50px' }}>
+                        <circle cx="85" cy="50" r="15" fill="none" stroke="#333" strokeWidth="3" />
+                        <line x1="85" y1="35" x2="85" y2="65" stroke="#333" strokeWidth="2" />
+                        <line x1="70" y1="50" x2="100" y2="50" stroke="#333" strokeWidth="2" />
+                        <line x1="75" y1="40" x2="95" y2="60" stroke="#333" strokeWidth="1.5" />
+                        <line x1="95" y1="40" x2="75" y2="60" stroke="#333" strokeWidth="1.5" />
+                      </g>
+
+                      {/* Frame */}
+                      <line x1="25" y1="50" x2="55" y2="25" stroke="#666" strokeWidth="3" />
+                      <line x1="55" y1="25" x2="85" y2="50" stroke="#666" strokeWidth="3" />
+                      <line x1="25" y1="50" x2="50" y2="50" stroke="#666" strokeWidth="3" />
+                      <line x1="50" y1="50" x2="55" y2="25" stroke="#666" strokeWidth="3" />
+                      
+                      {/* Seat */}
+                      <ellipse cx="40" cy="25" rx="8" ry="3" fill="#333" />
+                      
+                      {/* Handlebars */}
+                      <line x1="85" y1="50" x2="90" y2="30" stroke="#555" strokeWidth="2.5" />
+                      <line x1="88" y1="30" x2="95" y2="30" stroke="#555" strokeWidth="2.5" />
+                    </svg>
+                  </div>
+
+                  {/* Click Me Text */}
+                  <motion.div
+                    className="absolute inset-0 flex items-center justify-center"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <span className="text-white font-bold text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                      Click Me 🚴
+                    </span>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
+
           </div>
         </div>
       </motion.div>

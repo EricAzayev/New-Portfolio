@@ -309,3 +309,17 @@
   padding-right: 8vw;
   padding-bottom: 5rem;
 }
+
+/* Bike Wheel Spin Animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.group:hover .group-hover\:animate-spin-slow {
+  animation: spin-slow 1.5s linear infinite;
+}

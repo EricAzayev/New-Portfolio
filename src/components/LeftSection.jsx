@@ -102,10 +102,6 @@ const LeftSection = () => {
           transition={{ delay: 0.3 }}
           className="mt-4 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-2 bg-green-50 border border-green-200 rounded-lg">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            <span className="text-xs font-medium text-green-700">Available for opportunities</span>
-          </div>
         </motion.div>
       </motion.div>
     </aside>
