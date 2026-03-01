@@ -20,6 +20,6 @@ Transition: Fly to the moon (and stay above it)
 Transition: Drop down Minecraft lander_prop onto Minecraft Moon 
 5. Minecraft Moon
 Transition: lander prop transition to lander_flight_prop, and goes back up. All content goes off screen.  
-6. Now Checkout the Earth!
+6. Now Checkout the Earth! (Text appears on screen)
 
 Earth: deciding design. I think in /home, it will appear at the very bottom, taking full screen width. It will have 

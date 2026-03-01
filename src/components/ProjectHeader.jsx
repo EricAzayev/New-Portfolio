@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProjectHeader = ({ 
   title = "Project Title",
@@ -9,10 +10,11 @@ const ProjectHeader = ({
   githubLink = null,
   demoLink = null,
   docsLink = null,
-  tags = []
+  tags = [],
+  projectLink = null
 }) => {
-  return (
-    <div className="border border-slate-200 rounded-xl shadow-sm bg-white p-6">
+  const content = (
+    <div className="border border-slate-200 rounded-xl shadow-sm bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-indigo-300 cursor-pointer">
       
       {/* Media Placeholder */}
       <div className="aspect-video bg-slate-100 rounded-lg flex items-center justify-center">
@@ -115,6 +117,16 @@ const ProjectHeader = ({
       )}
     </div>
   );
+
+  if (projectLink) {
+    return (
+      <Link to={projectLink} className="block">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 };
 
 export default ProjectHeader;
