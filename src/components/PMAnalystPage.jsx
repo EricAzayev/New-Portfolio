@@ -175,7 +175,7 @@ const PMAnalystPage = () => {
                 demoLink="#"
                 docsLink="#"
                 tags={["Python", "Pandas", "Folium", "Satellite Data"]}
-                projectLink="/data/spring-foliage-map/false"
+                projectLink="/data/spring-foliage-map"
               />
               <ProjectHeader
                 title="StellarSearch"

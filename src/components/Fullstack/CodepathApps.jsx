@@ -1,14 +1,15 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 function CodepathApps() {
-  const { inSlideshow } = useParams();
+  const [searchParams] = useSearchParams();
+  const inSlideshow = searchParams.get('mode') === 'slideshow';
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">Codepath Apps</h1>
-        <p className="text-sm text-slate-500 mb-8">Slideshow Mode: {inSlideshow}</p>
+        <p className="text-sm text-slate-500 mb-8">Slideshow Mode: {inSlideshow ? 'Yes' : 'No'}</p>
         
         <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
           <h2 className="text-2xl font-semibold mb-4">Lorem Ipsum</h2>

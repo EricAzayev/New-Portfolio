@@ -174,7 +174,7 @@ const FullStackPage = () => {
                 demoLink="#"
                 docsLink="#"
                 tags={["React", "Node.js", "PostgreSQL", "Express"]}
-                projectLink="/fullstack/lexington-links/false"
+                projectLink="/fullstack/lexington-links"
               />
               <ProjectHeader
                 title="Findr"
@@ -183,7 +183,7 @@ const FullStackPage = () => {
                 githubLink="#"
                 demoLink="#"
                 tags={["React Native", "Firebase", "Google Maps API", "Redux"]}
-                projectLink="/fullstack/findr/false"
+                projectLink="/fullstack/findr"
               />
               <ProjectHeader
                 title="Codepath Apps"
@@ -193,7 +193,7 @@ const FullStackPage = () => {
                 demoLink="#"
                 docsLink="#"
                 tags={["Swift", "Android", "REST APIs", "Material Design"]}
-                projectLink="/fullstack/codepath-apps/false"
+                projectLink="/fullstack/codepath-apps"
               />
               <ProjectHeader
                 title="reciPal"

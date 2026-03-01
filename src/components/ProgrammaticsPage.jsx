@@ -92,7 +92,7 @@ const ProgrammaticsPage = () => {
                 githubLink="#"
                 docsLink="#"
                 tags={["Mission Design", "Systems Engineering", "NASA", "Aerospace"]}
-                projectLink="/programmatics/nasa-lspace-mca/false"
+                projectLink="/programmatics/nasa-lspace-mca"
               />
               <ProjectHeader
                 title="Unadat Final Product"
@@ -111,7 +111,7 @@ const ProgrammaticsPage = () => {
                 mediaSrc="/photos/Profile_Photos/LSPACEProposal.jpg"
                 docsLink="#"
                 tags={["Technical Writing", "Proposal Development", "NASA", "Research"]}
-                projectLink="/programmatics/nasa-proposal-writing/false"
+                projectLink="/programmatics/nasa-proposal-writing"
               />
             </div>
           </div>

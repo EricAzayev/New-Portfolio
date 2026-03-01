@@ -39,19 +39,19 @@ createRoot(document.getElementById("root")).render(
           <Route path="/blog" element={<Blog />} />
           
           {/* Fullstack Project Routes */}
-          <Route path="/fullstack/lexington-links/:inSlideshow" element={<LexingtonLinks />} />
-          <Route path="/fullstack/findr/:inSlideshow" element={<Findr />} />
-          <Route path="/fullstack/codepath-apps/:inSlideshow" element={<CodepathApps />} />
+          <Route path="/fullstack/lexington-links" element={<LexingtonLinks />} />
+          <Route path="/fullstack/findr" element={<Findr />} />
+          <Route path="/fullstack/codepath-apps" element={<CodepathApps />} />
           
           {/* Data Project Routes */}
-          <Route path="/data/spring-foliage-map/:inSlideshow" element={<SpringFoliageMap />} />
+          <Route path="/data/spring-foliage-map" element={<SpringFoliageMap />} />
           
           {/* Programmatics Project Routes */}
-          <Route path="/programmatics/nasa-lspace-mca/:inSlideshow" element={<NASALSPACEMCA />} />
-          <Route path="/programmatics/nasa-proposal-writing/:inSlideshow" element={<NASAProposalWriting />} />
-          <Route path="/programmatics/npwee/:inSlideshow" element={<NPWEE />} />
-          <Route path="/programmatics/stellar-search/:inSlideshow" element={<StellarSearch />} />
-          <Route path="/programmatics/minecraft-moon/:inSlideshow" element={<MinecraftMoon />} />
+          <Route path="/programmatics/nasa-lspace-mca" element={<NASALSPACEMCA />} />
+          <Route path="/programmatics/nasa-proposal-writing" element={<NASAProposalWriting />} />
+          <Route path="/programmatics/npwee" element={<NPWEE />} />
+          <Route path="/programmatics/stellar-search" element={<StellarSearch />} />
+          <Route path="/programmatics/minecraft-moon" element={<MinecraftMoon />} />
           
           <Route path="*" element={<NotFound />} />
         </Route>
