@@ -1,5 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
+import { Github, ExternalLink } from "lucide-react";
 
 function LexingtonLinks() {
   const [searchParams] = useSearchParams();
@@ -9,6 +10,18 @@ function LexingtonLinks() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">Lexington Links</h1>
+        <div className="flex gap-3 mb-4">
+          <a 
+            href="https://github.com/EricAzayev/Lexington-Links" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg transition-colors text-sm font-medium"
+          >
+            <Github size={16} />
+            View on GitHub
+            <ExternalLink size={14} />
+          </a>
+        </div>
         <p className="text-sm text-slate-500 mb-8">Slideshow Mode: {inSlideshow ? 'Yes' : 'No'}</p>
         
         <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">

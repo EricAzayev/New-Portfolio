@@ -16,6 +16,7 @@ import Blog from "./routes/Blog.jsx";
 import LexingtonLinks from "./components/Fullstack/LexingtonLinks.jsx";
 import Findr from "./components/Fullstack/Findr.jsx";
 import CodepathApps from "./components/Fullstack/CodepathApps.jsx";
+import FoodTracker from "./components/Fullstack/FoodTracker.jsx";
 
 // Data Project Pages
 import SpringFoliageMap from "./components/Data/SpringFoliageMap.jsx";
@@ -42,6 +43,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/fullstack/lexington-links" element={<LexingtonLinks />} />
           <Route path="/fullstack/findr" element={<Findr />} />
           <Route path="/fullstack/codepath-apps" element={<CodepathApps />} />
+          <Route path="/fullstack/foodtracker" element={<FoodTracker />} />
           
           {/* Data Project Routes */}
           <Route path="/data/spring-foliage-map" element={<SpringFoliageMap />} />

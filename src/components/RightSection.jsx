@@ -71,7 +71,7 @@ const RightSection = () => {
             <ArrowRight size={18} />
           </a>
           <a 
-            href="mailto:your.email@example.com"
+            href="mailto:azayeveric@gmail.com"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-lg font-medium transition-colors"
           >
             Get in Touch

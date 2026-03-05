@@ -171,7 +171,7 @@ const PMAnalystPage = () => {
                 date="2024"
                 status="Completed"
                 mediaSrc="/photos/Profile_Photos/SpringFoliageMap.png"
-                githubLink="#"
+                githubLink="https://github.com/EricAzayev/Spring-Foliage"
                 demoLink="#"
                 docsLink="#"
                 tags={["Python", "Pandas", "Folium", "Satellite Data"]}
@@ -182,7 +182,7 @@ const PMAnalystPage = () => {
                 date="2023"
                 status="Completed"
                 mediaSrc="/photos/Profile_Photos/StellarSearch.png"
-                githubLink="#"
+                githubLink="https://github.com/oleksiisud/slack-cluster-finder"
                 demoLink="#"
                 tags={["TensorFlow", "Scikit-learn", "NumPy", "Matplotlib"]}
               />

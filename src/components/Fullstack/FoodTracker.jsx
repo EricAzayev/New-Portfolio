@@ -2,17 +2,17 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink } from "lucide-react";
 
-function StellarSearch() {
+function FoodTracker() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">Stellar Search</h1>
+        <h1 className="text-4xl font-bold text-slate-900 mb-4">FoodTracker WebApp</h1>
         <div className="flex gap-3 mb-4">
           <a 
-            href="https://github.com/oleksiisud/slack-cluster-finder" 
+            href="https://github.com/EricAzayev/Full-Stack_Portfolio/tree/main/FoodTracker" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg transition-colors text-sm font-medium"
@@ -40,4 +40,4 @@ function StellarSearch() {
   );
 }
 
-export default StellarSearch;
+export default FoodTracker;

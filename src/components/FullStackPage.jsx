@@ -170,7 +170,7 @@ const FullStackPage = () => {
                 title="Lexington Links"
                 date="2024"
                 status="Production"
-                githubLink="#"
+                githubLink="https://github.com/EricAzayev/Lexington-Links"
                 demoLink="#"
                 docsLink="#"
                 tags={["React", "Node.js", "PostgreSQL", "Express"]}
@@ -180,8 +180,8 @@ const FullStackPage = () => {
                 title="Findr"
                 date="2024"
                 status="Completed"
-                githubLink="#"
-                demoLink="#"
+                githubLink="https://github.com/BorowskiKacper/divhacks"
+                demoLink="https://devpost.com/software/findr-z9k6ol"
                 tags={["React Native", "Firebase", "Google Maps API", "Redux"]}
                 projectLink="/fullstack/findr"
               />
@@ -189,7 +189,7 @@ const FullStackPage = () => {
                 title="Codepath Apps"
                 date="2023"
                 status="Completed"
-                githubLink="#"
+                githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio"
                 demoLink="#"
                 docsLink="#"
                 tags={["Swift", "Android", "REST APIs", "Material Design"]}
@@ -199,9 +199,17 @@ const FullStackPage = () => {
                 title="reciPal"
                 date="2024"
                 status="Active"
-                githubLink="#"
+                githubLink="https://github.com/EricAzayev/reciPal"
                 demoLink="#"
                 tags={["React", "Tailwind CSS", "Framer Motion", "Vite"]}
+              />
+              <ProjectHeader
+                title="FoodTracker WebApp"
+                date="2023"
+                status="Completed"
+                githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio/tree/main/FoodTracker"
+                tags={["React", "Node.js", "Express", "MongoDB"]}
+                projectLink="/fullstack/foodtracker"
               />
             </div>
           </div>

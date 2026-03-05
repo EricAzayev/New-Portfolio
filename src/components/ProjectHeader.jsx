@@ -64,6 +64,7 @@ const ProjectHeader = ({
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="text-blue-600 hover:text-blue-700 transition-colors"
             >
               GitHub
@@ -79,6 +80,7 @@ const ProjectHeader = ({
               href={demoLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="text-blue-600 hover:text-blue-700 transition-colors"
             >
               Demo
@@ -94,6 +96,7 @@ const ProjectHeader = ({
               href={docsLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="text-blue-600 hover:text-blue-700 transition-colors"
             >
               Docs

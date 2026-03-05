@@ -67,7 +67,7 @@ const LeftSection = () => {
             </a>
             
             <a 
-              href="mailto:your.email@example.com"
+              href="mailto:azayeveric@gmail.com"
               className="flex items-center gap-3 px-4 py-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors group"
             >
               <Mail size={18} className="text-slate-600" />
