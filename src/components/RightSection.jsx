@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { Github, Linkedin, Mail, ArrowRight, Sparkles, Code2, Database, Rocket } from "lucide-react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { Link } from "react-router-dom";
+import GitHubActivity from "./GitHubActivity";
+import LeetCodeStats from "./LeetCodeStats";
 
 const AnimatedCounter = ({ value, label }) => {
   const ref = useRef(null);
@@ -389,7 +391,7 @@ const RightSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mb-16"
+        className="mb-16 hidden"
       >
         <h2 className="text-2xl font-bold text-slate-900 mb-6">Beyond the Code</h2>
         <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
@@ -486,7 +488,7 @@ const RightSection = () => {
                 <div className="space-y-1 text-white/70 text-xs font-mono">
                   <div>→ NASA LSPACE MCA</div>
                   <div>→ Unadat Final Product</div>
-                  <div>→ NASA Proposal Writing</div>
+                  <div>→ NASA LSPACE NPWEE</div>
                 </div>
               </div>
             </div>
@@ -510,6 +512,21 @@ const RightSection = () => {
             </div>
           </Link>
 
+        </div>
+      </motion.div>
+
+      {/* GitHub Activity and LeetCode Stats Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-16"
+      >
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Coding Activity</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <GitHubActivity username="EricAzayev" />
+          <LeetCodeStats username="EricAzayev" />
         </div>
       </motion.div>
 

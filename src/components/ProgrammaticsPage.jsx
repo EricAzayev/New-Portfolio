@@ -25,7 +25,7 @@ const ProgrammaticsPage = () => {
     },
     {
       id: 3,
-      title: "NASA LSPACE Proposal Writing",
+      title: "NASA LSPACE NPWEE",
       organization: "NASA",
       description: "Technical writing and proposal development for space mission concepts",
       role: "Technical Writer",
@@ -86,7 +86,7 @@ const ProgrammaticsPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ProjectHeader
                 title="NASA LSPACE MCA"
-                date="2023"
+                date="2024"
                 status="Completed"
                 mediaSrc="/photos/Profile_Photos/LSPACEMCA.png"
                 githubLink="#"
@@ -96,7 +96,7 @@ const ProgrammaticsPage = () => {
               />
               <ProjectHeader
                 title="Unadat Final Product"
-                date="2024"
+                date="2025"
                 status="Production"
                 mediaSrc="/photos/Profile_Photos/UnadatFinal.png"
                 githubLink="#"
@@ -105,9 +105,9 @@ const ProgrammaticsPage = () => {
                 tags={["Product Management", "Strategy", "Data Analytics", "SaaS"]}
               />
               <ProjectHeader
-                title="NASA Proposal Writing"
-                date="2023"
-                status="Published"
+                title="NASA LSPACE NPWEE"
+                date="2026"
+                status="In Progress"
                 mediaSrc="/photos/Profile_Photos/LSPACEProposal.jpg"
                 docsLink="#"
                 tags={["Technical Writing", "Proposal Development", "NASA", "Research"]}

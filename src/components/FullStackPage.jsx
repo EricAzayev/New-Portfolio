@@ -165,8 +165,8 @@ const FullStackPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ProjectHeader
                 title="Lexington Links"
-                date="2024"
-                status="Production"
+                date="2025"
+                status="On Pause"
                 githubLink="https://github.com/EricAzayev/Lexington-Links"
                 demoLink="#"
                 docsLink="#"
@@ -175,7 +175,7 @@ const FullStackPage = () => {
               />
               <ProjectHeader
                 title="Findr"
-                date="2024"
+                date="2025"
                 status="Completed"
                 githubLink="https://github.com/BorowskiKacper/divhacks"
                 demoLink="https://devpost.com/software/findr-z9k6ol"
@@ -184,8 +184,8 @@ const FullStackPage = () => {
               />
               <ProjectHeader
                 title="Codepath Apps"
-                date="2023"
-                status="Completed"
+                date="2025"
+                status="Active"
                 githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio"
                 demoLink="#"
                 docsLink="#"
@@ -194,8 +194,8 @@ const FullStackPage = () => {
               />
               <ProjectHeader
                 title="reciPal"
-                date="2024"
-                status="Active"
+                date="2025"
+                status="Expanded"
                 githubLink="https://github.com/EricAzayev/reciPal"
                 demoLink="#"
                 tags={["React", "Tailwind CSS", "Framer Motion", "Vite"]}
@@ -203,8 +203,8 @@ const FullStackPage = () => {
               />
               <ProjectHeader
                 title="FoodTracker WebApp"
-                date="2023"
-                status="Completed"
+                date="2025"
+                status="Active"
                 githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio/tree/main/FoodTracker"
                 tags={["React", "Node.js", "Express", "MongoDB"]}
                 projectLink="/fullstack/foodtracker"

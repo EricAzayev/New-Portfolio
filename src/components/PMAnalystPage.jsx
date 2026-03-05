@@ -160,8 +160,8 @@ const PMAnalystPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ProjectHeader
                 title="Spring Foliage Map"
-                date="2024"
-                status="Completed"
+                date="2025"
+                status="In Progress"
                 mediaSrc="/photos/Profile_Photos/SpringFoliageMap.png"
                 githubLink="https://github.com/EricAzayev/Spring-Foliage"
                 demoLink="#"
@@ -171,7 +171,7 @@ const PMAnalystPage = () => {
               />
               <ProjectHeader
                 title="StellarSearch"
-                date="2023"
+                date="2025"
                 status="Completed"
                 mediaSrc="/photos/Profile_Photos/StellarSearch.png"
                 githubLink="https://github.com/oleksiisud/slack-cluster-finder"
@@ -180,8 +180,8 @@ const PMAnalystPage = () => {
               />
               <ProjectHeader
                 title="GroupWisdom Bot"
-                date="2024"
-                status="Active"
+                date="2026"
+                status="In Progress"
                 githubLink="#"
                 demoLink="#"
                 docsLink="#"
@@ -189,7 +189,7 @@ const PMAnalystPage = () => {
               />
               <ProjectHeader
                 title="LetterBuddy"
-                date="2023"
+                date="2025"
                 status="Hackathon"
                 mediaSrc="/photos/Profile_Photos/LetterBuddy.png"
                 githubLink="#"

@@ -8,7 +8,7 @@ function NASAProposalWriting() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">NASA Proposal Writing</h1>
+        <h1 className="text-4xl font-bold text-slate-900 mb-4">NASA LSPACE NPWEE</h1>
         <p className="text-sm text-slate-500 mb-8">Slideshow Mode: {inSlideshow ? 'Yes' : 'No'}</p>
         
         <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">

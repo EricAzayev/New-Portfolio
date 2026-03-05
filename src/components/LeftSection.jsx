@@ -1,8 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import { useProfileStats } from "../hooks/useProfileStats";
 
 const LeftSection = () => {
+  // Fetch dynamic stats from GitHub and LeetCode APIs
+  const { githubCommits, leetcodeSolved, loading } = useProfileStats(
+    'EricAzayev',  // Your GitHub username
+    'EricAzayev'   // Your LeetCode username (update if different)
+  );
   return (
     <aside className="left-section">
       <motion.div 
@@ -79,7 +85,7 @@ const LeftSection = () => {
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-200">
+          <div className="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-slate-200">
             <div className="text-center">
               <div className="text-lg font-bold text-slate-900">10+</div>
               <div className="text-xs text-slate-500 font-mono">Projects</div>
@@ -89,8 +95,16 @@ const LeftSection = () => {
               <div className="text-xs text-slate-500 font-mono">Teams</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-bold text-slate-900">2</div>
-              <div className="text-xs text-slate-500 font-mono">Leadership</div>
+              <div className="text-lg font-bold text-slate-900">
+                {loading ? '...' : leetcodeSolved}
+              </div>
+              <div className="text-xs text-slate-500 font-mono">LeetCode</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg font-bold text-slate-900">
+                {loading ? '...' : `${githubCommits}+`}
+              </div>
+              <div className="text-xs text-slate-500 font-mono">Commits</div>
             </div>
           </div>
         </div>

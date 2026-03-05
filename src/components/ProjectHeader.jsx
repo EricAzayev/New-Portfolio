@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const ProjectHeader = ({ 
+const ProjectHeader = ({
   title = "Project Title",
   date = "2024",
   status = "Completed",
@@ -13,21 +13,32 @@ const ProjectHeader = ({
   tags = [],
   projectLink = null
 }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    if (projectLink) {
+      navigate(projectLink);
+    }
+  };
+
   const content = (
-    <div className="border border-slate-200 rounded-xl shadow-sm bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-indigo-300 cursor-pointer">
-      
+    <div
+      className={`border border-slate-200 rounded-xl shadow-sm bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-indigo-300 ${projectLink ? 'cursor-pointer' : ''}`}
+      onClick={handleCardClick}
+    >
+
       {/* Media Placeholder */}
       <div className="aspect-video bg-slate-100 rounded-lg flex items-center justify-center">
         {mediaSrc ? (
           mediaType === "video" ? (
-            <video 
-              src={mediaSrc} 
+            <video
+              src={mediaSrc}
               className="w-full h-full object-cover rounded-lg"
               controls
             />
           ) : (
-            <img 
-              src={mediaSrc} 
+            <img
+              src={mediaSrc}
               alt={title}
               className="w-full h-full object-cover rounded-lg"
             />
@@ -60,7 +71,7 @@ const ProjectHeader = ({
       {(githubLink || demoLink || docsLink) && (
         <div className="flex items-center mt-3 text-sm font-mono">
           {githubLink && (
-            <a 
+            <a
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -70,13 +81,13 @@ const ProjectHeader = ({
               GitHub
             </a>
           )}
-          
+
           {githubLink && (demoLink || docsLink) && (
             <span className="mx-2 text-slate-300">|</span>
           )}
-          
+
           {demoLink && (
-            <a 
+            <a
               href={demoLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -86,13 +97,13 @@ const ProjectHeader = ({
               Demo
             </a>
           )}
-          
+
           {demoLink && docsLink && (
             <span className="mx-2 text-slate-300">|</span>
           )}
-          
+
           {docsLink && (
-            <a 
+            <a
               href={docsLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -109,7 +120,7 @@ const ProjectHeader = ({
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-4">
           {tags.map((tag, index) => (
-            <span 
+            <span
               key={index}
               className="bg-slate-100 px-2 py-1 rounded-md text-xs text-slate-700 font-mono"
             >
@@ -120,14 +131,6 @@ const ProjectHeader = ({
       )}
     </div>
   );
-
-  if (projectLink) {
-    return (
-      <Link to={projectLink} className="block">
-        {content}
-      </Link>
-    );
-  }
 
   return content;
 };
