@@ -24,6 +24,17 @@ function CodepathApps() {
         </div>
         <p className="text-sm text-slate-500 mb-8">Slideshow Mode: {inSlideshow ? 'Yes' : 'No'}</p>
         
+        <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 mb-6">
+          <h2 className="text-xl font-semibold mb-4">Key Technologies & Skills</h2>
+          <div className="flex flex-wrap gap-2">
+            {["React.js", "Express.js", "Vite", "REST API", "Data Visualization", "Node"].map((skill) => (
+              <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-purple-50 to-pink-100 text-purple-700 border border-purple-200 rounded-lg text-sm font-medium">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+        
         <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
           <h2 className="text-2xl font-semibold mb-4">Lorem Ipsum</h2>
           <p className="text-slate-600 mb-4">

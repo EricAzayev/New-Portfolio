@@ -2,17 +2,17 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink } from "lucide-react";
 
-function FoodTracker() {
+function ReciPal() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">FoodTracker WebApp</h1>
+        <h1 className="text-4xl font-bold text-slate-900 mb-4">reciPal</h1>
         <div className="flex gap-3 mb-4">
           <a 
-            href="https://github.com/EricAzayev/Full-Stack_Portfolio/tree/main/FoodTracker" 
+            href="https://github.com/EricAzayev/reciPal" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg transition-colors text-sm font-medium"
@@ -27,8 +27,8 @@ function FoodTracker() {
         <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 mb-6">
           <h2 className="text-xl font-semibold mb-4">Key Technologies & Skills</h2>
           <div className="flex flex-wrap gap-2">
-            {["React", "Node.js", "Express", "MongoDB", "REST API", "Authentication"].map((skill) => (
-              <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-indigo-50 to-purple-100 text-indigo-700 border border-indigo-200 rounded-lg text-sm font-medium">
+            {["Django", "Gemini API", "JSON", "Scripting", "Cross-Functional Integration"].map((skill) => (
+              <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-orange-50 to-red-100 text-orange-700 border border-orange-200 rounded-lg text-sm font-medium">
                 {skill}
               </span>
             ))}
@@ -51,4 +51,4 @@ function FoodTracker() {
   );
 }
 
-export default FoodTracker;
+export default ReciPal;

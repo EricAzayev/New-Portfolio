@@ -383,6 +383,46 @@ const RightSection = () => {
         </div>
       </motion.div>
 
+      {/* Interests Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-16"
+      >
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Beyond the Code</h2>
+        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+          <p className="text-slate-600 mb-6">
+            When I'm not coding, you'll find me exploring the world through various passions:
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { emoji: "🏋️", label: "Weight Lifting" },
+              { emoji: "🎸", label: "Guitar" },
+              { emoji: "♟️", label: "Chess" },
+              { emoji: "📚", label: "Reading" },
+              { emoji: "🚴", label: "Biking" },
+              { emoji: "🥾", label: "Hiking" },
+              { emoji: "🌱", label: "Gardening" },
+              { emoji: "🛰️", label: "Remote Sensing" }
+            ].map((interest, index) => (
+              <motion.div
+                key={interest.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="flex flex-col items-center gap-2 p-4 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors cursor-default"
+              >
+                <span className="text-3xl">{interest.emoji}</span>
+                <span className="text-sm font-medium text-slate-700 text-center">{interest.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
       {/* Explore My Work Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

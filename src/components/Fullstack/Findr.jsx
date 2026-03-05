@@ -33,6 +33,17 @@ function Findr() {
         </div>
         <p className="text-sm text-slate-500 mb-8">Slideshow Mode: {inSlideshow ? 'Yes' : 'No'}</p>
         
+        <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 mb-6">
+          <h2 className="text-xl font-semibold mb-4">Key Technologies & Skills</h2>
+          <div className="flex flex-wrap gap-2">
+            {["Supabase", "API Integration", "TypeScript", "Authentication", "React Native"].map((skill) => (
+              <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-green-50 to-teal-100 text-teal-700 border border-teal-200 rounded-lg text-sm font-medium">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+        
         <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
           <h2 className="text-2xl font-semibold mb-4">Lorem Ipsum</h2>
           <p className="text-slate-600 mb-4">

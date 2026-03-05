@@ -46,51 +46,43 @@ const PMAnalystPage = () => {
     }
   ];
 
-  // Data Science Tech Stack
+  // Data Science Tech Stack organized by category
   const techStack = {
-    analysis: [
-      { name: "Python/Pandas", level: 92, icon: Brain },
-      { name: "NumPy/SciPy", level: 88, icon: Cpu },
-      { name: "SQL/NoSQL", level: 85, icon: Database },
-      { name: "Data Visualization", level: 90, icon: BarChart3 }
-    ],
-    ml: [
-      { name: "TensorFlow/Keras", level: 82, icon: Network },
-      { name: "Scikit-learn", level: 87, icon: GitGraph },
-      { name: "Statistical Analysis", level: 84, icon: TrendingUp },
-      { name: "NLP/Text Mining", level: 80, icon: Search }
-    ]
+    languages: ["Python", "JavaScript", "C++", "Java"],
+    frameworks: ["NumPy", "Pandas", "SciKit Learn", "PyTorch", "TensorFlow", "React"],
+    tools: ["Git", "GitHub", "PyCharm", "Jira", "Jupyter", "Google Colab"],
+    specializations: ["Remote Sensing", "Machine Learning", "Statistical Analysis", "Data Visualization", "NLP"]
   };
 
-  const SkillBar = ({ skill, index }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-    const Icon = skill.icon;
+  // Achievements
+  const achievements = [
+    {
+      name: "30 Days of Pandas",
+      organization: "LeetCode",
+      year: "2024",
+      description: "Completed comprehensive pandas challenge",
+      icon: "📊"
+    },
+    {
+      name: "Data Science Fellowship",
+      organization: "CUNY Tech Prep",
+      year: "2023-2024",
+      description: "One semester program in data science and machine learning",
+      icon: "🎓"
+    }
+  ];
 
+  const SkillBadge = ({ skill, index, color = "cyan" }) => {
     return (
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, x: -50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="mb-6"
+      <motion.span
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: index * 0.03 }}
+        className={`inline-block px-4 py-2 bg-gradient-to-r from-${color}-50 to-${color}-100 text-${color}-700 border border-${color}-200 rounded-lg text-sm font-medium hover:shadow-md transition-all cursor-default`}
       >
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <Icon size={18} className="text-cyan-600" />
-            <span className="text-sm font-semibold text-gray-700">{skill.name}</span>
-          </div>
-          <span className="text-xs font-bold text-cyan-600">{skill.level}%</span>
-        </div>
-        <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={isInView ? { width: `${skill.level}%` } : {}}
-            transition={{ duration: 1, delay: index * 0.1 + 0.2, ease: "easeOut" }}
-            className="h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
-          />
-        </div>
-      </motion.div>
+        {skill}
+      </motion.span>
     );
   };
 
@@ -216,51 +208,129 @@ const PMAnalystPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Technical Expertise</h2>
-            <p className="text-gray-600 text-lg">Comprehensive data science and machine learning capabilities</p>
+            <p className="text-gray-600 text-lg">Data-driven insights through advanced analytics and machine learning</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Data Analysis Skills */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Languages */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg p-3">
-                  <BarChart3 className="text-white" size={24} />
+                  <Cpu className="text-white" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800">Data Analysis</h3>
+                <h3 className="text-2xl font-bold text-gray-800">Languages</h3>
               </div>
-              <div>
-                {techStack.analysis.map((skill, index) => (
-                  <SkillBar key={skill.name} skill={skill} index={index} />
+              <div className="flex flex-wrap gap-2">
+                {techStack.languages.map((skill, index) => (
+                  <SkillBadge key={skill} skill={skill} index={index} color="cyan" />
                 ))}
               </div>
             </motion.div>
 
-            {/* Machine Learning Skills */}
+            {/* Frameworks & Libraries */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-3">
                   <Brain className="text-white" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800">Machine Learning</h3>
+                <h3 className="text-2xl font-bold text-gray-800">Frameworks & Libraries</h3>
               </div>
-              <div>
-                {techStack.ml.map((skill, index) => (
-                  <SkillBar key={skill.name} skill={skill} index={index} />
+              <div className="flex flex-wrap gap-2">
+                {techStack.frameworks.map((skill, index) => (
+                  <SkillBadge key={skill} skill={skill} index={index} color="indigo" />
                 ))}
               </div>
             </motion.div>
+
+            {/* Tools */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-lg p-3">
+                  <BarChart3 className="text-white" size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Development Tools</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {techStack.tools.map((skill, index) => (
+                  <SkillBadge key={skill} skill={skill} index={index} color="green" />
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Specializations */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg p-3">
+                  <TrendingUp className="text-white" size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Specializations</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {techStack.specializations.map((skill, index) => (
+                  <SkillBadge key={skill} skill={skill} index={index} color="pink" />
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Achievements */}
+        <section className="mb-20">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Learning & Achievements</h2>
+            <p className="text-gray-600 text-lg">Continuous growth in data science and analytics</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {achievements.map((achievement, index) => (
+              <motion.div
+                key={achievement.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="text-6xl">{achievement.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{achievement.name}</h3>
+                    <p className="text-cyan-600 font-semibold mb-2">{achievement.organization}</p>
+                    <p className="text-gray-600 text-sm mb-2">{achievement.description}</p>
+                    <p className="text-sm font-semibold text-gray-500">{achievement.year}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
 
@@ -269,28 +339,32 @@ const PMAnalystPage = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-12 text-center"
+          className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-12 text-center mb-20"
         >
           <h2 className="text-3xl font-bold text-white mb-6">
             Complete Data Science Toolkit
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: PieChart, label: "Data Wrangling" },
-              { icon: LineChart, label: "Statistical Modeling" },
-              { icon: Activity, label: "Time Series Analysis" },
-              { icon: Network, label: "Neural Networks" }
+              { icon: BarChart3, label: "Data Wrangling" },
+              { icon: Brain, label: "Machine Learning" },
+              { icon: TrendingUp, label: "Statistical Modeling" },
+              { icon: Network, label: "Deep Learning" },
+              { icon: Database, label: "Data Engineering" },
+              { icon: Search, label: "Feature Engineering" },
+              { icon: Activity, label: "Model Optimization" },
+              { icon: GitGraph, label: "Experimentation" }
             ].map((item, index) => (
               <motion.div
                 key={item.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
               >
                 <item.icon className="text-white mx-auto mb-3" size={32} />
-                <p className="text-white font-semibold">{item.label}</p>
+                <p className="text-white font-semibold text-sm">{item.label}</p>
               </motion.div>
             ))}
           </div>

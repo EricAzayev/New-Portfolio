@@ -46,51 +46,48 @@ const FullStackPage = () => {
     }
   ];
 
-  // Tech Stack Data
+  // Tech Stack organized by category
   const techStack = {
-    frontend: [
-      { name: "React/React Native", level: 90, icon: Code2 },
-      { name: "JavaScript/TypeScript", level: 85, icon: Terminal },
-      { name: "Tailwind CSS", level: 88, icon: Layers },
-      { name: "Redux/State Mgmt", level: 80, icon: GitBranch }
-    ],
-    backend: [
-      { name: "Node.js/Express", level: 85, icon: Server },
-      { name: "Python/Django", level: 78, icon: Cpu },
-      { name: "PostgreSQL/MongoDB", level: 82, icon: Database },
-      { name: "AWS/Cloud Services", level: 75, icon: Cloud }
-    ]
+    languages: ["JavaScript", "TypeScript", "Python", "Java", "C++", "C#", "HTML/CSS"],
+    frameworks: ["React", "React Native", "Node.js", "Express.js", "ASP.NET Core", "Django", "Vite"],
+    databases: ["PostgreSQL", "MongoDB", "Microsoft SQL Server", "Supabase", "Redis"],
+    tools: ["Git", "GitHub", "Jira", "Figma", "PyCharm", "NuGet"],
+    apis: ["REST API", "Slack API", "Gemini API", "Supabase API"]
   };
 
-  const SkillBar = ({ skill, index }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-    const Icon = skill.icon;
+  // Certifications & Achievements
+  const certifications = [
+    {
+      name: "KKCF Fellowship",
+      organization: "Kode With Klossy",
+      year: "2024",
+      image: "/photos/Profile_Photos/KKCF.png"
+    },
+    {
+      name: "Codepath Web101",
+      organization: "Codepath",
+      year: "2023",
+      image: "/photos/Profile_Photos/Web101.png"
+    },
+    {
+      name: "Codepath Web102",
+      organization: "Codepath",
+      year: "2024",
+      image: "/photos/Profile_Photos/Web102.png"
+    }
+  ];
 
+  const SkillBadge = ({ skill, index, color = "indigo" }) => {
     return (
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, x: -50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="mb-6"
+      <motion.span
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: index * 0.03 }}
+        className={`inline-block px-4 py-2 bg-gradient-to-r from-${color}-50 to-${color}-100 text-${color}-700 border border-${color}-200 rounded-lg text-sm font-medium hover:shadow-md transition-all cursor-default`}
       >
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <Icon size={18} className="text-indigo-600" />
-            <span className="text-sm font-semibold text-gray-700">{skill.name}</span>
-          </div>
-          <span className="text-xs font-bold text-indigo-600">{skill.level}%</span>
-        </div>
-        <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={isInView ? { width: `${skill.level}%` } : {}}
-            transition={{ duration: 1, delay: index * 0.1 + 0.2, ease: "easeOut" }}
-            className="h-full bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
-          />
-        </div>
-      </motion.div>
+        {skill}
+      </motion.span>
     );
   };
 
@@ -202,6 +199,7 @@ const FullStackPage = () => {
                 githubLink="https://github.com/EricAzayev/reciPal"
                 demoLink="#"
                 tags={["React", "Tailwind CSS", "Framer Motion", "Vite"]}
+                projectLink="/fullstack/recipal"
               />
               <ProjectHeader
                 title="FoodTracker WebApp"
@@ -224,51 +222,155 @@ const FullStackPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Technical Expertise</h2>
-            <p className="text-gray-600 text-lg">Proficient across the entire technology stack</p>
+            <p className="text-gray-600 text-lg">Building full-stack solutions with modern technologies</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Frontend Skills */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Languages */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg p-3">
-                  <Globe className="text-white" size={24} />
+                  <Terminal className="text-white" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800">Frontend</h3>
+                <h3 className="text-2xl font-bold text-gray-800">Languages</h3>
               </div>
-              <div>
-                {techStack.frontend.map((skill, index) => (
-                  <SkillBar key={skill.name} skill={skill} index={index} />
+              <div className="flex flex-wrap gap-2">
+                {techStack.languages.map((skill, index) => (
+                  <SkillBadge key={skill} skill={skill} index={index} color="blue" />
                 ))}
               </div>
             </motion.div>
 
-            {/* Backend Skills */}
+            {/* Frameworks */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg p-3">
-                  <Server className="text-white" size={24} />
+                  <Layers className="text-white" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800">Backend</h3>
+                <h3 className="text-2xl font-bold text-gray-800">Frameworks</h3>
               </div>
-              <div>
-                {techStack.backend.map((skill, index) => (
-                  <SkillBar key={skill.name} skill={skill} index={index} />
+              <div className="flex flex-wrap gap-2">
+                {techStack.frameworks.map((skill, index) => (
+                  <SkillBadge key={skill} skill={skill} index={index} color="purple" />
                 ))}
               </div>
             </motion.div>
+
+            {/* Databases */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-lg p-3">
+                  <Database className="text-white" size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Databases & Storage</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {techStack.databases.map((skill, index) => (
+                  <SkillBadge key={skill} skill={skill} index={index} color="green" />
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Development Tools */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-lg p-3">
+                  <GitBranch className="text-white" size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Development Tools</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {techStack.tools.map((skill, index) => (
+                  <SkillBadge key={skill} skill={skill} index={index} color="orange" />
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* API Integration */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-3">
+                <Zap className="text-white" size={24} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800">API Integration & Services</h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {techStack.apis.map((skill, index) => (
+                <SkillBadge key={skill} skill={skill} index={index} color="indigo" />
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Certifications & Achievements */}
+        <section className="mb-20">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Certifications & Achievements</h2>
+            <p className="text-gray-600 text-lg">Continuous learning and professional development</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
+              >
+                <div className="aspect-video bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={cert.image} 
+                    alt={cert.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `<div class="text-indigo-600 text-4xl">🏆</div>`;
+                    }}
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{cert.name}</h3>
+                <p className="text-gray-600 text-sm mb-1">{cert.organization}</p>
+                <p className="text-indigo-600 text-sm font-semibold">{cert.year}</p>
+              </motion.div>
+            ))}
           </div>
         </section>
 
@@ -277,28 +379,32 @@ const FullStackPage = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-12 text-center"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-12 text-center mb-20"
         >
           <h2 className="text-3xl font-bold text-white mb-6">
             Complete Development Lifecycle
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Terminal, label: "API Development" },
+              { icon: Code2, label: "Full-Stack Development" },
+              { icon: GitBranch, label: "Version Control" },
+              { icon: Zap, label: "API Development" },
+              { icon: Server, label: "Backend Systems" },
               { icon: Database, label: "Database Design" },
               { icon: Cloud, label: "Cloud Deployment" },
-              { icon: GitBranch, label: "Version Control" }
+              { icon: Terminal, label: "Authentication" },
+              { icon: Layers, label: "Data Visualization" }
             ].map((item, index) => (
               <motion.div
                 key={item.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
               >
                 <item.icon className="text-white mx-auto mb-3" size={32} />
-                <p className="text-white font-semibold">{item.label}</p>
+                <p className="text-white font-semibold text-sm">{item.label}</p>
               </motion.div>
             ))}
           </div>
