@@ -39,24 +39,19 @@ const LeetCodeStats = ({ username = "EricAzayev" }) => {
   useEffect(() => {
     const fetchLeetCodeData = async () => {
       try {
-        const [solvedRes, profileRes] = await Promise.all([
-          fetch(`https://alfa-leetcode-api.onrender.com/${username}/solved`),
-          fetch(`https://alfa-leetcode-api.onrender.com/${username}`)
-        ]);
+        const response = await fetch(`https://leetcode-stats.tashif.codes/${username}`);
+        const data = await response.json();
 
-        const solvedData = await solvedRes.json();
-        const profileData = await profileRes.json();
-
-        if (solvedData.errors || profileData.errors) {
+        if (data.status !== "success") {
           throw new Error("Failed to fetch LeetCode data");
         }
 
         setLeetcodeData({
-          totalSolved: solvedData.solvedProblem || 0,
-          easySolved: solvedData.easySolved || 0,
-          mediumSolved: solvedData.mediumSolved || 0,
-          hardSolved: solvedData.hardSolved || 0,
-          ranking: profileData.ranking || 0,
+          totalSolved: data.totalSolved || 0,
+          easySolved: data.easySolved || 0,
+          mediumSolved: data.mediumSolved || 0,
+          hardSolved: data.hardSolved || 0,
+          ranking: data.ranking || 0,
           loading: false,
         });
       } catch (error) {
