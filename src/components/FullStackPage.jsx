@@ -209,6 +209,13 @@ const FullStackPage = () => {
                 tags={["React", "Node.js", "Express", "MongoDB"]}
                 projectLink="/fullstack/foodtracker"
               />
+              <ProjectHeader
+                title="TruthLens Hackathon Project"
+                date="2025"
+                status="In Development"
+                tags={["React", "AI/ML", "API Integration", "Data Visualization"]}
+                projectLink="/fullstack/truthlens"
+              />
             </div>
           </div>
         </motion.div>

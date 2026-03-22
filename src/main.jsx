@@ -18,6 +18,7 @@ import Findr from "./components/Fullstack/Findr.jsx";
 import CodepathApps from "./components/Fullstack/CodepathApps.jsx";
 import FoodTracker from "./components/Fullstack/FoodTracker.jsx";
 import ReciPal from "./components/Fullstack/ReciPal.jsx";
+import TruthLens from "./components/Fullstack/TruthLens.jsx";
 
 // Data Project Pages
 import SpringFoliageMap from "./components/Data/SpringFoliageMap.jsx";
@@ -46,6 +47,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/fullstack/codepath-apps" element={<CodepathApps />} />
           <Route path="/fullstack/foodtracker" element={<FoodTracker />} />
           <Route path="/fullstack/recipal" element={<ReciPal />} />
+          <Route path="/fullstack/truthlens" element={<TruthLens />} />
           
           {/* Data Project Routes */}
           <Route path="/data/spring-foliage-map" element={<SpringFoliageMap />} />
