@@ -8,6 +8,13 @@ const AnimatedProgressBar = ({ value, max, label, color = "blue", delay = 0 }) =
   const isInView = useInView(ref, { once: true });
   const percentage = (value / max) * 100;
 
+  const colorClasses = {
+    green: "bg-gradient-to-r from-green-500 to-green-400",
+    yellow: "bg-gradient-to-r from-yellow-500 to-yellow-400",
+    red: "bg-gradient-to-r from-red-500 to-red-400",
+    blue: "bg-gradient-to-r from-blue-500 to-blue-400",
+  };
+
   return (
     <div ref={ref} className="mb-6">
       <div className="flex justify-between mb-2">
@@ -19,7 +26,7 @@ const AnimatedProgressBar = ({ value, max, label, color = "blue", delay = 0 }) =
           initial={{ width: 0 }}
           animate={isInView ? { width: `${percentage}%` } : { width: 0 }}
           transition={{ duration: 1, delay, ease: "easeOut" }}
-          className={`h-full bg-gradient-to-r from-${color}-500 to-${color}-400 rounded-full`}
+          className={`h-full ${colorClasses[color]} rounded-full`}
         />
       </div>
     </div>

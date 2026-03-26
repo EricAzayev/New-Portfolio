@@ -109,35 +109,35 @@ const RightSection = () => {
         <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
           <div className="flex flex-wrap items-center gap-6">
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Experience_Band/LSPACE.png" alt="LSPACE" className="w-5 h-5 object-contain" />
+              <img src="/photos/Experience_Band/LSPACE.png" alt="LSPACE" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">LSPACE</span>
             </div>
             
             <span className="text-slate-300">•</span>
             
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Experience_Band/Unadat.png" alt="Unadat" className="w-5 h-5 object-contain" />
+              <img src="/photos/Experience_Band/Unadat.png" alt="Unadat" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">Unadat</span>
             </div>
             
             <span className="text-slate-300">•</span>
             
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Experience_Band/MorganStanley.png" alt="Morgan Stanley" className="w-5 h-5 object-contain" />
+              <img src="/photos/Experience_Band/MorganStanley.png" alt="Morgan Stanley" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">Morgan Stanley</span>
             </div>
             
             <span className="text-slate-300">•</span>
             
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Experience_Band/NASA.webp" alt="NASA" className="w-5 h-5 object-contain" />
+              <img src="/photos/Experience_Band/NASA.webp" alt="NASA" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">NASA</span>
             </div>
             
             <span className="text-slate-300">•</span>
             
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Experience_Band/IEH.png" alt="IEH" className="w-5 h-5 object-contain" />
+              <img src="/photos/Experience_Band/IEH.png" alt="IEH" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">IEH</span>
             </div>
           </div>
@@ -156,28 +156,28 @@ const RightSection = () => {
         <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
           <div className="flex flex-wrap items-center gap-6">
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Organizations_Band/Accenture.png" alt="Accenture" className="w-5 h-5 object-contain" />
+              <img src="/photos/Organizations_Band/Accenture.png" alt="Accenture" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">Accenture Student Leadership</span>
             </div>
             
             <span className="text-slate-300">•</span>
             
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Organizations_Band/BASTA.png" alt="Code2Career" className="w-5 h-5 object-contain" />
+              <img src="/photos/Organizations_Band/BASTA.png" alt="Code2Career" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">Code2Career</span>
             </div>
             
             <span className="text-slate-300">•</span>
             
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Organizations_Band/CUNYTechPrep.png" alt="Data Science Fellowship" className="w-5 h-5 object-contain" />
+              <img src="/photos/Organizations_Band/CUNYTechPrep.png" alt="Data Science Fellowship" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">Data Science Fellowship</span>
             </div>
             
             <span className="text-slate-300">•</span>
             
             <div className="flex items-center gap-2 hover:opacity-70 transition-opacity cursor-pointer">
-              <img src="/photos/Organizations_Band/Codepath.png" alt="Codepath" className="w-5 h-5 object-contain" />
+              <img src="/photos/Organizations_Band/Codepath.png" alt="Codepath" className="w-8 h-8 object-contain" />
               <span className="text-sm font-medium text-slate-700">Codepath</span>
             </div>
           </div>
