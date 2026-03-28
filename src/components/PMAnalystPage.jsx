@@ -177,6 +177,7 @@ const PMAnalystPage = () => {
                 githubLink="https://github.com/oleksiisud/slack-cluster-finder"
                 demoLink="#"
                 tags={["TensorFlow", "Scikit-learn", "NumPy", "Matplotlib"]}
+                projectLink="/data/stellar-search"
               />
               <ProjectHeader
                 title="GroupWisdom Bot"
@@ -194,6 +195,7 @@ const PMAnalystPage = () => {
                 mediaSrc="/photos/Profile_Photos/LetterBuddy.png"
                 githubLink="#"
                 tags={["Python", "Time Series", "ARIMA", "Visualization"]}
+                projectLink="/data/letterbuddy"
               />
             </div>
           </div>

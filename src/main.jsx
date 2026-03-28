@@ -22,12 +22,13 @@ import TruthLens from "./components/Fullstack/TruthLens.jsx";
 
 // Data Project Pages
 import SpringFoliageMap from "./components/Data/SpringFoliageMap.jsx";
+import StellarSearch from "./components/Programmatics/StellarSearch.jsx";
+import LetterBuddy from "./components/Data/LetterBuddy.jsx";
 
 // Programmatics Project Pages
 import NASALSPACEMCA from "./components/Programmatics/NASALSPACEMCA.jsx";
 import NASAProposalWriting from "./components/Programmatics/NASAProposalWriting.jsx";
 import NPWEE from "./components/Programmatics/NPWEE.jsx";
-import StellarSearch from "./components/Programmatics/StellarSearch.jsx";
 import MinecraftMoon from "./components/Programmatics/MinecraftMoon.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -51,12 +52,13 @@ createRoot(document.getElementById("root")).render(
           
           {/* Data Project Routes */}
           <Route path="/data/spring-foliage-map" element={<SpringFoliageMap />} />
+          <Route path="/data/stellar-search" element={<StellarSearch />} />
+          <Route path="/data/letterbuddy" element={<LetterBuddy />} />
           
           {/* Programmatics Project Routes */}
           <Route path="/programmatics/nasa-lspace-mca" element={<NASALSPACEMCA />} />
           <Route path="/programmatics/nasa-proposal-writing" element={<NASAProposalWriting />} />
           <Route path="/programmatics/npwee" element={<NPWEE />} />
-          <Route path="/programmatics/stellar-search" element={<StellarSearch />} />
           <Route path="/programmatics/minecraft-moon" element={<MinecraftMoon />} />
           
           <Route path="*" element={<NotFound />} />

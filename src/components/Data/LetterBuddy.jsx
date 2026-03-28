@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-function SpringFoliageMap() {
+function LetterBuddy() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const demoImages = [
-    "/photos/Projects/Spring_Foliage_Demo_Slider_1.png",
-    "/photos/Projects/Spring_Foliage_Demo_Slider_2.png",
-    "/photos/Projects/Spring_Foliage_Background.png"
+    "/photos/Projects/LetterBuddy_Demo2.png",
+    "/photos/Projects/LetterBuddy_Demo4.png",
+    "/photos/Projects/LetterBuddy_Demo5.png",
+    "/photos/Projects/LetterBuddy_Demo6.png"
   ];
 
   const nextImage = () => {
@@ -24,19 +25,7 @@ function SpringFoliageMap() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">Spring Foliage Map</h1>
-        <div className="flex gap-3 mb-6">
-          <a 
-            href="https://github.com/EricAzayev/Spring-Foliage" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg transition-colors text-sm font-medium"
-          >
-            <Github size={16} />
-            View on GitHub
-            <ExternalLink size={14} />
-          </a>
-        </div>
+        <h1 className="text-4xl font-bold text-slate-900 mb-6">LetterBuddy</h1>
         
         {/* BentoBox Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
@@ -91,8 +80,8 @@ function SpringFoliageMap() {
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                {["Python", "Pandas", "Folium", "Satellite Data", "Remote Sensing", "Data Visualization"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-cyan-50 to-blue-100 text-cyan-700 border border-cyan-200 rounded-lg text-sm font-medium">
+                {["Python", "Time Series", "ARIMA", "Visualization"].map((skill) => (
+                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-purple-50 to-pink-100 text-purple-700 border border-purple-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
@@ -100,17 +89,28 @@ function SpringFoliageMap() {
             </div>
           </div>
 
-          {/* Bottom Left - System Design */}
+          {/* Bottom Left - Problem Statement & Tech Stack */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
+              <h2 className="text-2xl font-semibold mb-4">Problem Statement & Tech Stack</h2>
             </div>
-            <div className="bg-slate-50 p-4">
-              <img 
-                src="/photos/Projects/SpringFoliage_System_Architecture.png" 
-                alt="System Architecture"
-                className="w-full h-auto object-contain"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-slate-50">
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <h3 className="text-lg font-semibold mb-2 text-slate-700">Problem Statement</h3>
+                <img 
+                  src="/photos/Projects/LetterBuddy_Problem_Statement.png" 
+                  alt="Problem Statement"
+                  className="w-full h-auto object-contain rounded"
+                />
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-slate-200">
+                <h3 className="text-lg font-semibold mb-2 text-slate-700">Tech Stack</h3>
+                <img 
+                  src="/photos/Projects/LetterBuddy_Tech_Stack.png" 
+                  alt="Tech Stack"
+                  className="w-full h-auto object-contain rounded"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -119,4 +119,4 @@ function SpringFoliageMap() {
   );
 }
 
-export default SpringFoliageMap;
+export default LetterBuddy;
