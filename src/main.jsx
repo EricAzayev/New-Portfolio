@@ -24,6 +24,7 @@ import TruthLens from "./components/Fullstack/TruthLens.jsx";
 import SpringFoliageMap from "./components/Data/SpringFoliageMap.jsx";
 import StellarSearch from "./components/Programmatics/StellarSearch.jsx";
 import LetterBuddy from "./components/Data/LetterBuddy.jsx";
+import DenCity from "./components/Data/DenCity.jsx";
 
 // Programmatics Project Pages
 import NASALSPACEMCA from "./components/Programmatics/NASALSPACEMCA.jsx";
@@ -54,6 +55,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/data/spring-foliage-map" element={<SpringFoliageMap />} />
           <Route path="/data/stellar-search" element={<StellarSearch />} />
           <Route path="/data/letterbuddy" element={<LetterBuddy />} />
+          <Route path="/data/dencity" element={<DenCity />} />
           
           {/* Programmatics Project Routes */}
           <Route path="/programmatics/nasa-lspace-mca" element={<NASALSPACEMCA />} />

@@ -197,6 +197,16 @@ const PMAnalystPage = () => {
                 tags={["Python", "Time Series", "ARIMA", "Visualization"]}
                 projectLink="/data/letterbuddy"
               />
+              <ProjectHeader
+                title="DenCity"
+                date="2024"
+                status="Hackathon"
+                mediaSrc="/photos/Profile_Photos/DenCity_Header_Photo.png"
+                githubLink="https://github.com/BorowskiKacper/parkingsniffer"
+                demoLink="https://devpost.com/software/dencity"
+                tags={["Bluetooth", "Supabase", "React", "Geospatial"]}
+                projectLink="/data/dencity"
+              />
             </div>
           </div>
         </motion.div>
