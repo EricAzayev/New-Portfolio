@@ -58,7 +58,7 @@ const RightSection = () => {
           Systems &amp; Solutions Engineer
         </h1>
         
-        <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
+        <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8 text-center">
           Building impactful solutions across Full-Stack Development, Data Science, and Product Strategy. 
           Computer Science student at Hunter College with a passion for creating elegant, scalable systems.
         </p>

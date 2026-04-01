@@ -8,8 +8,8 @@ function StellarSearch() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const demoImages = [
-    "/photos/Projects/StellarSearch_Demoable_1.png",
-    "/photos/Projects/StellarSearch_User_Stories.png"
+    "/photos/Projects/StellarSearch/StellarSearch_Demoable_1.png",
+    "/photos/Projects/StellarSearch/StellarSearch_User_Stories.png"
   ];
 
   const nextImage = () => {
@@ -106,7 +106,7 @@ function StellarSearch() {
             </div>
             <div className="bg-slate-50 p-4">
               <img 
-                src="/photos/Projects/SlackClusterFinder System Architecture.png" 
+                src="/photos/Projects/SlackClusterFinder/SlackClusterFinder System Architecture.png" 
                 alt="System Architecture"
                 className="w-full h-auto object-contain"
               />

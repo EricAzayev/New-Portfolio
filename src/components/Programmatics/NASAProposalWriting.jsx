@@ -14,8 +14,12 @@ function NASAProposalWriting() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           {/* Top Left - Demo Images (takes 2 columns) */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="relative aspect-video bg-slate-100 flex items-center justify-center">
-              <p className="text-slate-400">Project images coming soon...</p>
+            <div className="relative aspect-video bg-slate-100">
+              <img 
+                src="/photos/Projects/NPWEE/NPWEE_Quad_Chart.png" 
+                alt="NASA LSPACE NPWEE Quad Chart"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 

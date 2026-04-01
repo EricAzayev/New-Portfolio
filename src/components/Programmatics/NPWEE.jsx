@@ -16,7 +16,7 @@ function NPWEE() {
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="relative aspect-video bg-slate-100">
               <img 
-                src="/photos/Projects/NPWEE_Quad_Draft.png" 
+                src="/photos/Projects/NPWEE_Quad_Chart.png" 
                 alt="NPWEE Demo"
                 className="w-full h-full object-contain"
               />

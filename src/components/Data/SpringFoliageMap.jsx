@@ -8,9 +8,9 @@ function SpringFoliageMap() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const demoImages = [
-    "/photos/Projects/Spring_Foliage_Demo_Slider_1.png",
-    "/photos/Projects/Spring_Foliage_Demo_Slider_2.png",
-    "/photos/Projects/Spring_Foliage_Background.png"
+    "/photos/Projects/SpringFoliage/Spring_Foliage_Demo_Slider_1.png",
+    "/photos/Projects/SpringFoliage/Spring_Foliage_Demo_Slider_2.png",
+    "/photos/Projects/SpringFoliage/Spring_Foliage_Background.png"
   ];
 
   const nextImage = () => {
@@ -107,7 +107,7 @@ function SpringFoliageMap() {
             </div>
             <div className="bg-slate-50 p-4">
               <img 
-                src="/photos/Projects/SpringFoliage_System_Architecture.png" 
+                src="/photos/Projects/SpringFoliage/SpringFoliage_System_Architecture.png" 
                 alt="System Architecture"
                 className="w-full h-auto object-contain"
               />

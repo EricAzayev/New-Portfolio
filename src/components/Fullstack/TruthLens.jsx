@@ -8,8 +8,8 @@ function TruthLens() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const demoImages = [
-    "/photos/Projects/TruthLens_In_Action.png",
-    "/photos/Projects/TruthLens_Website_Image.png"
+    "/photos/Projects/TruthLens/TruthLens_In_Action.png",
+    "/photos/Projects/TruthLens/TruthLens_Website_Image.png"
   ];
 
   const nextImage = () => {
@@ -107,7 +107,7 @@ function TruthLens() {
             </div>
             <div className="bg-slate-50 p-4">
               <img 
-                src="/photos/Projects/TruthLens_System_Architecture.png" 
+                src="/photos/Projects/TruthLens/TruthLens_System_Architecture.png" 
                 alt="System Architecture"
                 className="w-full h-auto object-contain"
               />

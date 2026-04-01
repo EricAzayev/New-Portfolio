@@ -8,10 +8,10 @@ function LetterBuddy() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const demoImages = [
-    "/photos/Projects/LetterBuddy_Demo2.png",
-    "/photos/Projects/LetterBuddy_Demo4.png",
-    "/photos/Projects/LetterBuddy_Demo5.png",
-    "/photos/Projects/LetterBuddy_Demo6.png"
+    "/photos/Projects/LetterBuddy/LetterBuddy_Demo2.png",
+    "/photos/Projects/LetterBuddy/LetterBuddy_Demo4.png",
+    "/photos/Projects/LetterBuddy/LetterBuddy_Demo5.png",
+    "/photos/Projects/LetterBuddy/LetterBuddy_Demo6.png"
   ];
 
   const nextImage = () => {
@@ -98,7 +98,7 @@ function LetterBuddy() {
               <div className="bg-white rounded-lg p-4 border border-slate-200">
                 <h3 className="text-lg font-semibold mb-2 text-slate-700">Problem Statement</h3>
                 <img 
-                  src="/photos/Projects/LetterBuddy_Problem_Statement.png" 
+                  src="/photos/Projects/LetterBuddy/LetterBuddy_Problem_Statement.png" 
                   alt="Problem Statement"
                   className="w-full h-auto object-contain rounded"
                 />
@@ -106,7 +106,7 @@ function LetterBuddy() {
               <div className="bg-white rounded-lg p-4 border border-slate-200">
                 <h3 className="text-lg font-semibold mb-2 text-slate-700">Tech Stack</h3>
                 <img 
-                  src="/photos/Projects/LetterBuddy_Tech_Stack.png" 
+                  src="/photos/Projects/LetterBuddy/LetterBuddy_Tech_Stack.png" 
                   alt="Tech Stack"
                   className="w-full h-auto object-contain rounded"
                 />

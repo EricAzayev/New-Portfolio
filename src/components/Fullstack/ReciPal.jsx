@@ -8,12 +8,12 @@ function ReciPal() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const demoImages = [
-    "/photos/Projects/recipalDemo2.png",
-    "/photos/Projects/recipalDemo3.png",
-    "/photos/Projects/recipalDemo4.png",
-    "/photos/Projects/reciPalDemo5.png",
-    "/photos/Projects/reciPalDemo6.png",
-    "/photos/Projects/reciPalDemo7.png"
+    "/photos/Projects/ReciPal/recipalDemo2.png",
+    "/photos/Projects/ReciPal/recipalDemo3.png",
+    "/photos/Projects/ReciPal/recipalDemo4.png",
+    "/photos/Projects/ReciPal/reciPalDemo5.png",
+    "/photos/Projects/ReciPal/reciPalDemo6.png",
+    "/photos/Projects/ReciPal/reciPalDemo7.png"
   ];
 
   const nextImage = () => {
