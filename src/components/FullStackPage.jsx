@@ -190,7 +190,7 @@ const FullStackPage = () => {
                 demoLink="#"
                 docsLink="#"
                 tags={["Swift", "Android", "REST APIs", "Material Design"]}
-                projectLink="/fullstack/codepath-apps"
+                projectLink="https://dashboard-delta-eight-66.vercel.app/"
               />
               <ProjectHeader
                 title="reciPal"
