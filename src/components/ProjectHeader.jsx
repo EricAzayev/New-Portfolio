@@ -17,7 +17,12 @@ const ProjectHeader = ({
 
   const handleCardClick = () => {
     if (projectLink) {
-      navigate(projectLink);
+      // Check if it's an external URL
+      if (projectLink.startsWith('http://') || projectLink.startsWith('https://')) {
+        window.open(projectLink, '_blank', 'noopener,noreferrer');
+      } else {
+        navigate(projectLink);
+      }
     }
   };
 
