@@ -196,7 +196,7 @@ const FullStackPage = () => {
                 title="reciPal"
                 date="2025"
                 status="Expanded"
-                mediaSrc="/photos/Projects/ReciPal/reciPalCover.png"
+                mediaSrc="/photos/Profile_Photos/reciPalCover.png"
                 githubLink="https://github.com/EricAzayev/reciPal"
                 demoLink="#"
                 tags={["React", "Tailwind CSS", "Framer Motion", "Vite"]}
