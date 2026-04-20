@@ -1,4 +1,7 @@
 ## FocusTube - Smart YouTube Focus Mode
+Github: https://github.com/luoshuyi1124/google-project
+
+
 
 **Timeline:** April 2026
 
