@@ -39,6 +39,62 @@
 - **Cross-Channel Topics:** Identify discussions spanning multiple channels
 - **Historical Context:** Build topic evolution over time
 
+## Program Analysis
+
+### GitHub Repository: https://github.com/oleksiisud/slack-cluster-finder
+
+**Tech Stack:**
+- **Backend**: FastAPI (async REST)
+- **NLP**: Sentence-Transformers (`all-MiniLM-L6-v2`, 384-dim embeddings)
+- **Clustering**: scikit-learn (hierarchical Ward linkage)
+- **Labels**: Google Gemini API (primary) + HuggingFace Inference (fallback)
+- **Ingestion**: Slack SDK, Discord.py
+- **Database**: Supabase PostgreSQL + SQLite (local dev)
+- **Frontend**: React + Vite with D3.js visualization
+
+**Message Processing Pipeline:**
+- Extract from Slack/Discord APIs → Clean & preprocess → Generate embeddings
+- Hierarchical clustering with Ward linkage (2-level: conversations → topics)
+- Generate topic labels via Gemini API
+- Build search index with semantic similarity
+
+**Embedding & Clustering:**
+- **Model**: all-MiniLM-L6-v2 (384-dim, ~1000 msg/sec, lightweight)
+- **Clustering**: Hierarchical Ward linkage with configurable distance threshold
+  - 0.3 = many small clusters (high granularity)
+  - 0.6 = fewer large clusters (high abstraction)
+- **Performance**: 1,000 msgs in 5-8 seconds, ~200MB memory for 10k messages
+
+**Topic Labeling Strategy:**
+- **Primary**: Google Gemini API (free tier: 15 req/minute)
+- **Fallback**: TF-IDF + HuggingFace Inference (faster, deterministic)
+- **Caching**: Store labels to avoid re-labeling same clusters
+
+**Semantic Search:**
+- **Algorithm**: Cosine similarity against all message embeddings
+- **Complexity**: O(n) where n = message count
+- **Optimization**: FAISS approximate nearest neighbor for >100k messages
+- **Latency**: <100ms per query (with vector index)
+
+**Database Schema:**
+- `messages`: platform, user_id, text, channel_id, timestamp, embedding vector
+- `clusters`: label, message_ids, centroid embedding, created_at
+- `search_index`: cached results with 1-hour TTL
+
+**Notable Patterns:**
+- Orchestrator pattern: service layer coordinates embedding → clustering → labeling
+- Caching layer for expensive computations
+- Dual database: SQLite (dev) vs Supabase (prod)
+- Fault tolerance: fallback algorithms if Gemini fails
+
+**Known Trade-offs:**
+- Hierarchical clustering doesn't always match human intuition
+- O(n²) distance computation slow for >100k messages
+- English-only (Sentence-Transformers training bias)
+- Real-time re-clustering required for new messages
+
+---
+
 ## Skills Demonstrated
 - **NLP Engineering:** Text preprocessing, embedding generation, topic modeling
 - **API Integration:** Third-party platform integration (Slack, Discord)
