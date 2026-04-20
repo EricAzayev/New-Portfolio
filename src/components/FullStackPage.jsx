@@ -22,14 +22,6 @@ const FullStackPage = () => {
   const projects = [
     {
       id: 1,
-      title: "Lexington Links",
-      description: "Community platform connecting local residents and businesses",
-      tech: ["React", "Node.js", "PostgreSQL", "Express"],
-      gradient: "from-blue-500 to-purple-600",
-      features: ["Real-time updates", "User authentication", "Interactive maps", "Event management"]
-    },
-    {
-      id: 2,
       title: "Findr",
       description: "Location-based discovery and social networking application",
       tech: ["React Native", "Firebase", "Google Maps API", "Redux"],
@@ -37,12 +29,20 @@ const FullStackPage = () => {
       features: ["Geolocation services", "Push notifications", "Social features", "Real-time chat"]
     },
     {
-      id: 3,
+      id: 2,
       title: "Codepath Apps",
-      description: "Collection of educational mobile applications",
-      tech: ["Swift", "Android", "REST APIs", "Material Design"],
+      description: "Hub showcasing CodePath web development projects including Lexington Links and FoodTracker",
+      tech: ["React", "Node.js", "Express", "PostgreSQL", "MongoDB"],
+      gradient: "from-purple-500 to-pink-600",
+      features: ["Full-stack development", "Database design", "REST APIs", "Modern web architecture"]
+    },
+    {
+      id: 3,
+      title: "reciPal",
+      description: "Recipe discovery and meal planning application",
+      tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
       gradient: "from-orange-500 to-red-600",
-      features: ["Cross-platform", "API integration", "Modern UI/UX", "Responsive design"]
+      features: ["Recipe search", "Meal planning", "Smooth animations", "Responsive design"]
     }
   ];
 
@@ -164,19 +164,10 @@ const FullStackPage = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ProjectHeader
-                title="Lexington Links"
-                date="2025"
-                status="On Pause"
-                githubLink="https://github.com/EricAzayev/Lexington-Links"
-                demoLink="#"
-                docsLink="#"
-                tags={["React", "Node.js", "PostgreSQL", "Express"]}
-                projectLink="/fullstack/lexington-links"
-              />
-              <ProjectHeader
                 title="Findr"
                 date="2025"
                 status="Completed"
+                mediaSrc="/photos/Profile_Photos/Findr.png"
                 githubLink="https://github.com/BorowskiKacper/divhacks"
                 demoLink="https://devpost.com/software/findr-z9k6ol"
                 tags={["React Native", "Firebase", "Google Maps API", "Redux"]}
@@ -188,8 +179,7 @@ const FullStackPage = () => {
                 status="Active"
                 githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio"
                 demoLink="#"
-                docsLink="#"
-                tags={["Swift", "Android", "REST APIs", "Material Design"]}
+                tags={["React", "Node.js", "Express", "PostgreSQL", "MongoDB"]}
                 projectLink="https://dashboard-delta-eight-66.vercel.app/"
               />
               <ProjectHeader
@@ -203,17 +193,10 @@ const FullStackPage = () => {
                 projectLink="/fullstack/recipal"
               />
               <ProjectHeader
-                title="FoodTracker WebApp"
-                date="2025"
-                status="Active"
-                githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio/tree/main/FoodTracker"
-                tags={["React", "Node.js", "Express", "MongoDB"]}
-                projectLink="/fullstack/foodtracker"
-              />
-              <ProjectHeader
                 title="TruthLens Hackathon Project"
                 date="2025"
                 status="In Development"
+                mediaSrc="/photos/Profile_Photos/Truthlens.png"
                 tags={["React", "AI/ML", "API Integration", "Data Visualization"]}
                 projectLink="/fullstack/truthlens"
               />
