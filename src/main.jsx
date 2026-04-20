@@ -15,6 +15,7 @@ import Blog from "./routes/Blog.jsx";
 // Fullstack Project Pages
 import LexingtonLinks from "./components/Fullstack/LexingtonLinks.jsx";
 import Findr from "./components/Fullstack/Findr.jsx";
+import CodepathApps from "./components/Fullstack/CodepathApps.jsx";
 import FoodTracker from "./components/Fullstack/FoodTracker.jsx";
 import ReciPal from "./components/Fullstack/ReciPal.jsx";
 import TruthLens from "./components/Fullstack/TruthLens.jsx";
@@ -45,6 +46,7 @@ createRoot(document.getElementById("root")).render(
           {/* Fullstack Project Routes */}
           <Route path="/fullstack/lexington-links" element={<LexingtonLinks />} />
           <Route path="/fullstack/findr" element={<Findr />} />
+          <Route path="/fullstack/codepath-apps" element={<CodepathApps />} />
           <Route path="/fullstack/foodtracker" element={<FoodTracker />} />
           <Route path="/fullstack/recipal" element={<ReciPal />} />
           <Route path="/fullstack/truthlens" element={<TruthLens />} />

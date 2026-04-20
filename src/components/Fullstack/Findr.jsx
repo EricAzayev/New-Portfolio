@@ -32,45 +32,71 @@ function Findr() {
           </a>
         </div>
         
-        {/* BentoBox Grid Layout */}
+        {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-          {/* Top Left - Demo Images (takes 2 columns) */}
-          <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="relative aspect-video bg-slate-100 flex items-center justify-center">
-              <p className="text-slate-400">Project images coming soon...</p>
-            </div>
-          </div>
+          
+          {/* Project Overview - Full Width */}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+            <h2 className="text-3xl font-semibold mb-6 text-slate-900">Project Overview</h2>
+            
+            <div className="space-y-6">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                How in touch are you with the animals that surround you? Whether you live in a dense urban setting or the quiet countryside, we often overlook the incredible wildlife sharing our space. Most people can recognize a hundred brand logos but struggle to identify the birds in their own backyard, creating a disconnect from the natural world.
+              </p>
+              
+              <p className="text-lg text-slate-700 leading-relaxed">
+                That's why we made <strong>Findr</strong>, a gamified education app that turns every walk into a scavenger hunt. Using the Gemini API, users simply snap a photo of an animal to receive instant species identification and fascinating ecological insights. It's more than a camera; it's a digital field guide that transforms a fleeting glance into a lasting piece of knowledge.
+              </p>
 
-          {/* Top Right - Product Description */}
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
-            <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
-            <p className="text-slate-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <p className="text-slate-600 mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-              ut aliquip ex ea commodo consequat.
-            </p>
-            <div className="mt-6">
-              <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Supabase", "API Integration", "TypeScript", "Authentication", "React Native"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-green-50 to-teal-100 text-teal-700 border border-teal-200 rounded-lg text-sm font-medium">
-                    {skill}
-                  </span>
-                ))}
+              {/* Inline Image 1: American Woodcock */}
+              <div className="my-8 bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-6 border border-green-200">
+                <img 
+                  src="/photos/Projects/Findr/American_Woodcock.png" 
+                  alt="American Woodcock - Example Species"
+                  className="w-full max-w-2xl mx-auto h-auto object-contain rounded-lg shadow-md"
+                />
+                <p className="text-sm text-slate-600 text-center mt-3 italic">Example: American Woodcock identification (Photo: Wikipedia)</p>
+              </div>
+
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Users can pin sightings to their location to "flex" on friends and inspire the community to explore local hotspots. Our ranking system is based on species rarity, with a primary focus on migratory patterns. By rewarding players for spotting travelers on the move, Findr gamifies natural science and teaches users to appreciate the rhythmic, global scale of local biodiversity.
+              </p>
+
+              {/* Inline Image 2: Migration Map */}
+              <div className="my-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
+                <img 
+                  src="/photos/Projects/Findr/Animal_migrations_US.png" 
+                  alt="Animal Migration Patterns Across the US"
+                  className="w-full max-w-3xl mx-auto h-auto object-contain rounded-lg shadow-md"
+                />
+                <p className="text-sm text-slate-600 text-center mt-3 italic">Animal migration patterns help drive the app's ranking system (Source: blog.nature.org)</p>
+              </div>
+
+              {/* Key Technologies */}
+              <div className="mt-8 pt-6 border-t border-slate-200">
+                <h3 className="text-xl font-semibold mb-4 text-slate-900">Key Technologies</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["Gemini API", "React Native", "Supabase", "Geolocation", "Image Recognition", "Gamification", "Species Database"].map((skill) => (
+                    <span key={skill} className="px-4 py-2 bg-gradient-to-r from-green-50 to-teal-100 text-teal-700 border border-teal-200 rounded-lg text-sm font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Bottom Left - System Design */}
-          <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          {/* System Architecture */}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6">
               <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
-              <div className="bg-slate-50 p-8 rounded-lg text-center">
-                <p className="text-slate-500">System architecture diagram coming soon...</p>
-              </div>
+            </div>
+            <div className="bg-slate-50 p-6">
+              <img 
+                src="/photos/Projects/Findr/DivHacks_System_Architecture.png" 
+                alt="System Architecture"
+                className="w-full h-auto object-contain rounded-lg"
+              />
             </div>
           </div>
         </div>

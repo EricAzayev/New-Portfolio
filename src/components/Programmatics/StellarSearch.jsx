@@ -80,17 +80,15 @@ function StellarSearch() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+              Are you ever frustrated finding messages on Slack? Let's admit it, modern message search algorithms are plain outdated. Linearly searching for keywords is inefficient and frequently misses the target purpose of message searching.
             </p>
             <p className="text-slate-600 mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-              ut aliquip ex ea commodo consequat.
+              The goal of Stellar Search is to move beyond simple channel analysis to deliver actionable insights by automatically identifying and grouping latent topic clusters within large, active Slack and Discord communities. Server owners can store messages on our Supabase database or set up their own for full data ownership. Users connect to clusters, approaching each group chat like stellar systems in a galaxy. Find messages, and opportunities, faster!
             </p>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                {["AI Agents", "Message Analysis", "Cross-Functional Collaboration", "JSON", "Slack API"].map((skill) => (
+                {["Natural Language Processing", "Topic Clustering", "Supabase", "Slack API", "Discord API", "Machine Learning"].map((skill) => (
                   <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
@@ -106,7 +104,7 @@ function StellarSearch() {
             </div>
             <div className="bg-slate-50 p-4">
               <img 
-                src="/photos/Projects/SlackClusterFinder/SlackClusterFinder System Architecture.png" 
+                src="/photos/Projects/StellarSearch/SlackClusterFinder System Architecture.png" 
                 alt="System Architecture"
                 className="w-full h-auto object-contain"
               />

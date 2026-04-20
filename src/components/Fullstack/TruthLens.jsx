@@ -23,7 +23,10 @@ function TruthLens() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">TruthLens Hackathon Project</h1>
+        <h1 className="text-4xl font-bold text-slate-900 mb-4">TruthLens</h1>
+        <p className="text-lg text-slate-600 mb-4 italic">
+          Every child deserves to see the world as it truly is, not as AI decides it should be.
+        </p>
         <div className="flex gap-3 mb-6">
           {/* GitHub link will be added when available */}
           {/* <a 
@@ -81,17 +84,15 @@ function TruthLens() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+              TruthLens is a lightweight browser extension designed to protect digital reality for the next generation. While traditional parental controls focus on "what" kids see, we address how it was made—shielding families from the rising tide of synthetic deception.
             </p>
             <p className="text-slate-600 mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-              ut aliquip ex ea commodo consequat.
+              <strong>Multi-Modal Detection:</strong> Instantly identifies AI-generated video, images, and text across TikTok, Instagram, and YouTube. Runs silently in the background with zero lag, providing real-time parental alerts. Unlike competitors like Bark or Qustodio which only filter keywords, TruthLens is the first to distinguish between real human content and deepfakes.
             </p>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                {["React", "AI/ML", "API Integration", "Data Visualization"].map((skill) => (
+                {["Browser Extension", "AI/ML Detection", "Multi-Modal Analysis", "Real-time Processing", "Parental Controls"].map((skill) => (
                   <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-700 border border-blue-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
