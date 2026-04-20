@@ -13,6 +13,49 @@
 - **Visualization:** Real-time heatmap rendering
 - **Metadata Store:** User locations, device counts, timestamps
 
+## Program Analysis
+
+### GitHub Repository: https://github.com/BorowskiKacper/parkingsniffer
+
+**Repository Structure:**
+Monorepo containing two frontend implementations (modern Next.js + legacy React/Leaflet) and Python sniffer backend.
+
+**Frontend Stack (Primary - DenCity/)**
+- **Framework**: Next.js 15 with TypeScript (App Router, Turbopack)
+- **Mapping**: Google Maps JS API via `@vis.gl/react-google-maps`
+- **Heatmap Rendering**: deck.gl `HeatmapLayer` with MEAN aggregation (not additive)
+- **UI Components**: Radix UI + Tailwind CSS (40+ component library)
+- **Mobile UX**: Vaul drawer library with gesture support + Framer Motion animations
+- **AI Integration**: Optional Genkit flows for hotspot explanations
+
+**Backend (Python Sniffer)**
+- **BLE Scanning**: Uses `pybluez` for Bluetooth device discovery
+- **Geolocation**: GPS (primary) or IP-based lookup fallback
+- **Async Processing**: asyncio for concurrent scanning (~10 second intervals)
+- **Data Upload**: POSTs telemetry (lat, lng, signal_type, timestamp) to Supabase
+
+**Key Algorithms & Implementation Details:**
+
+1. **Spatial De-duplication**
+   - Reduces data volume before heatmap rendering
+   - Prevents duplicate markers at same location
+
+2. **Heatmap Aggregation**
+   - Uses deck.gl's **MEAN mode** (average, not sum)
+   - Prevents false hotspots from clustering noise
+   - Cell-based grid with automatic spatial grouping
+
+3. **Data Lifecycle**
+   - Fetches latest **2500 rows** (windowing strategy)
+   - Older data naturally pruned as new signals overflow
+   - Timestamp-based filtering creates TTL effect
+
+**Database Schema** (Supabase PostgreSQL):
+- `signals` table with composite index on (lat, lng, created_at)
+- Stores: latitude, longitude, signal_type, timestamp, real/demo flag, parking_rule
+
+---
+
 ## Architecture Components
 
 ### Data Collection Pipeline
