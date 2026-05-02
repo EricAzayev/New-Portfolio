@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Github, ExternalLink, ArrowRight, Code2, Database } from "lucide-react";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function CodepathApps() {
+  usePageViewMetric("Fullstack/CodepathApps");
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">

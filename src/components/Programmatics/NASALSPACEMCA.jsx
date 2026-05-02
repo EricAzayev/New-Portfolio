@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { FileText, ChevronLeft, ChevronRight, DollarSign, Users, Rocket, Award } from "lucide-react";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function NASALSPACEMCA() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentSlide, setCurrentSlide] = useState(0);
+  usePageViewMetric("Programmatics/NASALSPACEMCA");
   
   // PDF pages from the comprehensive Preliminary Design Review
   const briefSlides = [

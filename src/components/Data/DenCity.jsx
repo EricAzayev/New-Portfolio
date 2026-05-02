@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function DenCity() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  usePageViewMetric("Data/DenCity");
   
   const demoImages = [
     "/photos/Projects/DenCity/DenCity Demo OpenData.png",

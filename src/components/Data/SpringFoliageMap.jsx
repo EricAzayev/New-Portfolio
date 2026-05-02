@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function SpringFoliageMap() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  usePageViewMetric("Data/SpringFoliageMap");
   
   const demoImages = [
     "/photos/Projects/SpringFoliage/Spring_Foliage_Demo_Slider_1.png",

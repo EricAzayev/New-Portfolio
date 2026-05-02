@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function StellarSearch() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  usePageViewMetric("Data/StellarSearch");
   
   const demoImages = [
     "/photos/Projects/StellarSearch/StellarSearch_Demoable_1.png",

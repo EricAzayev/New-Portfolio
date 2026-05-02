@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function TruthLens() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+  usePageViewMetric("Fullstack/TruthLens");
   const demoImages = [
     "/photos/Projects/TruthLens/TruthLens_In_Action.png",
     "/photos/Projects/TruthLens/TruthLens_Website_Image.png"

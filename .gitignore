@@ -2,6 +2,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
 
 /web102_unit7lab
 
@@ -70,3 +71,4 @@ dist-ssr
 LINKS.md
 README_API_INTEGRATION.md
 
+resume/
