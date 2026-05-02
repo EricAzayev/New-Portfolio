@@ -1,9 +1,11 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function NASAProposalWriting() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
+  usePageViewMetric("Programmatics/NASAProposalWriting");
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">

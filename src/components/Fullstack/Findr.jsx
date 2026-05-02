@@ -2,10 +2,11 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink } from "lucide-react";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function Findr() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
-  
+  usePageViewMetric("Fullstack/Findr");
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-7xl mx-auto">

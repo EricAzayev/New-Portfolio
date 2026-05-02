@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import usePageViewMetric from "../../hooks/usePageViewMetric";
 function LetterBuddy() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  usePageViewMetric("Data/LetterBuddy");
   
   const demoImages = [
     "/photos/Projects/LetterBuddy/LetterBuddy_Demo2.png",
