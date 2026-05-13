@@ -29,21 +29,30 @@ function NASAProposalWriting() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+              This NASA LSPACE NPWEE page captures the proposal-writing portion of the program, where the challenge was to distill research and mission intent into a concise, reviewable deliverable.
             </p>
             <p className="text-slate-600 mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-              ut aliquip ex ea commodo consequat.
+              The work emphasized technical writing, framing an aerospace problem clearly, and presenting the concept in a format that could communicate value, scope, and readiness quickly.
             </p>
           </div>
 
           {/* Bottom Left - System Design */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
-              <div className="bg-slate-50 p-8 rounded-lg text-center">
-                <p className="text-slate-500">System architecture diagram coming soon...</p>
+              <h2 className="text-2xl font-semibold mb-4">Writing & Review Objectives</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Technical Narrative</h3>
+                  <p className="text-sm text-slate-600">Built a proposal story that communicated purpose, feasibility, and research direction without losing engineering rigor.</p>
+                </div>
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Concise Deliverables</h3>
+                  <p className="text-sm text-slate-600">Used compact artifacts such as the quad chart to keep the project legible to reviewers under tight time constraints.</p>
+                </div>
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Cross-Functional Review</h3>
+                  <p className="text-sm text-slate-600">Balanced research ambition, mission planning, and communication discipline across a systems-engineering context.</p>
+                </div>
               </div>
             </div>
           </div>

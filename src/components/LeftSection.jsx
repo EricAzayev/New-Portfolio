@@ -41,7 +41,7 @@ const LeftSection = () => {
 
           {/* Bio */}
           <p className="text-slate-600 text-sm leading-relaxed mb-6 text-center">
-            Computer Science student at Hunter College, specializing in Full-Stack Engineering and Data Science.
+            Computer Science student at Hunter College, specializing in Software Engineering and Data Science.
           </p>
 
           {/* Social Links */}

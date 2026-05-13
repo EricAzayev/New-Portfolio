@@ -6,7 +6,7 @@ import usePageViewMetric from "../../hooks/usePageViewMetric";
 function FoodTracker() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
-  usePageViewMetric("Fullstack/FoodTracker");
+  usePageViewMetric("SWE/FoodTracker");
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-7xl mx-auto">
@@ -28,21 +28,21 @@ function FoodTracker() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           {/* Top Left - Demo Images (takes 2 columns) */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="relative aspect-video bg-slate-100 flex items-center justify-center">
-              <p className="text-slate-400">Project images coming soon...</p>
-            </div>
+            <img
+              src="https://opengraph.githubassets.com/1/EricAzayev/Full-Stack_Portfolio"
+              alt="FoodTracker repository preview"
+              className="w-full aspect-video object-cover"
+            />
           </div>
 
           {/* Top Right - Product Description */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+              FoodTracker is a CodePath project centered on personal nutrition tracking, meal logging, and making food data easier to review over time.
             </p>
             <p className="text-slate-600 mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-              ut aliquip ex ea commodo consequat.
+              The application reflects the progression from interface work into persistent data handling, REST API design, and backend-backed user workflows using the MERN-style tooling highlighted throughout the collection.
             </p>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
@@ -59,9 +59,20 @@ function FoodTracker() {
           {/* Bottom Left - System Design */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
-              <div className="bg-slate-50 p-8 rounded-lg text-center">
-                <p className="text-slate-500">System architecture diagram coming soon...</p>
+              <h2 className="text-2xl font-semibold mb-4">Implementation Focus</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Meal Logging</h3>
+                  <p className="text-sm text-slate-600">Designed around repeatable entry flows for food items, portions, and day-to-day tracking.</p>
+                </div>
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Backend Integration</h3>
+                  <p className="text-sm text-slate-600">Uses API-driven state updates and database-backed persistence instead of isolated front-end state.</p>
+                </div>
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Analytics Mindset</h3>
+                  <p className="text-sm text-slate-600">Treats nutrition tracking as a product problem where clarity and consistency matter as much as raw CRUD functionality.</p>
+                </div>
               </div>
             </div>
           </div>

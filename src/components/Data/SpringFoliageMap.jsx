@@ -83,12 +83,11 @@ function SpringFoliageMap() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+              Spring Foliage Map is a geospatial visualization project focused on making large-scale seasonal foliage data fast enough to explore interactively. 
+              The work evolved from an initial CPU-rendered proof of concept into a GPU-assisted pipeline built for real-time web delivery.
             </p>
             <p className="text-slate-600 mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-              ut aliquip ex ea commodo consequat.
+              The project pushed performance across four phases: CPU rendering, GPU data generation, full web GPU integration, and a scalable raster tiling mode capable of handling global datasets.
             </p>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
@@ -106,6 +105,10 @@ function SpringFoliageMap() {
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6">
               <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
+              <p className="text-slate-600 mb-4">
+                Raster-mode tiling became the core scaling strategy, allowing the map to move beyond prototype datasets and toward a globally explorable interface.
+                The next deployment phase focuses on observability, bug-reporting, and open-sourcing the workflow behind the map.
+              </p>
             </div>
             <div className="bg-slate-50 p-4">
               <img 

@@ -183,10 +183,9 @@ const PMAnalystPage = () => {
                 title="GroupWisdom Bot"
                 date="2026"
                 status="In Progress"
-                githubLink="#"
-                demoLink="#"
-                docsLink="#"
+                mediaSrc="/photos/Projects/GroupWisdom/hallucinationsExample.png"
                 tags={["NLP", "Python", "FastAPI", "PostgreSQL"]}
+                projectLink="/data/groupwisdom"
               />
               <ProjectHeader
                 title="LetterBuddy"

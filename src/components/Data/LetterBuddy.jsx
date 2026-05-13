@@ -72,21 +72,70 @@ function LetterBuddy() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+              LetterBuddy is an AI-powered handwriting improvement platform that uses OpenAI's GPT-4o Vision API 
+              to analyze and provide personalized feedback on handwriting quality. Built with Next.js 15 and FastAPI.
             </p>
             <p className="text-slate-600 mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-              ut aliquip ex ea commodo consequat.
+              The platform features secure user authentication via Supabase, real-time handwriting analysis, 
+              AI-generated practice sentences, and progress tracking to help users improve their handwriting systematically.
             </p>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                {["Python", "Time Series", "ARIMA", "Visualization"].map((skill) => (
+                {["Next.js 15", "React 19", "FastAPI", "GPT-4o Vision", "PostgreSQL", "Docker"].map((skill) => (
                   <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-purple-50 to-pink-100 text-purple-700 border border-purple-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Left - Problem Statement & Tech Stack */}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
+            <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-3 text-slate-700">AI-Powered Analysis</h3>
+                <ul className="space-y-2 text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 font-bold">•</span>
+                    <span><strong>Photo Upload:</strong> Instant feedback on handwriting samples</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 font-bold">•</span>
+                    <span><strong>Letter Detection:</strong> Identifies specific letters needing improvement</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 font-bold">•</span>
+                    <span><strong>Quality Assessment:</strong> Detailed feedback on spacing and consistency</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 font-bold">•</span>
+                    <span><strong>Personalized Tips:</strong> AI-generated improvement suggestions</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-3 text-slate-700">Practice System</h3>
+                <ul className="space-y-2 text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-pink-600 font-bold">•</span>
+                    <span><strong>Smart Sentences:</strong> OpenAI-generated practice content</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-pink-600 font-bold">•</span>
+                    <span><strong>Difficulty Levels:</strong> Beginner to advanced progression</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-pink-600 font-bold">•</span>
+                    <span><strong>Progress Tracking:</strong> Monitor improvement over time</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-pink-600 font-bold">•</span>
+                    <span><strong>Secure Authentication:</strong> JWT-based system with Supabase</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

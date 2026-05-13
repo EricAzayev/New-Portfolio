@@ -59,7 +59,7 @@ const RightSection = () => {
         </h1>
         
         <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8 text-center">
-          Building impactful solutions across Full-Stack Development, Data Science, and Product Strategy. 
+          Building impactful solutions across Software Engineering, Data Science, and Product Strategy. 
           Computer Science student at Hunter College with a passion for creating elegant, scalable systems.
         </p>
 
@@ -209,7 +209,7 @@ const RightSection = () => {
               </p>
               <p className="text-slate-600 leading-relaxed">
                 Through my experiences at NASA, Morgan Stanley, and various tech initiatives, I've developed a systems-level approach to my work. I'm always excited to tackle complex challenges and create meaningful solutions.
-                My journey in Computer Science has led me to explore Full-Stack Engineering, Data Science, and Remote Sensing technologies.
+                My journey in Computer Science has led me to explore Software Engineering, Data Science, and Remote Sensing technologies.
               </p>
             </div>
 
@@ -437,14 +437,14 @@ const RightSection = () => {
         <h2 className="text-2xl font-bold text-slate-900 mb-6">Explore My Work</h2>
         <div className="grid md:grid-cols-2 gap-6">
           
-          {/* Full-Stack Card */}
-          <Link to="/fullstack" className="group">
+          {/* Software Engineering Card */}
+          <Link to="/swe" className="group">
             <div className="relative h-64 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                 <div>
                   <Code2 className="text-white mb-3" size={32} />
-                  <h3 className="text-2xl font-bold text-white mb-2">Full-Stack</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">SWE</h3>
                   <p className="text-white/80 text-sm">Web & Mobile Applications</p>
                 </div>
                 <div className="space-y-1 text-white/70 text-xs font-mono">

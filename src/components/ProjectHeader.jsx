@@ -49,9 +49,12 @@ const ProjectHeader = ({
             />
           )
         ) : (
-          <span className="text-slate-400 text-sm font-mono">
-            [ Project Preview ]
-          </span>
+          <div className="w-full h-full rounded-lg bg-gradient-to-br from-slate-800 via-slate-700 to-indigo-700 text-white flex items-center justify-center p-6 text-center">
+            <div>
+              <div className="text-xs uppercase tracking-[0.25em] text-white/70 mb-3">Project Preview</div>
+              <div className="text-lg font-semibold">{title}</div>
+            </div>
+          </div>
         )}
       </div>
 

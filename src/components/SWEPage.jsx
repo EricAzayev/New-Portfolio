@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import ProjectHeader from "./ProjectHeader.jsx";
 
-const FullStackPage = () => {
+const SWEPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -18,7 +18,7 @@ const FullStackPage = () => {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // Full Stack Projects Data
+  // Software Engineering Projects Data
   const projects = [
     {
       id: 1,
@@ -34,7 +34,7 @@ const FullStackPage = () => {
       description: "Hub showcasing CodePath web development projects including Lexington Links and FoodTracker",
       tech: ["React", "Node.js", "Express", "PostgreSQL", "MongoDB"],
       gradient: "from-purple-500 to-pink-600",
-      features: ["Full-stack development", "Database design", "REST APIs", "Modern web architecture"]
+      features: ["Software engineering foundations", "Database design", "REST APIs", "Modern web architecture"]
     },
     {
       id: 3,
@@ -43,6 +43,30 @@ const FullStackPage = () => {
       tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
       gradient: "from-orange-500 to-red-600",
       features: ["Recipe search", "Meal planning", "Smooth animations", "Responsive design"]
+    },
+    {
+      id: 4,
+      title: "FocusTube",
+      description: "Chrome extension to combat YouTube distraction with AI-powered content filtering",
+      tech: ["Chrome Extension", "JavaScript", "Local AI", "YouTube API"],
+      gradient: "from-blue-500 to-indigo-600",
+      features: ["Focus Mode", "Block Shorts", "AI Content Filtering", "Privacy-focused"]
+    },
+    {
+      id: 5,
+      title: "The Thankful Forest Mod",
+      description: "Minecraft Forge mod adding Thanksgiving-themed content with custom entities and biomes",
+      tech: ["Minecraft Forge", "Java 17", "Gradle", "TerraBLender"],
+      gradient: "from-orange-400 to-amber-500",
+      features: ["Custom Entities", "World Generation", "AI Behaviors", "3D Modeling"]
+    },
+    {
+      id: 6,
+      title: "LetterBuddy",
+      description: "AI-powered handwriting improvement platform using GPT-4o Vision for real-time analysis",
+      tech: ["Next.js 15", "React 19", "FastAPI", "GPT-4o Vision", "PostgreSQL", "Docker"],
+      gradient: "from-purple-500 to-pink-500",
+      features: ["AI Vision Analysis", "Real-time Feedback", "Progress Tracking", "EdTech Platform"]
     }
   ];
 
@@ -114,7 +138,7 @@ const FullStackPage = () => {
               <Database className="text-white" size={48} />
             </div>
             <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">
-              Full-Stack Engineering
+              Software Engineering
             </h1>
             <p className="text-2xl text-white/90 font-light max-w-3xl mx-auto">
               Building complete solutions from database to user interface
@@ -160,7 +184,7 @@ const FullStackPage = () => {
         >
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-slate-900 mb-8">
-              Featured Full-Stack Projects
+              Featured Software Engineering Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ProjectHeader
@@ -171,12 +195,13 @@ const FullStackPage = () => {
                 githubLink="https://github.com/BorowskiKacper/divhacks"
                 demoLink="https://devpost.com/software/findr-z9k6ol"
                 tags={["React Native", "Firebase", "Google Maps API", "Redux"]}
-                projectLink="/fullstack/findr"
+                projectLink="/swe/findr"
               />
               <ProjectHeader
                 title="Codepath Apps"
                 date="2025"
                 status="Active"
+                mediaSrc="https://opengraph.githubassets.com/1/EricAzayev/Full-Stack_Portfolio"
                 githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio"
                 demoLink="#"
                 tags={["React", "Node.js", "Express", "PostgreSQL", "MongoDB"]}
@@ -190,7 +215,7 @@ const FullStackPage = () => {
                 githubLink="https://github.com/EricAzayev/reciPal"
                 demoLink="#"
                 tags={["React", "Tailwind CSS", "Framer Motion", "Vite"]}
-                projectLink="/fullstack/recipal"
+                projectLink="/swe/recipal"
               />
               <ProjectHeader
                 title="TruthLens Hackathon Project"
@@ -198,7 +223,25 @@ const FullStackPage = () => {
                 status="In Development"
                 mediaSrc="/photos/Profile_Photos/Truthlens.png"
                 tags={["React", "AI/ML", "API Integration", "Data Visualization"]}
-                projectLink="/fullstack/truthlens"
+                projectLink="/swe/truthlens"
+              />
+              <ProjectHeader
+                title="FocusTube"
+                date="April 2026"
+                status="Completed"
+                mediaSrc="https://github.com/user-attachments/assets/091da99e-790d-4c35-8901-7eb04850db55"
+                githubLink="https://github.com/luoshuyi1124/google-project"
+                tags={["Chrome Extension", "AI/ML", "JavaScript", "YouTube API"]}
+                projectLink="/swe/focustube"
+              />
+              <ProjectHeader
+                title="The Thankful Forest Mod"
+                date="2023"
+                status="Completed"
+                mediaSrc="/photos/Profile_Photos/Thankful_Forest.png"
+                githubLink="https://github.com/EricAzayev/Festive_Hackathon-The_Thankful_Forest_Mod"
+                tags={["Minecraft Forge", "Java 17", "Game Development", "Gradle"]}
+                projectLink="/swe/thankful-forest-mod"
               />
             </div>
           </div>
@@ -213,7 +256,7 @@ const FullStackPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Technical Expertise</h2>
-            <p className="text-gray-600 text-lg">Building full-stack solutions with modern technologies</p>
+            <p className="text-gray-600 text-lg">Building complete software solutions with modern technologies</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -377,7 +420,7 @@ const FullStackPage = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Code2, label: "Full-Stack Development" },
+              { icon: Code2, label: "Software Development" },
               { icon: GitBranch, label: "Version Control" },
               { icon: Zap, label: "API Development" },
               { icon: Server, label: "Backend Systems" },
@@ -406,4 +449,4 @@ const FullStackPage = () => {
   );
 };
 
-export default FullStackPage;
+export default SWEPage;

@@ -7,24 +7,27 @@ import Index from "./Index.jsx";
 
 import Layout from "./routes/Layout.jsx";
 import NotFound from "./routes/NotFound.jsx";
-import FullStack from "./routes/FullStackData.jsx";
+import SWE from "./routes/SWEData.jsx";
 import PMAnalyst from "./routes/PMAnalyst.jsx";
 import Programmatics from "./routes/Programmatics.jsx";
 import Blog from "./routes/Blog.jsx";
 
-// Fullstack Project Pages
-import LexingtonLinks from "./components/Fullstack/LexingtonLinks.jsx";
-import Findr from "./components/Fullstack/Findr.jsx";
-import CodepathApps from "./components/Fullstack/CodepathApps.jsx";
-import FoodTracker from "./components/Fullstack/FoodTracker.jsx";
-import ReciPal from "./components/Fullstack/ReciPal.jsx";
-import TruthLens from "./components/Fullstack/TruthLens.jsx";
+// Software Engineering Project Pages
+import LexingtonLinks from "./components/SWE/LexingtonLinks.jsx";
+import Findr from "./components/SWE/Findr.jsx";
+import CodepathApps from "./components/SWE/CodepathApps.jsx";
+import FoodTracker from "./components/SWE/FoodTracker.jsx";
+import ReciPal from "./components/SWE/ReciPal.jsx";
+import TruthLens from "./components/SWE/TruthLens.jsx";
+import FocusTube from "./components/SWE/FocusTube.jsx";
+import TheThankfulForestMod from "./components/SWE/TheThankfulForestMod.jsx";
 
 // Data Project Pages
 import SpringFoliageMap from "./components/Data/SpringFoliageMap.jsx";
 import StellarSearch from "./components/Programmatics/StellarSearch.jsx";
 import LetterBuddy from "./components/Data/LetterBuddy.jsx";
 import DenCity from "./components/Data/DenCity.jsx";
+import GroupWisdom from "./components/Data/GroupWisdom.jsx";
 
 // Programmatics Project Pages
 import NASALSPACEMCA from "./components/Programmatics/NASALSPACEMCA.jsx";
@@ -38,24 +41,27 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index={true} element={<Index />} />
-          <Route path="/fullstack" element={<FullStack />} />
+          <Route path="/swe" element={<SWE />} />
           <Route path="/data" element={<PMAnalyst />} />
           <Route path="/programmatics" element={<Programmatics />} />
           <Route path="/blog" element={<Blog />} />
           
-          {/* Fullstack Project Routes */}
-          <Route path="/fullstack/lexington-links" element={<LexingtonLinks />} />
-          <Route path="/fullstack/findr" element={<Findr />} />
-          <Route path="/fullstack/codepath-apps" element={<CodepathApps />} />
-          <Route path="/fullstack/foodtracker" element={<FoodTracker />} />
-          <Route path="/fullstack/recipal" element={<ReciPal />} />
-          <Route path="/fullstack/truthlens" element={<TruthLens />} />
+          {/* Software Engineering Project Routes */}
+          <Route path="/swe/lexington-links" element={<LexingtonLinks />} />
+          <Route path="/swe/findr" element={<Findr />} />
+          <Route path="/swe/codepath-apps" element={<CodepathApps />} />
+          <Route path="/swe/foodtracker" element={<FoodTracker />} />
+          <Route path="/swe/recipal" element={<ReciPal />} />
+          <Route path="/swe/truthlens" element={<TruthLens />} />
+          <Route path="/swe/focustube" element={<FocusTube />} />
+          <Route path="/swe/thankful-forest-mod" element={<TheThankfulForestMod />} />
           
           {/* Data Project Routes */}
           <Route path="/data/spring-foliage-map" element={<SpringFoliageMap />} />
           <Route path="/data/stellar-search" element={<StellarSearch />} />
           <Route path="/data/letterbuddy" element={<LetterBuddy />} />
           <Route path="/data/dencity" element={<DenCity />} />
+          <Route path="/data/groupwisdom" element={<GroupWisdom />} />
           
           {/* Programmatics Project Routes */}
           <Route path="/programmatics/nasa-lspace-mca" element={<NASALSPACEMCA />} />

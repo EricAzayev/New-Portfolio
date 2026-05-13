@@ -14,10 +14,10 @@ const Layout = () => {
               <span>Home</span>
             </div>
           </Link>
-          <Link to="/fullstack" style={{ textDecoration: 'none' }}>
+          <Link to="/swe" style={{ textDecoration: 'none' }}>
             <div className="nav-section">
               <Code />
-              <span>Full-Stack</span>
+              <span>SWE</span>
             </div>
           </Link>
           <Link to="/data" style={{ textDecoration: 'none' }}>

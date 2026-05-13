@@ -16,8 +16,12 @@ function MinecraftMoon() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           {/* Top Left - Demo Images (takes 2 columns) */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="relative aspect-video bg-slate-100 flex items-center justify-center">
-              <p className="text-slate-400">Project images coming soon...</p>
+            <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 flex items-center justify-center text-white">
+              <div className="text-center px-8">
+                <div className="text-6xl mb-4">🌕</div>
+                <p className="text-lg font-semibold">Minecraft Moon Concept</p>
+                <p className="text-sm text-slate-300 mt-2">Visual assets are still being consolidated for this archive page.</p>
+              </div>
             </div>
           </div>
 
@@ -25,21 +29,21 @@ function MinecraftMoon() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+              This page currently serves as a portfolio placeholder for Minecraft Moon project material that is still being consolidated into the site.
             </p>
             <p className="text-slate-600 mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-              ut aliquip ex ea commodo consequat.
+              The archived intent is to capture a moon-themed Minecraft concept in a cleaner project narrative once the supporting assets and write-up are fully assembled.
             </p>
           </div>
 
           {/* Bottom Left - System Design */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
-              <div className="bg-slate-50 p-8 rounded-lg text-center">
-                <p className="text-slate-500">System architecture diagram coming soon...</p>
+              <h2 className="text-2xl font-semibold mb-4">Current Status</h2>
+              <div className="bg-slate-50 p-8 rounded-lg border border-slate-200">
+                <p className="text-slate-600">
+                  The route is preserved so the project remains represented in the portfolio, but a full sourced visual set has not been added to the workspace yet.
+                </p>
               </div>
             </div>
           </div>

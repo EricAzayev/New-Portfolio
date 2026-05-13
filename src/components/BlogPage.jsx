@@ -10,68 +10,68 @@ const BlogPage = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "Lorem Ipsum Dolor Sit Amet",
-      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "Building the Portfolio as a Product",
+      excerpt: "Notes on turning a personal site into a maintainable product surface: routes, project metadata, previews, and documentation discipline.",
       date: "2026-02-15",
       readTime: "8 min read",
       category: "Development",
-      tags: ["Tag1", "Tag2", "Tag3", "Tag4"],
-      image: "/photos/blog/placeholder-1.jpg", // This post has an image
+      tags: ["portfolio", "react", "ux", "architecture"],
+      image: null,
       featured: true
     },
     {
       id: 2,
-      title: "Consectetur Adipiscing Elit",
-      excerpt: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: "Designing for Project Discovery",
+      excerpt: "How landing-page cards, preview images, and route naming affect whether a portfolio feels polished or half-wired.",
       date: "2026-02-10",
       readTime: "5 min read",
       category: "Design",
-      tags: ["TagA", "TagB", "TagC"],
-      image: null, // This post has no image
+      tags: ["design", "navigation", "content"],
+      image: null,
       featured: false
     },
     {
       id: 3,
-      title: "Sed Do Eiusmod Tempor",
-      excerpt: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      title: "Lessons from Fast AI Prototypes",
+      excerpt: "A short reflection on building experimental tools like FocusTube, TruthLens, and LetterBuddy without losing sight of product quality.",
       date: "2026-02-05",
       readTime: "10 min read",
       category: "Development",
-      tags: ["Tag1", "TagB", "Tag5"],
-      image: "/photos/blog/placeholder-2.jpg", // This post has an image
+      tags: ["ai", "experiments", "product"],
+      image: null,
       featured: false
     },
     {
       id: 4,
-      title: "Quis Nostrud Exercitation",
-      excerpt: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      title: "Why I Keep a Systems Lens",
+      excerpt: "On carrying systems thinking from NASA work into software projects, portfolio storytelling, and collaborative engineering.",
       date: "2026-01-28",
       readTime: "6 min read",
       category: "Personal",
-      tags: ["TagX", "TagY", "TagZ"],
-      image: null, // This post has no image
+      tags: ["systems", "career", "engineering"],
+      image: null,
       featured: false
     },
     {
       id: 5,
-      title: "Ullamco Laboris Nisi",
-      excerpt: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      title: "Shipping Better Internal Tooling",
+      excerpt: "A draft post about reducing repetitive portfolio maintenance by leaning on better structure, reusable components, and stronger defaults.",
       date: "2026-01-20",
       readTime: "12 min read",
       category: "Development",
-      tags: ["Tag1", "Tag2", "Tag6"],
-      image: "/photos/blog/placeholder-3.jpg", // This post has an image
+      tags: ["tooling", "workflow", "maintenance"],
+      image: null,
       featured: false
     },
     {
       id: 6,
-      title: "Nemo Enim Ipsam Voluptatem",
-      excerpt: "Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+      title: "Tools I Keep Reaching For",
+      excerpt: "A running list of the frameworks, APIs, and debugging patterns that consistently make project work faster and more reliable.",
       date: "2026-01-15",
       readTime: "4 min read",
       category: "Tools",
-      tags: ["TagA", "TagB", "Tag7"],
-      image: null, // This post has no image
+      tags: ["tools", "workflow", "stack"],
+      image: null,
       featured: false
     }
   ];
@@ -186,7 +186,7 @@ const BlogPage = () => {
             transition={{ delay: 0.1 }}
             className="text-xl text-indigo-100 max-w-2xl"
           >
-            Lorem ipsum dolor sit amet consectetur adipiscing elit
+            Notes on engineering projects, interface decisions, and the systems thinking behind the work
           </motion.p>
         </div>
       </div>

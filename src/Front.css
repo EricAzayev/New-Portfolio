@@ -213,7 +213,7 @@
   background-position: center;
 }
 
-.theme-box[data-theme="fullstack"] {
+.theme-box[data-theme="swe"] {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 

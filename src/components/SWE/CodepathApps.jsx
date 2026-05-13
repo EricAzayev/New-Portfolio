@@ -4,12 +4,12 @@ import { Github, ExternalLink, ArrowRight, Code2, Database } from "lucide-react"
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function CodepathApps() {
-  usePageViewMetric("Fullstack/CodepathApps");
+  usePageViewMetric("SWE/CodepathApps");
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-5xl font-bold text-slate-900 mb-3">CodePath Apps Collection</h1>
-        <p className="text-xl text-slate-600 mb-8">Full-Stack Web Development Journey</p>
+        <p className="text-xl text-slate-600 mb-8">Software Engineering Web Development Journey</p>
         
         {/* Dashboard CTA */}
         <div className="mb-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-xl overflow-hidden">
@@ -38,7 +38,7 @@ function CodepathApps() {
         <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 mb-12">
           <h2 className="text-3xl font-semibold mb-4 text-slate-900">About This Collection</h2>
           <p className="text-lg text-slate-700 leading-relaxed mb-4">
-            This collection represents my journey through CodePath's comprehensive web development curriculum, spanning both foundational and advanced full-stack concepts. Through hands-on projects, I developed proficiency in modern web technologies, API design, database management, and user-centered application development.
+            This collection represents my journey through CodePath's comprehensive web development curriculum, spanning both foundational and advanced software engineering concepts. Through hands-on projects, I developed proficiency in modern web technologies, API design, database management, and user-centered application development.
           </p>
           <div className="grid md:grid-cols-2 gap-6 mt-6">
             <div className="bg-purple-50 rounded-lg p-5 border border-purple-200">
@@ -47,7 +47,7 @@ function CodepathApps() {
             </div>
             <div className="bg-pink-50 rounded-lg p-5 border border-pink-200">
               <h3 className="font-semibold text-lg mb-2 text-pink-900">🚀 CodePath Web102</h3>
-              <p className="text-slate-700">Advanced full-stack development, database integration, and production deployment</p>
+              <p className="text-slate-700">Advanced application development, database integration, and production deployment</p>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ function CodepathApps() {
           <div className="grid md:grid-cols-2 gap-8">
             
             {/* Lexington Links Card */}
-            <Link to="/fullstack/lexington-links" className="group">
+            <Link to="/swe/lexington-links" className="group">
               <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-slate-200 overflow-hidden transform hover:-translate-y-1">
                 <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-white">
                   <div className="flex items-center justify-between mb-3">
@@ -85,7 +85,7 @@ function CodepathApps() {
             </Link>
 
             {/* FoodTracker Card */}
-            <Link to="/fullstack/foodtracker" className="group">
+            <Link to="/swe/foodtracker" className="group">
               <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-slate-200 overflow-hidden transform hover:-translate-y-1">
                 <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 text-white">
                   <div className="flex items-center justify-between mb-3">
