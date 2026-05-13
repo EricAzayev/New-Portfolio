@@ -6,77 +6,33 @@ const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Blog posts data - mix of posts with and without images
+  // Blog posts data
   const blogPosts = [
     {
       id: 1,
-      title: "Building the Portfolio as a Product",
-      excerpt: "Notes on turning a personal site into a maintainable product surface: routes, project metadata, previews, and documentation discipline.",
-      date: "2026-02-15",
-      readTime: "8 min read",
-      category: "Development",
-      tags: ["portfolio", "react", "ux", "architecture"],
-      image: null,
+      title: "My Accenture SLP Experience",
+      excerpt: "A first-pass reflection on the Accenture Student Leadership Program, the people I met, and the professional lessons that carried forward into the rest of my engineering work.",
+      date: "2026-05-12",
+      readTime: "6 min read",
+      category: "Experience",
+      tags: ["accenture", "slp", "leadership", "career"],
+      image: "/photos/blog/accenture-slp-header.png",
       featured: true
     },
     {
       id: 2,
-      title: "Designing for Project Discovery",
-      excerpt: "How landing-page cards, preview images, and route naming affect whether a portfolio feels polished or half-wired.",
-      date: "2026-02-10",
+      title: "My Kohls ETS Experience",
+      excerpt: "An in-progress writeup covering the interview process, what stood out about the ETS experience, and the technical and professional takeaways worth keeping.",
+      date: "2026-05-12",
       readTime: "5 min read",
-      category: "Design",
-      tags: ["design", "navigation", "content"],
-      image: null,
-      featured: false
-    },
-    {
-      id: 3,
-      title: "Lessons from Fast AI Prototypes",
-      excerpt: "A short reflection on building experimental tools like FocusTube, TruthLens, and LetterBuddy without losing sight of product quality.",
-      date: "2026-02-05",
-      readTime: "10 min read",
-      category: "Development",
-      tags: ["ai", "experiments", "product"],
-      image: null,
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Why I Keep a Systems Lens",
-      excerpt: "On carrying systems thinking from NASA work into software projects, portfolio storytelling, and collaborative engineering.",
-      date: "2026-01-28",
-      readTime: "6 min read",
-      category: "Personal",
-      tags: ["systems", "career", "engineering"],
-      image: null,
-      featured: false
-    },
-    {
-      id: 5,
-      title: "Shipping Better Internal Tooling",
-      excerpt: "A draft post about reducing repetitive portfolio maintenance by leaning on better structure, reusable components, and stronger defaults.",
-      date: "2026-01-20",
-      readTime: "12 min read",
-      category: "Development",
-      tags: ["tooling", "workflow", "maintenance"],
-      image: null,
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Tools I Keep Reaching For",
-      excerpt: "A running list of the frameworks, APIs, and debugging patterns that consistently make project work faster and more reliable.",
-      date: "2026-01-15",
-      readTime: "4 min read",
-      category: "Tools",
-      tags: ["tools", "workflow", "stack"],
-      image: null,
+      category: "Experience",
+      tags: ["kohls", "ets", "career", "interview"],
+      image: "/photos/blog/kohls-ets-header.png",
       featured: false
     }
   ];
 
-  const categories = ["All", "Development", "Design", "Personal", "Tools"];
+  const categories = ["All", "Experience"];
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
@@ -172,7 +128,7 @@ const BlogPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -184,7 +140,7 @@ const BlogPage = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-indigo-100 max-w-2xl"
+            className="text-xl text-indigo-100 max-w-2xl mx-auto"
           >
             Notes on engineering projects, interface decisions, and the systems thinking behind the work
           </motion.p>
