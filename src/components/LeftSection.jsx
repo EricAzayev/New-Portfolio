@@ -10,12 +10,11 @@ const LeftSection = () => {
     'EricAzayev'   // Your LeetCode username (update if different)
   );
   return (
-    <aside className="left-section">
+    <aside className="left-section left-section-panel">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="sticky top-24"
       >
         {/* Profile Card */}
         <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-8">
