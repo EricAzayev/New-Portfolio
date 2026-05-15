@@ -1,8 +1,15 @@
-import { Outlet, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { Home, Code, Database, Cpu, Pen } from "lucide-react";
 import "../Front.css";
 
 const Layout = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location.pathname]);
+
   return (
     <div>
       {/* Navbar Section */}

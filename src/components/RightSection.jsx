@@ -302,7 +302,7 @@ const RightSection = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <span className="text-white font-bold text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
-                      Click Me ✨
+                      Coming Soon!
                     </span>
                   </motion.div>
                 </div>
@@ -384,7 +384,7 @@ const RightSection = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <span className="text-white font-bold text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
-                      Click Me 🚴
+                      Coming Soon!
                     </span>
                   </motion.div>
                 </div>
@@ -448,7 +448,7 @@ const RightSection = () => {
         <div className="grid md:grid-cols-2 gap-6">
           
           {/* Software Engineering Card */}
-          <Link to="/swe" className="group">
+          <Link to="/swe" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
             <div className="relative h-64 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
@@ -467,7 +467,7 @@ const RightSection = () => {
           </Link>
 
           {/* Data Science Card */}
-          <Link to="/data" className="group">
+          <Link to="/data" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
             <div className="relative h-64 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
@@ -486,7 +486,7 @@ const RightSection = () => {
           </Link>
 
           {/* Programmatics Card */}
-          <Link to="/programmatics" className="group">
+          <Link to="/programmatics" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
             <div className="relative h-64 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
@@ -505,7 +505,7 @@ const RightSection = () => {
           </Link>
 
           {/* Blog Card */}
-          <Link to="/blog" className="group">
+          <Link to="/blog" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
             <div className="relative h-64 bg-gradient-to-br from-orange-500 to-pink-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">

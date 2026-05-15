@@ -83,21 +83,21 @@ const SWEPage = () => {
   const certifications = [
     {
       name: "KKCF Fellowship",
-      organization: "Kode With Klossy",
+      organization: "Web Dev Fellowship",
       year: "2024",
-      image: "/photos/Profile_Photos/KKCF.png"
-    },
-    {
-      name: "Codepath Web101",
-      organization: "Codepath",
-      year: "2023",
-      image: "/photos/Profile_Photos/Web101.png"
+      image: "/photos/Certificates/KKCF.png"
     },
     {
       name: "Codepath Web102",
       organization: "Codepath",
-      year: "2024",
-      image: "/photos/Profile_Photos/Web102.png"
+      year: "2025",
+      image: "/photos/Certificates/TIP102.png"
+    },
+    {
+      name: "Codepath Web103",
+      organization: "Codepath",
+      year: "2025",
+      image: "/photos/Certificates/Web103.png"
     }
   ];
 
@@ -390,15 +390,19 @@ const SWEPage = () => {
                 className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
               >
                 <div className="aspect-video bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={cert.image} 
-                    alt={cert.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = `<div class="text-indigo-600 text-4xl">🏆</div>`;
-                    }}
-                  />
+                  {cert.image ? (
+                    <img 
+                      src={cert.image} 
+                      alt={cert.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.parentElement.innerHTML = `<div class="text-indigo-600 text-4xl">🏆</div>`;
+                      }}
+                    />
+                  ) : (
+                    <div className="text-indigo-600 text-4xl">🏆</div>
+                  )}
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{cert.name}</h3>
                 <p className="text-gray-600 text-sm mb-1">{cert.organization}</p>
