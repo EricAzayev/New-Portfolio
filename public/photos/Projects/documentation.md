@@ -75,3 +75,50 @@
 - Real-time Discord data ingestion, automated cleaning, context-aware responses
 - Tech: Unsloth, Discord.py, Pattern Recognition, Fine-tuning
 
+## Hidden Timeline Draft For Future Reuse
+
+This section stores a compact vertical timeline draft that is intentionally hidden from the live site for now.
+It is kept here so future AI-assisted edits can quickly recover the content and rebuild a timeline section.
+
+### Intended timeline style
+
+- Vertical timeline aligned to the main right content column
+- Color-coded dots by category
+- Only show project title and date span
+- No long descriptions in the visible UI
+- Year chips can be shown as section dividers or omitted
+
+### Category color mapping
+
+- SWE
+- Programmatics
+- Data/NLP
+- AI Tools
+
+### Timeline entries
+
+#### 2024
+
+- MCA: The LCAVEMAN Mission | Sep 2024 - Dec 2024 | Programmatics
+- The Thankful Forest Mod | Nov 2024 | SWE
+
+#### 2025
+
+- Codepath Apps | Feb 2025 - Dec 2025 | SWE
+- NPWEE | Feb 2025 - Apr 2025 | Programmatics
+- Team Cats | Mar 2025 - May 2025 | SWE
+- LetterBuddy | Jul 2025 | AI Tools
+- ReciPal | Sep 2025 | SWE
+- Findr | Oct 2025 | SWE
+- StellarSearch | Nov 2025 - Dec 2025 | Data/NLP
+
+#### 2026
+
+- Spring Foliage Map | Dec 2025 - Mar 2026 | Data/NLP
+- TruthLens | Mar 2026 | AI Tools
+- DenCity | Mar 2026 | AI Tools
+- FocusTube | Apr 2026 | AI Tools
+- GroupWisdom | 2026 - In Development | Data/NLP
+
+
+
