@@ -24,16 +24,15 @@ const GitHubActivity = ({ username = "EricAzayev" }) => {
         }
 
         if (dataArray.length === 0) {
-          const response = await fetch(`https://github-contributions-api.deno.dev/${username}.json`);
+          const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
           if (!response.ok) throw new Error('Failed to fetch GitHub data');
 
           const json = await response.json();
-          total = json.totalContributions || 0;
+          total = json.total?.lastYear || 0;
 
-          // Flatten the weeks array into a single days array
-          const allDays = (json.contributions || []).flat().map(day => ({
+          const allDays = (json.contributions || []).map(day => ({
             date: day.date,
-            count: day.contributionCount
+            count: day.count
           }));
 
           // Take last 90 days for the UI

@@ -21,12 +21,12 @@ export const useProfileStats = (githubUsername, leetcodeUsername) => {
           }
         }
 
-        const response = await fetch(`https://github-contributions-api.deno.dev/${githubUsername}.json`);
+        const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${githubUsername}?y=last`);
 
         if (!response.ok) throw new Error('GitHub API request failed');
         const json = await response.json();
 
-        const totalCommits = json.totalContributions || 0;
+        const totalCommits = json.total?.lastYear || 0;
 
         sessionStorage.setItem(cacheKey, JSON.stringify({
           data: totalCommits,
