@@ -16,23 +16,46 @@
       overflow: hidden;
       background-color: #050508;
     }
-    #webgl-canvas {
+    #webgl-canvas-saturn,
+    #webgl-canvas-moon {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       display: block;
-      z-index: 1; /* Keep above body background */
+      transition: opacity 1600ms ease-in-out, transform 1600ms ease-in-out;
+    }
+    #webgl-canvas-saturn {
+      z-index: 1;
+      opacity: 1;
+      transform: scale(1);
+    }
+    #webgl-canvas-moon {
+      z-index: 2;
+      opacity: 0;
+      transform: scale(1.15);
+      pointer-events: none; /* Saturn layer stays interactive underneath during crossfade */
+    }
+    /* Scroll down zooms into the Moon layer; scroll up returns to the Saturn layer */
+    body.zoomed-in #webgl-canvas-saturn {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    body.zoomed-in #webgl-canvas-moon {
+      opacity: 1;
+      transform: scale(1);
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-  <canvas id="webgl-canvas"></canvas>
+  <canvas id="webgl-canvas-saturn"></canvas>
+  <canvas id="webgl-canvas-moon"></canvas>
 
   <script>
+  (function initSaturnScene() {
     // --- PROCEDURAL TEXTURES (2D Canvas to WebGL Texture) ---
 
     function generateSaturnTexture() {
@@ -167,7 +190,7 @@
 
     // --- THREE.JS SCENE SETUP ---
 
-    const canvas = document.getElementById('webgl-canvas');
+    const canvas = document.getElementById('webgl-canvas-saturn');
     const scene = new THREE.Scene();
     
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -289,6 +312,233 @@
     }
 
     animate();
+  })();
+  </script>
+
+  <script>
+  (function initMoonScene() {
+    // --- PROCEDURAL TEXTURES (2D Canvas to WebGL Texture) ---
+
+    function generateMoonSurfaceTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1024;
+      canvas.height = 512;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#b8b6b2';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Maria (dark basaltic plains)
+      ctx.fillStyle = 'rgba(90, 88, 84, 0.5)';
+      for (let i = 0; i < 10; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        ctx.beginPath();
+        ctx.ellipse(x, y, Math.random() * 90 + 40, Math.random() * 60 + 30, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Craters, large to small
+      for (let i = 0; i < 220; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const r = Math.random() * 14 + 2;
+
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(70, 68, 64, ${Math.random() * 0.4 + 0.2})`;
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(x - r * 0.25, y - r * 0.25, r * 0.7, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200, 198, 194, ${Math.random() * 0.25 + 0.1})`;
+        ctx.fill();
+      }
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.needsUpdate = true;
+      return texture;
+    }
+
+    function generateSunTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, cx);
+
+      grad.addColorStop(0.00, 'rgba(255,255,255,1)');
+      grad.addColorStop(0.05, 'rgba(255,250,235,1)');
+      grad.addColorStop(0.15, 'rgba(255,240,200,0.55)');
+      grad.addColorStop(0.35, 'rgba(255,225,160,0.18)');
+      grad.addColorStop(0.65, 'rgba(255,215,140,0.05)');
+      grad.addColorStop(1.00, 'rgba(255,215,140,0)');
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.needsUpdate = true;
+      return texture;
+    }
+
+    function generateEarthTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 128;
+      canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#1a4d8f';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = 'rgba(70, 140, 80, 0.9)';
+      for (let i = 0; i < 18; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        ctx.beginPath();
+        ctx.ellipse(x, y, Math.random() * 10 + 3, Math.random() * 6 + 2, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.needsUpdate = true;
+      return texture;
+    }
+
+    // --- THREE.JS SCENE SETUP ---
+
+    const canvas = document.getElementById('webgl-canvas-moon');
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 0, 10);
+
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // 1. Starfield
+    const starGeo = new THREE.BufferGeometry();
+    const starCount = 2500;
+    const starPositions = new Float32Array(starCount * 3);
+
+    for (let i = 0; i < starCount * 3; i++) {
+      starPositions[i] = (Math.random() - 0.5) * 150;
+    }
+
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+    const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.15 });
+    const starField = new THREE.Points(starGeo, starMat);
+    scene.add(starField);
+
+    // 2. Moon, filling most of the frame as the "zoomed in" destination
+    const moonGeo = new THREE.SphereGeometry(4, 64, 64);
+    const moonMat = new THREE.MeshStandardMaterial({
+      map: generateMoonSurfaceTexture(),
+      roughness: 1
+    });
+    const moonMesh = new THREE.Mesh(moonGeo, moonMat);
+    moonMesh.position.set(1.5, -0.5, 0);
+    scene.add(moonMesh);
+
+    // 3. Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.15);
+    scene.add(ambientLight);
+
+    const sunLight = new THREE.DirectionalLight(0xfffaed, 2.8);
+    sunLight.position.set(-12, 8, 10);
+    scene.add(sunLight);
+
+    // Distant sun, matching the light's direction
+    const sunSprite = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: generateSunTexture(),
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.9,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    }));
+    sunSprite.position.set(-25, 15, -90);
+    sunSprite.scale.set(6, 6, 1);
+    scene.add(sunSprite);
+
+    // Distant Earth, as it would appear from the Moon
+    const earthGeo = new THREE.SphereGeometry(0.4, 32, 32);
+    const earthMat = new THREE.MeshStandardMaterial({
+      map: generateEarthTexture(),
+      roughness: 0.9,
+      metalness: 0.1,
+      emissive: 0x1c4d8f,
+      emissiveIntensity: 0.3
+    });
+    const earthMesh = new THREE.Mesh(earthGeo, earthMat);
+    scene.add(earthMesh);
+
+    // Soft atmospheric glow so the small, distant Earth still reads clearly
+    // against the starfield instead of blending into the black background.
+    const earthGlowSprite = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: generateSunTexture(),
+      color: 0x5c9bff,
+      transparent: true,
+      opacity: 0.35,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    }));
+    earthGlowSprite.scale.set(2, 2, 1);
+    scene.add(earthGlowSprite);
+
+    // Slow background orbit, offset well away from the Moon's line of sight
+    // (the Moon is large and close, so anywhere near dead-center gets occluded).
+    const earthOrbitCenter = new THREE.Vector3(-14, 9, -30);
+    const earthOrbitRadius = 2;
+    let earthOrbitAngle = 0;
+
+    // 4. Resize Listener
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // 5. Animation Loop
+    function animate() {
+      requestAnimationFrame(animate);
+
+      moonMesh.rotation.y += 0.0006;
+      earthMesh.rotation.y += 0.003;
+      starField.rotation.y += 0.0001;
+
+      earthOrbitAngle += 0.0007;
+      earthMesh.position.set(
+        earthOrbitCenter.x + Math.cos(earthOrbitAngle) * earthOrbitRadius,
+        earthOrbitCenter.y + Math.sin(earthOrbitAngle) * (earthOrbitRadius * 0.35),
+        earthOrbitCenter.z + Math.sin(earthOrbitAngle) * earthOrbitRadius
+      );
+      earthGlowSprite.position.copy(earthMesh.position);
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  })();
+  </script>
+
+  <script>
+    // Scroll down zooms into the Moon; scroll up returns to the Saturn view.
+    let zoomedIn = false;
+
+    window.addEventListener('wheel', (e) => {
+      if (e.deltaY > 0 && !zoomedIn) {
+        zoomedIn = true;
+        document.body.classList.add('zoomed-in');
+      } else if (e.deltaY < 0 && zoomedIn) {
+        zoomedIn = false;
+        document.body.classList.remove('zoomed-in');
+      }
+    }, { passive: true });
   </script>
 </body>
 </html>
