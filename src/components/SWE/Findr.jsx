@@ -1,6 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import { Github, ExternalLink } from "lucide-react";
+import { Award, ExternalLink, Github } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function Findr() {
@@ -10,7 +10,13 @@ function Findr() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">Findr</h1>
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <h1 className="text-4xl font-bold text-slate-900">Findr</h1>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-mono uppercase tracking-wide text-amber-700">
+            <Award size={12} />
+            Best Use of Gemini API &middot; DivHacks
+          </span>
+        </div>
         <div className="flex gap-3 mb-6">
           <a 
             href="https://github.com/BorowskiKacper/divhacks" 
@@ -32,7 +38,7 @@ function Findr() {
             <ExternalLink size={14} />
           </a>
         </div>
-        
+
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           

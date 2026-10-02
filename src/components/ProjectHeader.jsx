@@ -1,4 +1,5 @@
 import React from "react";
+import { Award } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const ProjectHeader = ({
@@ -11,7 +12,9 @@ const ProjectHeader = ({
   demoLink = null,
   docsLink = null,
   tags = [],
-  projectLink = null
+  projectLink = null,
+  recognition = null,
+  hidePreview = false
 }) => {
   const navigate = useNavigate();
 
@@ -33,6 +36,7 @@ const ProjectHeader = ({
     >
 
       {/* Media Placeholder */}
+      {!hidePreview && (
       <div className="aspect-video bg-slate-100 rounded-lg flex items-center justify-center">
         {mediaSrc ? (
           mediaType === "video" ? (
@@ -57,6 +61,7 @@ const ProjectHeader = ({
           </div>
         )}
       </div>
+      )}
 
       {/* Header Row: Title and Year */}
       <div className="flex justify-between items-start mt-4">
@@ -69,10 +74,19 @@ const ProjectHeader = ({
       </div>
 
       {/* Status Tag */}
-      <div className="mt-2">
+      <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
         <span className="text-xs uppercase font-mono text-slate-600 tracking-wide">
           {status}
         </span>
+        {recognition && (
+          <>
+            <span className="text-slate-300">&middot;</span>
+            <span className="inline-flex items-center gap-1 text-xs font-mono text-amber-700">
+              <Award size={12} className="shrink-0" />
+              {recognition.event ? `${recognition.label} \u2014 ${recognition.event}` : recognition.label}
+            </span>
+          </>
+        )}
       </div>
 
       {/* Links Row */}

@@ -194,6 +194,12 @@ const SWEPage = () => {
                 mediaSrc="/photos/Profile_Photos/Findr.png"
                 githubLink="https://github.com/BorowskiKacper/divhacks"
                 demoLink="https://devpost.com/software/findr-z9k6ol"
+                recognition={{
+                  label: "Best Use of Gemini API",
+                  event: "DivHacks",
+                  href: "https://devpost.com/software/findr-z9k6ol",
+                  prefix: "Awarded"
+                }}
                 tags={["React Native", "Firebase", "Google Maps API", "Redux"]}
                 projectLink="/swe/findr"
               />
@@ -204,6 +210,9 @@ const SWEPage = () => {
                 mediaSrc="https://opengraph.githubassets.com/1/EricAzayev/Full-Stack_Portfolio"
                 githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio"
                 demoLink="#"
+                recognition={{
+                  label: "Graduated Web103 with Honors"
+                }}
                 tags={["React", "Node.js", "Express", "PostgreSQL", "MongoDB"]}
                 projectLink="https://dashboard-delta-eight-66.vercel.app/"
               />
@@ -213,7 +222,7 @@ const SWEPage = () => {
                 status="Expanded"
                 mediaSrc="/photos/Profile_Photos/reciPalCover.png"
                 githubLink="https://github.com/EricAzayev/reciPal"
-                demoLink="#"
+                demoLink="https://youtu.be/7EKcPbCa5ow"
                 tags={["React", "Tailwind CSS", "Framer Motion", "Vite"]}
                 projectLink="/swe/recipal"
               />
@@ -222,6 +231,10 @@ const SWEPage = () => {
                 date="2025"
                 status="In Development"
                 mediaSrc="/photos/Profile_Photos/Truthlens.png"
+                recognition={{
+                  label: "Advanced to Second Round",
+                  event: "Cornell AI Hackathon"
+                }}
                 tags={["React", "AI/ML", "API Integration", "Data Visualization"]}
                 projectLink="/swe/truthlens"
               />
@@ -231,6 +244,9 @@ const SWEPage = () => {
                 status="Completed"
                 mediaSrc="https://github.com/user-attachments/assets/091da99e-790d-4c35-8901-7eb04850db55"
                 githubLink="https://github.com/luoshuyi1124/google-project"
+                recognition={{
+                  label: "Presented at Google Mentorship Conference"
+                }}
                 tags={["Chrome Extension", "AI/ML", "JavaScript", "YouTube API"]}
                 projectLink="/swe/focustube"
               />
@@ -240,6 +256,10 @@ const SWEPage = () => {
                 status="Completed"
                 mediaSrc="/photos/Profile_Photos/Thankful_Forest.png"
                 githubLink="https://github.com/EricAzayev/Festive_Hackathon-The_Thankful_Forest_Mod"
+                recognition={{
+                  label: "Best Thanksgiving Project",
+                  event: "Festive Hackathon"
+                }}
                 tags={["Minecraft Forge", "Java 17", "Game Development", "Gradle"]}
                 projectLink="/swe/thankful-forest-mod"
               />

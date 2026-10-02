@@ -36,6 +36,7 @@ function TheThankfulForestMod() {
           status="Completed"
           githubLink="https://github.com/EricAzayev/Festive_Hackathon-The_Thankful_Forest_Mod"
           tags={["Minecraft Forge", "Java 17", "Game Development", "3D Modeling", "Gradle"]}
+          hidePreview
         />
         
         {/* BentoBox Grid Layout */}
