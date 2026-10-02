@@ -11,6 +11,7 @@ import SWE from "./routes/SWEData.jsx";
 import PMAnalyst from "./routes/PMAnalyst.jsx";
 import Programmatics from "./routes/Programmatics.jsx";
 import Blog from "./routes/Blog.jsx";
+import SpaceBackground from "./routes/SpaceBackground.jsx";
 
 // Software Engineering Project Pages
 import LexingtonLinks from "./components/SWE/LexingtonLinks.jsx";
@@ -71,6 +72,9 @@ createRoot(document.getElementById("root")).render(
           
           <Route path="*" element={<NotFound />} />
         </Route>
+
+        {/* Immersive full-screen slide, rendered without the navbar Layout */}
+        <Route path="/space" element={<SpaceBackground />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

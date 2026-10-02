@@ -666,3 +666,77 @@
 .group:hover .group-hover\:animate-spin-slow {
   animation: spin-slow 1.5s linear infinite;
 }
+
+/* Realistic Starfield Background (used by the Space icon preview and /space page) */
+/* Each layer tiles a hand-placed dot pattern via radial-gradient so density stays
+   constant regardless of container size, instead of rendering hundreds of DOM nodes. */
+.starfield {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 20%, #10102a 0%, #060613 45%, #000000 100%);
+}
+
+.starfield-nebula {
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(109, 40, 217, 0.35), transparent 38%),
+    radial-gradient(circle at 78% 65%, rgba(30, 64, 175, 0.28), transparent 42%),
+    radial-gradient(circle at 55% 85%, rgba(190, 24, 93, 0.12), transparent 40%);
+  filter: blur(20px);
+  mix-blend-mode: screen;
+}
+
+/* space2: near-black deep space backdrop, scrolled into on the /space route */
+.starfield-deep {
+  background: radial-gradient(ellipse at 50% 20%, #030308 0%, #000002 45%, #000000 100%);
+}
+
+.starfield-nebula-deep {
+  opacity: 0.35;
+  filter: blur(20px) brightness(0.5);
+}
+
+.starfield-layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+}
+
+.starfield-layer-1 {
+  background-image:
+    radial-gradient(1px 1px at 15px 25px, #fff, transparent),
+    radial-gradient(1px 1px at 65px 90px, #fff, transparent),
+    radial-gradient(1px 1px at 110px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 150px 120px, #fff, transparent),
+    radial-gradient(1px 1px at 40px 150px, #fff, transparent);
+  background-size: 180px 180px;
+  opacity: 0.5;
+}
+
+.starfield-layer-2 {
+  background-image:
+    radial-gradient(1.2px 1.2px at 30px 60px, #e8e8ff, transparent),
+    radial-gradient(1.2px 1.2px at 100px 20px, #e8e8ff, transparent),
+    radial-gradient(1.2px 1.2px at 160px 110px, #e8e8ff, transparent),
+    radial-gradient(1.2px 1.2px at 200px 170px, #e8e8ff, transparent),
+    radial-gradient(1.2px 1.2px at 230px 60px, #e8e8ff, transparent);
+  background-size: 260px 260px;
+  opacity: 0.65;
+}
+
+.starfield-layer-3 {
+  background-image:
+    radial-gradient(1.8px 1.8px at 50px 80px, #ffffff, transparent),
+    radial-gradient(1.6px 1.6px at 180px 40px, #ffffff, transparent),
+    radial-gradient(1.8px 1.8px at 280px 200px, #ffffff, transparent),
+    radial-gradient(1.6px 1.6px at 320px 100px, #ffffff, transparent);
+  background-size: 360px 360px;
+  animation: star-twinkle 4s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}

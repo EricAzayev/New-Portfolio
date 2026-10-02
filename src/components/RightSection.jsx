@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import { Mail, ArrowRight, Sparkles, Code2, Database, Rocket } from "lucide-react";
+import { Mail, ArrowRight, Code2, Database, Rocket } from "lucide-react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GitHubActivity from "./GitHubActivity";
 import LeetCodeStats from "./LeetCodeStats";
 
@@ -88,6 +88,7 @@ const AnimatedCounter = ({ value, label }) => {
 };
 
 const RightSection = () => {
+  const navigate = useNavigate();
   return (
     <main className="right-section">
       
@@ -99,7 +100,6 @@ const RightSection = () => {
         className="mb-16"
       >
         <div className="flex items-center gap-2 mb-4">
-          <Sparkles size={20} className="text-indigo-500" />
           <span className="text-sm font-mono text-slate-600 uppercase tracking-wide">
             Portfolio
           </span>
@@ -230,33 +230,17 @@ const RightSection = () => {
                 className="relative w-40 h-40 cursor-pointer group"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
+                onClick={() => navigate("/space")}
+                role="button"
+                aria-label="View realistic space starfield"
               >
                 {/* Space Background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-indigo-950 via-purple-900 to-black rounded-2xl overflow-hidden">
-                  {/* Animated Stars */}
-                  {[...Array(20)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-1 h-1 bg-white rounded-full"
-                      style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                        opacity: Math.random() * 0.7 + 0.3,
-                      }}
-                      animate={{
-                        y: [0, -20, 0],
-                        x: [0, Math.random() * 10 - 5, 0],
-                        opacity: [0.3, 1, 0.3],
-                      }}
-                      transition={{
-                        duration: Math.random() * 3 + 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: Math.random() * 2,
-                      }}
-                    />
-                  ))}
-                  
+                <div className="starfield rounded-2xl">
+                  <div className="starfield-nebula" />
+                  <div className="starfield-layer starfield-layer-1" />
+                  <div className="starfield-layer starfield-layer-2" />
+                  <div className="starfield-layer starfield-layer-3" />
+
                   {/* Saturn Planet */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <svg width="80" height="80" viewBox="0 0 100 100">
@@ -302,7 +286,7 @@ const RightSection = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <span className="text-white font-bold text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
-                      Coming Soon!
+                      Explore Space
                     </span>
                   </motion.div>
                 </div>
@@ -479,7 +463,6 @@ const RightSection = () => {
                 <div className="space-y-1 text-white/70 text-xs font-mono">
                   <div>→ Spring Foliage Map</div>
                   <div>→ StellarSearch</div>
-                  <div>→ GroupWisdom Bot</div>
                 </div>
               </div>
             </div>
