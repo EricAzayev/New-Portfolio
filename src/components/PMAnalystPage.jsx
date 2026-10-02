@@ -35,14 +35,6 @@ const PMAnalystPage = () => {
       tech: ["TensorFlow", "Scikit-learn", "NumPy", "Matplotlib"],
       gradient: "from-blue-500 to-indigo-600",
       features: ["Deep learning", "Image classification", "Feature extraction", "Model optimization"]
-    },
-    {
-      id: 3,
-      title: "GroupWisdom Bot",
-      description: "NLP-driven chatbot for collective intelligence and decision-making analytics",
-      tech: ["NLP", "Python", "FastAPI", "PostgreSQL"],
-      gradient: "from-purple-500 to-pink-600",
-      features: ["Natural language processing", "Sentiment analysis", "Real-time analytics", "API development"]
     }
   ];
 
@@ -178,14 +170,6 @@ const PMAnalystPage = () => {
                 demoLink="#"
                 tags={["TensorFlow", "Scikit-learn", "NumPy", "Matplotlib"]}
                 projectLink="/data/stellar-search"
-              />
-              <ProjectHeader
-                title="GroupWisdom Bot"
-                date="2026"
-                status="In Progress"
-                mediaSrc="/photos/Projects/GroupWisdom/hallucinationsExample.png"
-                tags={["NLP", "Python", "FastAPI", "PostgreSQL"]}
-                projectLink="/data/groupwisdom"
               />
               <ProjectHeader
                 title="LetterBuddy"

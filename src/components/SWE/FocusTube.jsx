@@ -1,87 +1,102 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSearchParams } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Github, ExternalLink } from "lucide-react";
+import { Puzzle } from "lucide-react";
 import ProjectHeader from "../ProjectHeader.jsx";
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 
 function FocusTube() {
   const [searchParams] = useSearchParams();
   const inSlideshow = searchParams.get('mode') === 'slideshow';
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("SWE/FocusTube");
-  
-  // Demo images from the GitHub README
-  const demoImages = [
-    "https://github.com/user-attachments/assets/091da99e-790d-4c35-8901-7eb04850db55"
+
+  // Demo videos from the GitHub README (hosted on GitHub's CDN, not duplicated in this repo)
+  const demoVideos = [
+    {
+      title: "Block Shorts in Action",
+      src: "https://github.com/user-attachments/assets/75221bf0-7323-4891-b21d-9f8e7624afd0"
+    },
+    {
+      title: "AI Filter Detection",
+      src: "https://github.com/user-attachments/assets/26409997-c3f8-447c-9073-646013be30be"
+    },
+    {
+      title: "AI Filter on \"lofi\" Query",
+      src: "https://github.com/user-attachments/assets/acc508a3-013d-41b5-871f-68826ebb9288"
+    }
   ];
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % demoImages.length);
-  };
+  const demoImages = [
+    {
+      title: "Extension Filter Example",
+      src: "/photos/Projects/FocusTube/ExtensionFilterExample.png"
+    },
+    {
+      title: "Output Amplified",
+      src: "/photos/Projects/FocusTube/OutputAmplified.png"
+    }
+  ];
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + demoImages.length) % demoImages.length);
-  };
-  
+  const koalaLogo = "https://raw.githubusercontent.com/luoshuyi1124/google-project/main/extension/images/cute_koala.png";
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Project Header */}
         <ProjectHeader 
           title="FocusTube"
           date="April 2026"
           status="Completed"
           githubLink="https://github.com/luoshuyi1124/google-project"
           tags={["Chrome Extension", "AI/ML", "Python", "JavaScript", "YouTube API"]}
+          hidePreview
         />
+
+        {/* My Contribution - scoped to what I personally built on this team project */}
+        <div className="mt-3 mb-6 flex items-center gap-1.5 text-xs font-mono text-slate-500">
+          <Puzzle size={12} className="shrink-0 text-indigo-600" />
+          My contribution: the Chrome extension — thumbnail/Shorts blocking and the on-device AI filtering pipeline
+        </div>
         
         {/* BentoBox Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-          {/* Top Left - Demo Images (takes 2 columns) */}
-          <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="relative aspect-video bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 flex items-center justify-center">
-              {demoImages.length > 0 ? (
-                <>
-                  <img 
-                    src={demoImages[currentImageIndex]} 
-                    alt={`Demo ${currentImageIndex + 1}`}
-                    className="w-full h-full object-contain"
+          {/* Hero - Demo Videos, the most impressive part of the product */}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+            <h2 className="text-2xl font-semibold mb-1">See It In Action</h2>
+            <p className="text-sm text-slate-500 mb-4">Recorded straight from the extension I built &mdash; from the project's GitHub README</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {demoVideos.map((video) => (
+                <div key={video.title} className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden">
+                  <video
+                    src={video.src}
+                    controls
+                    preload="metadata"
+                    className="w-full aspect-video bg-black"
                   />
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-                  >
-                    <ChevronLeft size={24} className="text-slate-700" />
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-                  >
-                    <ChevronRight size={24} className="text-slate-700" />
-                  </button>
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                    {demoImages.map((_, idx) => (
-                      <div
-                        key={idx}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          idx === currentImageIndex ? 'bg-blue-600 w-8' : 'bg-white/70'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <div className="text-center p-8">
-                  <div className="text-6xl mb-4">🐨📺</div>
-                  <p className="text-slate-600 font-medium">FocusTube</p>
-                  <p className="text-slate-500 text-sm mt-2">Chrome Extension for Focused YouTube Viewing</p>
+                  <p className="px-3 py-2 text-sm font-medium text-slate-700">{video.title}</p>
                 </div>
-              )}
+              ))}
             </div>
           </div>
 
-          {/* Top Right - Project Overview */}
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+          {/* Demo Screenshots */}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+            <h3 className="text-lg font-semibold mb-1">Demo Screenshots</h3>
+            <p className="text-sm text-slate-500 mb-4">Additional extension output examples</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {demoImages.map((image) => (
+                <div key={image.title} className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden">
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    className="w-full h-full object-contain"
+                  />
+                  <p className="px-3 py-2 text-sm font-medium text-slate-700">{image.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Project Overview */}
+          <div className="lg:col-span-2 bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
               FocusTube is a Chrome extension that removes distractions from YouTube so you can stay productive. 
@@ -91,16 +106,39 @@ function FocusTube() {
               The average person loses 2+ hours a day to YouTube recommendations and Shorts. 
               FocusTube gives you control back—no distractions, no rabbit holes, just intentional viewing.
             </p>
-            <div className="mt-6">
-              <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Chrome Extension", "Vanilla JavaScript", "React 19 + Vite", "Node.js + Express", "Phi-3 AI Model"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-700 border border-blue-200 rounded-lg text-sm font-medium">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+          </div>
+
+          {/* Koala Branding */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200 flex flex-col items-center justify-center text-center">
+            <img
+              src={koalaLogo}
+              alt="FocusTube koala mascot"
+              className="h-20 w-20 rounded-xl object-contain bg-slate-50 border border-slate-200 p-2 shadow-sm mb-3"
+            />
+            <p className="text-sm font-medium text-slate-700">The FocusTube Koala</p>
+            <p className="text-xs text-slate-500 mt-1">Replaces clickbait thumbnails so browsing stays calm</p>
+          </div>
+
+          {/* Key Technologies */}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+            <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
+            <div className="flex flex-wrap gap-2">
+              {["Chrome Extension", "Vanilla JavaScript", "React 19 + Vite", "Node.js + Express", "Phi-3 AI Model"].map((skill) => (
+                <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-700 border border-blue-200 rounded-lg text-sm font-medium">
+                  {skill}
+                </span>
+              ))}
             </div>
+          </div>
+
+          {/* System Architecture */}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+            <h3 className="text-lg font-semibold mb-3">System Architecture</h3>
+            <img
+              src="/photos/Projects/FocusTube/FocusTube_System_Architecture.png"
+              alt="FocusTube system architecture: React frontend and the extension exchange video HTML with Google, backed by a Node.js server using the YouTube Data API v3, Ollama, and a request cache"
+              className="w-full max-w-3xl mx-auto rounded-lg border border-slate-200"
+            />
           </div>
 
           {/* Bottom Section - Key Features & Implementation */}
@@ -133,11 +171,11 @@ function FocusTube() {
                 <ul className="space-y-2 text-slate-600">
                   <li className="flex items-start gap-2">
                     <span className="text-indigo-600 font-bold">•</span>
-                    <span><strong>Extension:</strong> Vanilla JavaScript with Chrome Extension Manifest V3</span>
+                    <span><strong>Extension (my build):</strong> Vanilla JavaScript with Chrome Extension Manifest V3, plus the AI filtering integration</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-indigo-600 font-bold">•</span>
-                    <span><strong>Landing Page:</strong> React 19 + Vite for fast, modern marketing site</span>
+                    <span><strong>Landing Page (teammate contribution):</strong> React 19 + Vite marketing site</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-indigo-600 font-bold">•</span>
@@ -149,9 +187,6 @@ function FocusTube() {
                   </li>
                 </ul>
                 <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <p className="text-sm text-slate-700 mb-2">
-                    <strong>Demo Clip:</strong> <a href="https://github.com/user-attachments/assets/75221bf0-7323-4891-b21d-9f8e7624afd0" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">View README demo</a>
-                  </p>
                   <p className="text-sm text-slate-700">
                     <strong>Team:</strong> Built with @EricAzayev, @luoshuyi1124, and @Cassandra-Hinds
                   </p>

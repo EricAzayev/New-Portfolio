@@ -40,6 +40,15 @@ function ReciPal() {
             View on GitHub
             <ExternalLink size={14} />
           </a>
+          <a 
+            href="https://youtu.be/7EKcPbCa5ow" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors text-sm font-medium"
+          >
+            Watch Demo
+            <ExternalLink size={14} />
+          </a>
         </div>
         
         {/* BentoBox Grid Layout */}

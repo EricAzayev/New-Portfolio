@@ -10,7 +10,6 @@ function DenCity() {
   usePageViewMetric("Data/DenCity");
   
   const demoImages = [
-    "/photos/Projects/DenCity/DenCity Demo OpenData.png",
     "/photos/Projects/DenCity/DenCity_Actual_Collected_Data.png",
     "/photos/Projects/DenCity/DenCity_FutureIntent.png"
   ];
