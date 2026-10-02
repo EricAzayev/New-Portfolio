@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { 
   BarChart3, Brain, Database, TrendingUp, Cpu, 
-  Network, GitGraph, Search, CheckCircle2, 
-  ArrowRight, Zap, PieChart, LineChart, Activity
+  CheckCircle2, 
+  ArrowRight, Zap, PieChart, LineChart
 } from "lucide-react";
 import ProjectHeader from "./ProjectHeader.jsx";
 
@@ -51,15 +51,15 @@ const PMAnalystPage = () => {
     {
       name: "30 Days of Pandas",
       organization: "LeetCode",
-      year: "2024",
+      year: "2025",
       description: "Completed comprehensive pandas challenge",
       icon: "📊"
     },
     {
       name: "Data Science Fellowship",
       organization: "CUNY Tech Prep",
-      year: "2023-2024",
-      description: "One semester program in data science and machine learning",
+      year: "2025-2026",
+      description: "Year-long fellowship program in data science and machine learning",
       icon: "🎓"
     }
   ];
@@ -328,42 +328,6 @@ const PMAnalystPage = () => {
             ))}
           </div>
         </section>
-
-        {/* Additional Skills/Capabilities */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-12 text-center mb-20"
-        >
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Complete Data Science Toolkit
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {[
-              { icon: BarChart3, label: "Data Wrangling" },
-              { icon: Brain, label: "Machine Learning" },
-              { icon: TrendingUp, label: "Statistical Modeling" },
-              { icon: Network, label: "Deep Learning" },
-              { icon: Database, label: "Data Engineering" },
-              { icon: Search, label: "Feature Engineering" },
-              { icon: Activity, label: "Model Optimization" },
-              { icon: GitGraph, label: "Experimentation" }
-            ].map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
-              >
-                <item.icon className="text-white mx-auto mb-3" size={32} />
-                <p className="text-white font-semibold text-sm">{item.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
 
       </div>
     </div>

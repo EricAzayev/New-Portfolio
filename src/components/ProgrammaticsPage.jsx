@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Rocket, Target, Users, Lightbulb, FileText, Calendar } from "lucide-react";
+import { Rocket, Target, Users, Lightbulb, FileText } from "lucide-react";
 import ProjectHeader from "./ProjectHeader.jsx";
 
 const ProgrammaticsPage = () => {
@@ -116,42 +116,6 @@ const ProgrammaticsPage = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* Skills Section */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl p-12"
-        >
-          <h2 className="text-3xl font-bold text-white text-center mb-10">
-            Core Competencies
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {[
-              { icon: Target, label: "Strategic Planning" },
-              { icon: Users, label: "Team Leadership" },
-              { icon: Lightbulb, label: "Innovation" },
-              { icon: FileText, label: "Technical Writing" },
-              { icon: Rocket, label: "Mission Design" },
-              { icon: Calendar, label: "Program Management" },
-              { icon: Target, label: "Stakeholder Management" },
-              { icon: Users, label: "Cross-functional Collaboration" }
-            ].map((item, index) => (
-              <motion.div
-                key={`${item.label}-${index}`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center"
-              >
-                <item.icon className="text-white mx-auto mb-3" size={32} />
-                <p className="text-white font-semibold text-sm">{item.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
 
       </div>
     </div>

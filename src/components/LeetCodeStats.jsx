@@ -9,10 +9,10 @@ const AnimatedProgressBar = ({ value, max, label, color = "blue", delay = 0 }) =
   const percentage = (value / max) * 100;
 
   const colorClasses = {
-    green: "bg-gradient-to-r from-green-500 to-green-400",
-    yellow: "bg-gradient-to-r from-yellow-500 to-yellow-400",
-    red: "bg-gradient-to-r from-red-500 to-red-400",
-    blue: "bg-gradient-to-r from-blue-500 to-blue-400",
+    green: "bg-green-500",
+    yellow: "bg-yellow-500",
+    red: "bg-red-500",
+    blue: "bg-blue-500",
   };
 
   return (
@@ -76,10 +76,10 @@ const LeetCodeStats = ({ username = "EricAzayev" }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-slate-950 rounded-2xl p-8 shadow-lg border border-white/10"
+      className="bg-slate-950 rounded-lg p-8 border border-white/10"
     >
       <div className="flex items-center gap-3 mb-6">
-        <div className="bg-gradient-to-br from-orange-500 to-amber-600 rounded-lg p-3">
+        <div className="bg-slate-800 border border-white/10 rounded-md p-3">
           <Code2 className="text-white" size={24} />
         </div>
         <div>

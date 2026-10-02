@@ -118,14 +118,14 @@ const RightSection = () => {
         <div className="flex flex-wrap gap-4 mb-8">
           <a 
             href="#explore"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md font-medium transition-colors"
           >
             Explore My Work
             <ArrowRight size={18} />
           </a>
           <a 
             href="mailto:azayeveric@gmail.com"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-lg font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-md font-medium transition-colors"
           >
             Get in Touch
             <Mail size={18} />
@@ -206,7 +206,7 @@ const RightSection = () => {
         <h2 className="text-2xl font-bold text-slate-900 mb-6">About Me</h2>
         <div className="grid md:grid-cols-5 gap-8">
           <div className="md:col-span-2">
-            <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl"></div>
+            <div className="aspect-square bg-slate-100 border border-slate-200 rounded-lg"></div>
           </div>
           <div className="md:col-span-3">
             <div className="prose prose-slate">
@@ -433,15 +433,14 @@ const RightSection = () => {
           
           {/* Software Engineering Card */}
           <Link to="/swe" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
-            <div className="relative h-64 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+            <div className="relative h-64 bg-white border border-slate-200 rounded-lg overflow-hidden transition-colors duration-200 group-hover:border-indigo-400">
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                 <div>
-                  <Code2 className="text-white mb-3" size={32} />
-                  <h3 className="text-2xl font-bold text-white mb-2">SWE</h3>
-                  <p className="text-white/80 text-sm">Web & Mobile Applications</p>
+                  <Code2 className="text-indigo-600 mb-3" size={32} />
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">SWE</h3>
+                  <p className="text-slate-600 text-sm">Web & Mobile Applications</p>
                 </div>
-                <div className="space-y-1 text-white/70 text-xs font-mono">
+                <div className="space-y-1 text-slate-500 text-xs font-mono">
                   <div>→ Lexington Links</div>
                   <div>→ Findr</div>
                   <div>→ Codepath Apps</div>
@@ -452,15 +451,14 @@ const RightSection = () => {
 
           {/* Data Science Card */}
           <Link to="/data" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
-            <div className="relative h-64 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+            <div className="relative h-64 bg-white border border-slate-200 rounded-lg overflow-hidden transition-colors duration-200 group-hover:border-sky-400">
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                 <div>
-                  <Database className="text-white mb-3" size={32} />
-                  <h3 className="text-2xl font-bold text-white mb-2">Data Science</h3>
-                  <p className="text-white/80 text-sm">ML & Analytics</p>
+                  <Database className="text-sky-600 mb-3" size={32} />
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Data Science</h3>
+                  <p className="text-slate-600 text-sm">ML & Analytics</p>
                 </div>
-                <div className="space-y-1 text-white/70 text-xs font-mono">
+                <div className="space-y-1 text-slate-500 text-xs font-mono">
                   <div>→ Spring Foliage Map</div>
                   <div>→ StellarSearch</div>
                 </div>
@@ -470,15 +468,14 @@ const RightSection = () => {
 
           {/* Programmatics Card */}
           <Link to="/programmatics" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
-            <div className="relative h-64 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+            <div className="relative h-64 bg-white border border-slate-200 rounded-lg overflow-hidden transition-colors duration-200 group-hover:border-emerald-400">
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                 <div>
-                  <Rocket className="text-white mb-3" size={32} />
-                  <h3 className="text-2xl font-bold text-white mb-2">Programmatics</h3>
-                  <p className="text-white/80 text-sm">Strategy & Mission Planning</p>
+                  <Rocket className="text-emerald-600 mb-3" size={32} />
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Programmatics</h3>
+                  <p className="text-slate-600 text-sm">Strategy & Mission Planning</p>
                 </div>
-                <div className="space-y-1 text-white/70 text-xs font-mono">
+                <div className="space-y-1 text-slate-500 text-xs font-mono">
                   <div>→ NASA LSPACE MCA</div>
                   <div>→ Unadat Final Product</div>
                   <div>→ NASA LSPACE NPWEE</div>
@@ -489,15 +486,14 @@ const RightSection = () => {
 
           {/* Blog Card */}
           <Link to="/blog" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
-            <div className="relative h-64 bg-gradient-to-br from-orange-500 to-pink-600 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+            <div className="relative h-64 bg-white border border-slate-200 rounded-lg overflow-hidden transition-colors duration-200 group-hover:border-amber-400">
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                 <div>
-                  <ArrowRight className="text-white mb-3" size={32} />
-                  <h3 className="text-2xl font-bold text-white mb-2">Blog</h3>
-                  <p className="text-white/80 text-sm">Insights & Tutorials</p>
+                  <ArrowRight className="text-amber-600 mb-3" size={32} />
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Blog</h3>
+                  <p className="text-slate-600 text-sm">Insights & Tutorials</p>
                 </div>
-                <div className="space-y-1 text-white/70 text-xs font-mono">
+                <div className="space-y-1 text-slate-500 text-xs font-mono">
                   <div>→ Technical Tutorials</div>
                   <div>→ Project Insights</div>
                 </div>

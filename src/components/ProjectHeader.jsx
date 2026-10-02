@@ -31,7 +31,7 @@ const ProjectHeader = ({
 
   const content = (
     <div
-      className={`border border-slate-200 rounded-xl shadow-sm bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-indigo-300 ${projectLink ? 'cursor-pointer' : ''}`}
+      className={`border border-slate-200 rounded-lg shadow-sm bg-white p-6 transition-colors duration-200 hover:border-indigo-300 ${projectLink ? 'cursor-pointer' : ''}`}
       onClick={handleCardClick}
     >
 
@@ -53,7 +53,7 @@ const ProjectHeader = ({
             />
           )
         ) : (
-          <div className="w-full h-full rounded-lg bg-gradient-to-br from-slate-800 via-slate-700 to-indigo-700 text-white flex items-center justify-center p-6 text-center">
+          <div className="w-full h-full rounded-lg bg-slate-800 text-white flex items-center justify-center p-6 text-center">
             <div>
               <div className="text-xs uppercase tracking-[0.25em] text-white/70 mb-3">Project Preview</div>
               <div className="text-lg font-semibold">{title}</div>

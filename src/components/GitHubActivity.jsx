@@ -77,10 +77,10 @@ const GitHubActivity = ({ username = "EricAzayev" }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-slate-950 rounded-2xl p-8 shadow-lg border border-white/10"
+      className="bg-slate-950 rounded-lg p-8 border border-white/10"
     >
       <div className="flex items-center gap-3 mb-6">
-        <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg p-3">
+        <div className="bg-slate-800 border border-white/10 rounded-md p-3">
           <Github className="text-white" size={24} />
         </div>
         <div>

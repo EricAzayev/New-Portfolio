@@ -17,10 +17,10 @@ const LeftSection = () => {
         transition={{ duration: 0.6 }}
       >
         {/* Profile Card */}
-        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-8">
+        <div className="bg-white border border-slate-200 rounded-lg shadow-sm p-8">
           
           {/* Profile Image */}
-          <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+          <div className="w-32 h-32 mx-auto mb-6 bg-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold">
             EA
           </div>
           

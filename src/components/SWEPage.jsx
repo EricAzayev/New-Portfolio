@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { 
   Code2, Database, Server, Globe, Layers, 
-  Zap, GitBranch, Terminal, Cpu, Cloud,
+  Zap, GitBranch, Terminal, Cpu,
   CheckCircle2, ArrowRight, ExternalLink
 } from "lucide-react";
 import ProjectHeader from "./ProjectHeader.jsx";
@@ -431,42 +431,6 @@ const SWEPage = () => {
             ))}
           </div>
         </section>
-
-        {/* Additional Skills/Capabilities */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-12 text-center mb-20"
-        >
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Complete Development Lifecycle
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {[
-              { icon: Code2, label: "Software Development" },
-              { icon: GitBranch, label: "Version Control" },
-              { icon: Zap, label: "API Development" },
-              { icon: Server, label: "Backend Systems" },
-              { icon: Database, label: "Database Design" },
-              { icon: Cloud, label: "Cloud Deployment" },
-              { icon: Terminal, label: "Authentication" },
-              { icon: Layers, label: "Data Visualization" }
-            ].map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
-              >
-                <item.icon className="text-white mx-auto mb-3" size={32} />
-                <p className="text-white font-semibold text-sm">{item.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
 
       </div>
     </div>
