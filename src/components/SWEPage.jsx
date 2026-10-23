@@ -263,6 +263,15 @@ const SWEPage = () => {
                 tags={["Minecraft Forge", "Java 17", "Game Development", "Gradle"]}
                 projectLink="/swe/thankful-forest-mod"
               />
+              <ProjectHeader
+                title="FoodTracker"
+                date="2025"
+                status="Active"
+                mediaSrc="/photos/Projects/FoodTracker/screenshots/today.png"
+                githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio/tree/main/FoodTracker"
+                tags={["React", "Node.js", "Express", "MongoDB", "REST API"]}
+                projectLink="/swe/foodtracker"
+              />
             </div>
           </div>
         </motion.div>
