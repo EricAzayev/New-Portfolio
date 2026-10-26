@@ -12,7 +12,7 @@ function NASALSPACEMCA() {
       type: "image",
       src: "/photos/Projects/MCA/P1.png",
       title: "PDR Cover - Team 25",
-      description: "L'SPACE Program - 9-Person Team"
+      description: "L'SPACE Program - 11-Person Team"
     },
     {
       type: "image",
@@ -91,7 +91,7 @@ function NASALSPACEMCA() {
           </div>
           <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-xl p-6 text-white shadow-lg">
             <Users className="mb-2" size={32} />
-            <div className="text-3xl font-bold mb-1">9</div>
+            <div className="text-3xl font-bold mb-1">11</div>
             <div className="text-sm text-green-100">Team Members</div>
           </div>
         </div>
