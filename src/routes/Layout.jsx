@@ -3,6 +3,9 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 import { Home, Code, Database, Cpu, Pen } from "lucide-react";
 import "../Front.css";
 
+// Blog is not built yet — flip to `true` to restore the navbar link
+const SHOW_BLOG_LINK = false;
+
 const Layout = () => {
   const location = useLocation();
 
@@ -39,12 +42,14 @@ const Layout = () => {
               <span>Programmatics</span>
             </div>
           </Link>
-          <Link to="/blog" style={{ textDecoration: 'none' }}>
-            <div className="nav-section">
-              <Pen />
-              <span>Blog</span>
-            </div>
-          </Link>
+          {SHOW_BLOG_LINK && (
+            <Link to="/blog" style={{ textDecoration: 'none' }}>
+              <div className="nav-section">
+                <Pen />
+                <span>Blog</span>
+              </div>
+            </Link>
+          )}
         </div>
       </nav>
       <Outlet />

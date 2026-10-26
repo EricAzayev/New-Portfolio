@@ -90,6 +90,9 @@ const AnimatedCounter = ({ value, label }) => {
 // Image placeholder toggle set to `false` while waiting for real photos — flip to `true` to bring them back
 const SHOW_IMAGE_PLACEHOLDERS = false;
 
+// Blog is not built yet — flip to `true` to restore the Blog card
+const SHOW_BLOG_CARD = false;
+
 const RightSection = () => {
   const navigate = useNavigate();
   return (
@@ -445,21 +448,23 @@ const RightSection = () => {
           </Link>
 
           {/* Blog Card */}
-          <Link to="/blog" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
-            <div className="relative h-64 bg-white border border-slate-200 rounded-lg overflow-hidden transition-colors duration-200 group-hover:border-amber-400">
-              <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                <div>
-                  <ArrowRight className="text-amber-600 mb-3" size={32} />
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Blog</h3>
-                  <p className="text-slate-600 text-sm">Insights & Tutorials</p>
-                </div>
-                <div className="space-y-1 text-slate-500 text-xs font-mono">
-                  <div>→ Technical Tutorials</div>
-                  <div>→ Project Insights</div>
+          {SHOW_BLOG_CARD && (
+            <Link to="/blog" className="group" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
+              <div className="relative h-64 bg-white border border-slate-200 rounded-lg overflow-hidden transition-colors duration-200 group-hover:border-amber-400">
+                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <ArrowRight className="text-amber-600 mb-3" size={32} />
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Blog</h3>
+                    <p className="text-slate-600 text-sm">Insights & Tutorials</p>
+                  </div>
+                  <div className="space-y-1 text-slate-500 text-xs font-mono">
+                    <div>→ Technical Tutorials</div>
+                    <div>→ Project Insights</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          )}
 
         </div>
       </motion.div>
