@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function SpringFoliageMap() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("Data/SpringFoliageMap");
   
@@ -93,7 +90,7 @@ function SpringFoliageMap() {
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["Python", "Pandas", "Folium", "Satellite Data", "Remote Sensing", "Data Visualization"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-cyan-50 to-blue-100 text-cyan-700 border border-cyan-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
@@ -104,18 +101,21 @@ function SpringFoliageMap() {
           {/* Bottom Left - System Design */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
+              <h2 className="text-2xl font-semibold mb-4">Map Tiling & Data Source</h2>
               <p className="text-slate-600 mb-4">
                 Raster-mode tiling became the core scaling strategy, allowing the map to move beyond prototype datasets and toward a globally explorable interface.
                 The next deployment phase focuses on observability, bug-reporting, and open-sourcing the workflow behind the map.
               </p>
             </div>
             <div className="bg-slate-50 p-4">
-              <img 
-                src="/photos/Projects/SpringFoliage/SpringFoliage_System_Architecture.png" 
-                alt="System Architecture"
+              <img
+                src="/photos/Projects/SpringFoliage/SpringFoliage_System_Architecture.png"
+                alt="Stack and tile-resolution tradeoffs: React with MapLibre, tile counts from 3.1×3.1 miles (~27,000 tiles) down to 20×20 miles (~680 tiles), with 10×10 miles selected as the best balance; data from the USA National Phenology Network Bloom Day dataset"
                 className="w-full h-auto object-contain"
               />
+              <p className="text-sm text-slate-500 mt-3 text-center">
+                Tile-resolution options from ~27,000 tiles (3.1×3.1 mi) to ~680 (20×20 mi) — 10×10 mi won as the balance point. Data: USA National Phenology Network Bloom Day dataset.
+              </p>
             </div>
           </div>
         </div>

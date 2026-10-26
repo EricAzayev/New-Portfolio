@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function DenCity() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("Data/DenCity");
   
@@ -27,7 +24,7 @@ function DenCity() {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">DenCity</h1>
         <p className="text-lg text-slate-600 mb-4 italic">
-          Do you love crowds? Perhaps you seek to get away. With DenCity, you can know where the people are!
+          Real-time crowd-density heatmaps — for when you want to find the crowd, or know where the people are before you go.
         </p>
         <div className="flex gap-3 mb-6">
           <a 
@@ -94,7 +91,7 @@ function DenCity() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              DenCity is a crowd-density telemetry platform designed to solve urban crowd awareness challenges. By leveraging decentralized Bluetooth data collection, it provides real-time heatmaps for urban planners, commuters, hobbyists, and pedestrians seeking to navigate or avoid high-density areas.
+              DenCity is a crowd-density telemetry platform built around urban crowd awareness. Using opt-in Bluetooth data collection, it provides real-time heatmaps for urban planners, commuters, hobbyists, and pedestrians seeking to navigate or avoid high-density areas.
             </p>
             <p className="text-slate-600 mb-4">
               User-opted telemetry is processed at the edge, cleaned of signal noise, and synced to a Supabase instance with a 30-minute TTL (Time-To-Live) for privacy-first, ephemeral storage. During the deployment phase, we performed ground-truth validation by collecting live Bluetooth telemetry and physical manual headcounts in various city locations.
@@ -103,7 +100,7 @@ function DenCity() {
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["Bluetooth", "Supabase", "React", "Geospatial", "Edge Computing", "Data Visualization"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-cyan-50 to-blue-100 text-cyan-700 border border-cyan-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
@@ -118,18 +115,18 @@ function DenCity() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-slate-50">
               <div className="bg-white rounded-lg p-4 border border-slate-200">
-                <h3 className="text-lg font-semibold mb-2 text-slate-700">Solution Statement</h3>
-                <img 
-                  src="/photos/Projects/DenCity/DenCity_Solution_Statement.png" 
-                  alt="Solution Statement"
+                <h3 className="text-lg font-semibold mb-2 text-slate-700">Solution</h3>
+                <img
+                  src="/photos/Projects/DenCity/DenCity_Solution_Statement.png"
+                  alt="DenCity pitch slide: Bluetooth, crowdsourced, anonymized — with a crowd-density heatmap of Brooklyn"
                   className="w-full h-auto object-contain rounded"
                 />
               </div>
               <div className="bg-white rounded-lg p-4 border border-slate-200">
                 <h3 className="text-lg font-semibold mb-2 text-slate-700">System Architecture</h3>
-                <img 
-                  src="/photos/Projects/DenCity/DenCity_System_Architecture.png" 
-                  alt="System Architecture"
+                <img
+                  src="/photos/Projects/DenCity/DenCity_System_Architecture.png"
+                  alt="Architecture diagram: Bluetooth telemetry from nearby devices flows to a validating backend API, then to storage; the frontend encodes crowdsourced data into the heatmap"
                   className="w-full h-auto object-contain rounded"
                 />
               </div>

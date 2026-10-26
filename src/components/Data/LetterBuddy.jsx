@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function LetterBuddy() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("Data/LetterBuddy");
   
@@ -83,7 +80,7 @@ function LetterBuddy() {
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["Next.js 15", "React 19", "FastAPI", "GPT-4o Vision", "PostgreSQL", "Docker"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-purple-50 to-pink-100 text-purple-700 border border-purple-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
@@ -140,27 +137,36 @@ function LetterBuddy() {
             </div>
           </div>
 
-          {/* Bottom Left - Problem Statement & Tech Stack */}
+          {/* Bottom Left - Landing Page & Tech Stack */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">Problem Statement & Tech Stack</h2>
+              <h2 className="text-2xl font-semibold mb-4">Landing Page & Tech Stack</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-slate-50">
               <div className="bg-white rounded-lg p-4 border border-slate-200">
-                <h3 className="text-lg font-semibold mb-2 text-slate-700">Problem Statement</h3>
-                <img 
-                  src="/photos/Projects/LetterBuddy/LetterBuddy_Problem_Statement.png" 
-                  alt="Problem Statement"
+                <h3 className="text-lg font-semibold mb-2 text-slate-700">Landing Page</h3>
+                <img
+                  src="/photos/Projects/LetterBuddy/LetterBuddy_Problem_Statement.png"
+                  alt="LetterBuddy landing page"
                   className="w-full h-auto object-contain rounded"
                 />
               </div>
               <div className="bg-white rounded-lg p-4 border border-slate-200">
                 <h3 className="text-lg font-semibold mb-2 text-slate-700">Tech Stack</h3>
-                <img 
-                  src="/photos/Projects/LetterBuddy/LetterBuddy_Tech_Stack.png" 
-                  alt="Tech Stack"
-                  className="w-full h-auto object-contain rounded"
-                />
+                <ul className="text-sm text-slate-600 space-y-3">
+                  <li>
+                    <span className="font-semibold text-slate-800">Frontend:</span> Next.js 15 (React 19), Tailwind CSS, Supabase Auth
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-800">Backend:</span> FastAPI + Uvicorn, PostgreSQL 15 via SQLAlchemy
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-800">Vision AI:</span> OpenAI GPT-4o multimodal model
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-800">Infrastructure:</span> Docker Compose with hot reload
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

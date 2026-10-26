@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { 
-  BarChart3, Brain, Database, TrendingUp, Cpu, 
-  CheckCircle2, 
-  ArrowRight, Zap, PieChart, LineChart
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  BarChart3, Brain, TrendingUp, Cpu
 } from "lucide-react";
 import ProjectHeader from "./ProjectHeader.jsx";
 
 const PMAnalystPage = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -17,26 +14,6 @@ const PMAnalystPage = () => {
 
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  // Data Science Projects
-  const projects = [
-    {
-      id: 1,
-      title: "Spring Foliage Map",
-      description: "Interactive geospatial visualization of seasonal vegetation changes using satellite imagery",
-      tech: ["Python", "Pandas", "Folium", "Satellite Data"],
-      gradient: "from-cyan-500 to-blue-600",
-      features: ["Geospatial analysis", "Data visualization", "Time-series processing", "Remote sensing"]
-    },
-    {
-      id: 2,
-      title: "StellarSearch",
-      description: "Machine learning-powered astronomical object detection and classification system",
-      tech: ["TensorFlow", "Scikit-learn", "NumPy", "Matplotlib"],
-      gradient: "from-blue-500 to-indigo-600",
-      features: ["Deep learning", "Image classification", "Feature extraction", "Model optimization"]
-    }
-  ];
 
   // Data Science Tech Stack organized by category
   const techStack = {
@@ -64,6 +41,14 @@ const PMAnalystPage = () => {
     }
   ];
 
+  // Literal class strings per color — Tailwind can't see interpolated class names
+  const badgeStyles = {
+    cyan: "from-cyan-50 to-cyan-100 text-cyan-700 border-cyan-200",
+    indigo: "from-indigo-50 to-indigo-100 text-indigo-700 border-indigo-200",
+    green: "from-green-50 to-green-100 text-green-700 border-green-200",
+    pink: "from-pink-50 to-pink-100 text-pink-700 border-pink-200"
+  };
+
   const SkillBadge = ({ skill, index, color = "cyan" }) => {
     return (
       <motion.span
@@ -71,7 +56,7 @@ const PMAnalystPage = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, delay: index * 0.03 }}
-        className={`inline-block px-4 py-2 bg-gradient-to-r from-${color}-50 to-${color}-100 text-${color}-700 border border-${color}-200 rounded-lg text-sm font-medium hover:shadow-md transition-all cursor-default`}
+        className={`inline-block px-4 py-2 bg-gradient-to-r border ${badgeStyles[color]} rounded-lg text-sm font-medium hover:shadow-md transition-all cursor-default`}
       >
         {skill}
       </motion.span>
@@ -104,7 +89,7 @@ const PMAnalystPage = () => {
               Data Science
             </h1>
             <p className="text-2xl text-white/90 font-light max-w-3xl mx-auto">
-              Transforming data into actionable insights through advanced analytics and machine learning
+              Projects in geospatial analysis, natural language processing, and applied machine learning
             </p>
           </motion.div>
         </div>
@@ -156,8 +141,6 @@ const PMAnalystPage = () => {
                 status="In Progress"
                 mediaSrc="/photos/Profile_Photos/SpringFoliageMap.png"
                 githubLink="https://github.com/EricAzayev/Spring-Foliage"
-                demoLink="#"
-                docsLink="#"
                 tags={["Python", "Pandas", "Folium", "Satellite Data"]}
                 projectLink="/data/spring-foliage-map"
               />
@@ -167,8 +150,7 @@ const PMAnalystPage = () => {
                 status="Completed"
                 mediaSrc="/photos/Profile_Photos/StellarSearch.png"
                 githubLink="https://github.com/oleksiisud/slack-cluster-finder"
-                demoLink="#"
-                tags={["TensorFlow", "Scikit-learn", "NumPy", "Matplotlib"]}
+                tags={["NLP", "Topic Clustering", "Supabase", "Slack API", "Discord API"]}
                 projectLink="/data/stellar-search"
               />
               <ProjectHeader
@@ -176,8 +158,7 @@ const PMAnalystPage = () => {
                 date="2025"
                 status="Hackathon"
                 mediaSrc="/photos/Profile_Photos/LetterBuddy.png"
-                githubLink="#"
-                tags={["Python", "Time Series", "ARIMA", "Visualization"]}
+                tags={["Next.js 15", "React 19", "FastAPI", "GPT-4o Vision"]}
                 projectLink="/data/letterbuddy"
               />
               <ProjectHeader
@@ -189,6 +170,14 @@ const PMAnalystPage = () => {
                 demoLink="https://devpost.com/software/dencity"
                 tags={["Bluetooth", "Supabase", "React", "Geospatial"]}
                 projectLink="/data/dencity"
+              />
+              <ProjectHeader
+                title="GroupWisdom Bot"
+                date="2026"
+                status="In Development"
+                mediaSrc="/photos/Projects/GroupWisdom/hallucinationsExample.png"
+                tags={["Unsloth", "Discord.py", "LLM Fine-Tuning"]}
+                projectLink="/data/groupwisdom"
               />
             </div>
           </div>

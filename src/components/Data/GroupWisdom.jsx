@@ -33,7 +33,7 @@ function GroupWisdom() {
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["Unsloth", "Discord.py", "LLM Inference", "Fine-Tuning", "Context Windows"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-cyan-50 to-blue-100 text-cyan-700 border border-cyan-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
