@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
 import { useProfileStats } from "../hooks/useProfileStats";
 
+// Image placeholder toggle set to `false` while waiting for real photos — flip to `true` to bring them back
+const SHOW_IMAGE_PLACEHOLDERS = false;
+
 const LeftSection = () => {
   // Fetch dynamic stats from GitHub and LeetCode APIs
   const { githubCommits, leetcodeSolved, loading } = useProfileStats(
@@ -20,9 +23,11 @@ const LeftSection = () => {
         <div className="bg-white border border-slate-200 rounded-lg shadow-sm p-8">
           
           {/* Profile Image */}
-          <div className="w-32 h-32 mx-auto mb-6 bg-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold">
-            EA
-          </div>
+          {SHOW_IMAGE_PLACEHOLDERS && (
+            <div className="w-32 h-32 mx-auto mb-6 bg-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold">
+              EA
+            </div>
+          )}
           
           {/* Name & Title */}
           <div className="text-center mb-6">

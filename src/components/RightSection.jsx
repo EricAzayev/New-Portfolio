@@ -87,6 +87,9 @@ const AnimatedCounter = ({ value, label }) => {
   );
 };
 
+// Image placeholder toggle set to `false` while waiting for real photos — flip to `true` to bring them back
+const SHOW_IMAGE_PLACEHOLDERS = false;
+
 const RightSection = () => {
   const navigate = useNavigate();
   return (
@@ -99,12 +102,6 @@ const RightSection = () => {
         transition={{ duration: 0.6 }}
         className="mb-16"
       >
-        <div className="flex items-center gap-2 mb-4">
-          <span className="text-sm font-mono text-slate-600 uppercase tracking-wide">
-            Portfolio
-          </span>
-        </div>
-        
         <h1 className="text-5xl font-bold text-slate-900 mb-4 leading-tight">
           Systems &amp; Solutions Engineer
         </h1>
@@ -206,7 +203,9 @@ const RightSection = () => {
         <h2 className="text-2xl font-bold text-slate-900 mb-6">About Me</h2>
         <div className="grid md:grid-cols-5 gap-8">
           <div className="md:col-span-2">
-            <div className="aspect-square bg-slate-100 border border-slate-200 rounded-lg"></div>
+            {SHOW_IMAGE_PLACEHOLDERS && (
+              <div className="aspect-square bg-slate-100 border border-slate-200 rounded-lg"></div>
+            )}
           </div>
           <div className="md:col-span-3">
             <div className="prose prose-slate">
