@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { 
-  Code2, Database, Server, Globe, Layers, 
-  Zap, GitBranch, Terminal, Cpu,
-  CheckCircle2, ArrowRight, ExternalLink
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  Code2, Database, Server, Layers,
+  Zap, GitBranch, Terminal
 } from "lucide-react";
 import ProjectHeader from "./ProjectHeader.jsx";
 
 const SWEPage = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -18,59 +16,6 @@ const SWEPage = () => {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // Software Engineering Projects Data
-  const projects = [
-    {
-      id: 1,
-      title: "Findr",
-      description: "Location-based discovery and social networking application",
-      tech: ["React Native", "Firebase", "Google Maps API", "Redux"],
-      gradient: "from-green-500 to-teal-600",
-      features: ["Geolocation services", "Push notifications", "Social features", "Real-time chat"]
-    },
-    {
-      id: 2,
-      title: "Codepath Apps",
-      description: "Hub showcasing CodePath web development projects including Lexington Links and FoodTracker",
-      tech: ["React", "Node.js", "Express", "PostgreSQL", "MongoDB"],
-      gradient: "from-purple-500 to-pink-600",
-      features: ["Software engineering foundations", "Database design", "REST APIs", "Modern web architecture"]
-    },
-    {
-      id: 3,
-      title: "reciPal",
-      description: "Recipe discovery and meal planning application",
-      tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-      gradient: "from-orange-500 to-red-600",
-      features: ["Recipe search", "Meal planning", "Smooth animations", "Responsive design"]
-    },
-    {
-      id: 4,
-      title: "FocusTube",
-      description: "Chrome extension to combat YouTube distraction with AI-powered content filtering",
-      tech: ["Chrome Extension", "JavaScript", "Local AI", "YouTube API"],
-      gradient: "from-blue-500 to-indigo-600",
-      features: ["Focus Mode", "Block Shorts", "AI Content Filtering", "Privacy-focused"]
-    },
-    {
-      id: 5,
-      title: "The Thankful Forest Mod",
-      description: "Minecraft Forge mod adding Thanksgiving-themed content with custom entities and biomes",
-      tech: ["Minecraft Forge", "Java 17", "Gradle", "TerraBLender"],
-      gradient: "from-orange-400 to-amber-500",
-      features: ["Custom Entities", "World Generation", "AI Behaviors", "3D Modeling"]
-    },
-    {
-      id: 6,
-      title: "LetterBuddy",
-      description: "AI-powered handwriting improvement platform using GPT-4o Vision for real-time analysis",
-      tech: ["Next.js 15", "React 19", "FastAPI", "GPT-4o Vision", "PostgreSQL", "Docker"],
-      gradient: "from-purple-500 to-pink-500",
-      features: ["AI Vision Analysis", "Real-time Feedback", "Progress Tracking", "EdTech Platform"]
-    }
-  ];
-
-  // Tech Stack organized by category
   const techStack = {
     languages: ["JavaScript", "TypeScript", "Python", "Java", "C++", "C#", "HTML/CSS"],
     frameworks: ["React", "React Native", "Node.js", "Express.js", "ASP.NET Core", "Django", "Vite"],
@@ -88,8 +33,8 @@ const SWEPage = () => {
       image: "/photos/Certificates/KKCF.png"
     },
     {
-      name: "Codepath Web102",
-      organization: "Codepath",
+      name: "CodePath Technical Interview Prep (Advanced)",
+      organization: "CodePath",
       year: "2025",
       image: "/photos/Certificates/TIP102.png"
     },
@@ -101,6 +46,15 @@ const SWEPage = () => {
     }
   ];
 
+  // Literal class strings per color — Tailwind can't see interpolated class names
+  const badgeStyles = {
+    blue: "from-blue-50 to-blue-100 text-blue-700 border-blue-200",
+    purple: "from-purple-50 to-purple-100 text-purple-700 border-purple-200",
+    green: "from-green-50 to-green-100 text-green-700 border-green-200",
+    orange: "from-orange-50 to-orange-100 text-orange-700 border-orange-200",
+    indigo: "from-indigo-50 to-indigo-100 text-indigo-700 border-indigo-200"
+  };
+
   const SkillBadge = ({ skill, index, color = "indigo" }) => {
     return (
       <motion.span
@@ -108,7 +62,7 @@ const SWEPage = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, delay: index * 0.03 }}
-        className={`inline-block px-4 py-2 bg-gradient-to-r from-${color}-50 to-${color}-100 text-${color}-700 border border-${color}-200 rounded-lg text-sm font-medium hover:shadow-md transition-all cursor-default`}
+        className={`inline-block px-4 py-2 bg-gradient-to-r border ${badgeStyles[color]} rounded-lg text-sm font-medium hover:shadow-md transition-all cursor-default`}
       >
         {skill}
       </motion.span>
@@ -207,14 +161,13 @@ const SWEPage = () => {
                 title="Codepath Apps"
                 date="2025"
                 status="Active"
-                mediaSrc="https://opengraph.githubassets.com/1/EricAzayev/Full-Stack_Portfolio"
+                mediaSrc="/photos/Projects/CodepathApps/CodepathApps_Cover.png"
                 githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio"
-                demoLink="#"
                 recognition={{
                   label: "Graduated Web103 with Honors"
                 }}
                 tags={["React", "Node.js", "Express", "PostgreSQL", "MongoDB"]}
-                projectLink="https://dashboard-delta-eight-66.vercel.app/"
+                projectLink="/swe/codepath-apps"
               />
               <ProjectHeader
                 title="reciPal"
@@ -242,7 +195,7 @@ const SWEPage = () => {
                 title="FocusTube"
                 date="April 2026"
                 status="Completed"
-                mediaSrc="https://github.com/user-attachments/assets/091da99e-790d-4c35-8901-7eb04850db55"
+                mediaSrc="/photos/Projects/FocusTube/FocusTube_Cover.png"
                 githubLink="https://github.com/luoshuyi1124/google-project"
                 recognition={{
                   label: "Presented at Google Mentorship Conference"
@@ -267,7 +220,8 @@ const SWEPage = () => {
                 title="FoodTracker"
                 date="2025"
                 status="Active"
-                mediaSrc="/photos/Projects/FoodTracker/screenshots/today.png"
+                mediaSrc="/photos/Projects/FoodTracker/DataFork Logo.png"
+                mediaFit="contain"
                 githubLink="https://github.com/EricAzayev/Full-Stack_Portfolio/tree/main/FoodTracker"
                 tags={["React", "Node.js", "Express", "MongoDB", "REST API"]}
                 projectLink="/swe/foodtracker"
@@ -285,7 +239,7 @@ const SWEPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Technical Expertise</h2>
-            <p className="text-gray-600 text-lg">Building complete software solutions with modern technologies</p>
+            <p className="text-gray-600 text-lg">Languages, frameworks, and tools used across the projects above</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -405,7 +359,6 @@ const SWEPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Certifications & Achievements</h2>
-            <p className="text-gray-600 text-lg">Continuous learning and professional development</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
