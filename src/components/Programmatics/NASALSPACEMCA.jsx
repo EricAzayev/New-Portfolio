@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { FileText, ChevronLeft, ChevronRight, DollarSign, Users, Rocket, Award } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function NASALSPACEMCA() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentSlide, setCurrentSlide] = useState(0);
   usePageViewMetric("Programmatics/NASALSPACEMCA");
   
@@ -183,12 +180,6 @@ function NASALSPACEMCA() {
                 <h4 className="font-semibold text-green-900 mb-2">🔄 Change Control</h4>
                 <p className="text-sm text-slate-700">Implemented NASA-aligned change control and risk management strategies</p>
               </div>
-
-              <div className="mt-6 p-4 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-lg border-2 border-indigo-300">
-                <p className="text-sm text-slate-800 italic">
-                  "Through extensive research in official NASA engineering and project management handbooks, I developed NASA-aligned concepts for extended and complex projects."
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -230,7 +221,7 @@ function NASALSPACEMCA() {
             <h3 className="text-xl font-semibold mb-4">Key Skills Developed</h3>
             <div className="flex flex-wrap gap-2">
               {["Program Analysis", "Interface Control", "Mission Outreach", "Budget Management", "Documentation", "Scoping", "Scheduling", "Stakeholder Communication", "NASA Best Practices", "Change Control"].map((skill) => (
-                <span key={skill} className="px-3 py-2 bg-gradient-to-r from-blue-50 to-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg text-sm font-medium">
+                <span key={skill} className="px-3 py-2 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                   {skill}
                 </span>
               ))}
@@ -243,9 +234,7 @@ function NASALSPACEMCA() {
               <div>
                 <h4 className="font-bold text-xl mb-2">Complete PDR Document</h4>
                 <p className="text-indigo-100 mb-4 text-sm">The full 187-page Preliminary Design Review with detailed mission architecture, risk analysis, and budget planning.</p>
-                <div className="inline-block px-6 py-3 bg-white/20 text-white rounded-lg font-semibold border-2 border-white/50">
-                  Available Upon Request
-                </div>
+                <p className="text-indigo-100 text-sm italic">Available upon request.</p>
               </div>
             </div>
           </div>

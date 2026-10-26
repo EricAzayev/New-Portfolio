@@ -1,39 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Rocket, Target, Users, Lightbulb, FileText } from "lucide-react";
+import { Target, Users, Lightbulb } from "lucide-react";
 import ProjectHeader from "./ProjectHeader.jsx";
 
 const ProgrammaticsPage = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "NASA LSPACE Mission Concept Academy",
-      organization: "NASA",
-      description: "Mission design and concept development for space exploration initiatives",
-      role: "Mission Analyst",
-      gradient: "from-blue-600 to-indigo-700",
-      icon: Rocket
-    },
-    {
-      id: 2,
-      title: "Unadat Final Product",
-      organization: "Unadat",
-      description: "Product management and strategic planning for data analytics solutions",
-      role: "Product Manager",
-      gradient: "from-green-600 to-teal-700",
-      icon: Target
-    },
-    {
-      id: 3,
-      title: "NASA LSPACE NPWEE",
-      organization: "NASA",
-      description: "Technical writing and proposal development for space mission concepts",
-      role: "Technical Writer",
-      gradient: "from-purple-600 to-pink-700",
-      icon: FileText
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-teal-50">
       
@@ -89,27 +58,21 @@ const ProgrammaticsPage = () => {
                 date="2024"
                 status="Completed"
                 mediaSrc="/photos/Profile_Photos/LSPACEMCA.png"
-                githubLink="#"
-                docsLink="#"
                 tags={["Mission Design", "Systems Engineering", "NASA", "Aerospace"]}
                 projectLink="/programmatics/nasa-lspace-mca"
               />
               <ProjectHeader
-                title="Unadat Final Product"
+                title="Unadat"
                 date="2025"
-                status="Production"
+                status="In Development"
                 mediaSrc="/photos/Profile_Photos/UnadatFinal.png"
-                githubLink="#"
-                demoLink="#"
-                docsLink="#"
-                tags={["Product Management", "Strategy", "Data Analytics", "SaaS"]}
+                tags={["Product Management", "Strategy", "Data Analytics"]}
               />
               <ProjectHeader
                 title="NASA LSPACE NPWEE"
                 date="2026"
                 status="In Progress"
                 mediaSrc="/photos/Profile_Photos/LSPACEProposal.jpg"
-                docsLink="#"
                 tags={["Technical Writing", "Proposal Development", "NASA", "Research"]}
                 projectLink="/programmatics/nasa-proposal-writing"
               />

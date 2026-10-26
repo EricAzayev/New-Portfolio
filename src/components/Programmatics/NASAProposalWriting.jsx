@@ -1,10 +1,7 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function NASAProposalWriting() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   usePageViewMetric("Programmatics/NASAProposalWriting");
   
   return (
