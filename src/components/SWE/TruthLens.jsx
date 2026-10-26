@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function TruthLens() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("SWE/TruthLens");
   const demoImages = [
@@ -85,16 +82,16 @@ function TruthLens() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              TruthLens is a lightweight browser extension designed to protect digital reality for the next generation. While traditional parental controls focus on "what" kids see, we address how it was made—shielding families from the rising tide of synthetic deception.
+              TruthLens is a browser extension that helps parents tell AI-generated content apart from real media. Instead of only filtering what kids see, it looks at how the content was made, flagging deepfakes and AI-generated media.
             </p>
             <p className="text-slate-600 mb-4">
-              <strong>Multi-Modal Detection:</strong> Instantly identifies AI-generated video, images, and text across TikTok, Instagram, and YouTube. Runs silently in the background with zero lag, providing real-time parental alerts. Unlike competitors like Bark or Qustodio which only filter keywords, TruthLens is the first to distinguish between real human content and deepfakes.
+              <strong>Multi-Modal Detection:</strong> Identifies AI-generated video, images, and text across TikTok, Instagram, and YouTube, and sends parents a real-time alert when something synthetic appears.
             </p>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["Browser Extension", "AI/ML Detection", "Multi-Modal Analysis", "Real-time Processing", "Parental Controls"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-700 border border-blue-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
@@ -108,11 +105,14 @@ function TruthLens() {
               <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
             </div>
             <div className="bg-slate-50 p-4">
-              <img 
-                src="/photos/Projects/TruthLens/TruthLens_System_Architecture.png" 
-                alt="System Architecture"
+              <img
+                src="/photos/Projects/TruthLens/TruthLens_System_Architecture.png"
+                alt="TruthLens component diagram: the browser extension injects into YouTube and Instagram frames to classify content, exchanging auth and metrics with Firebase and a FastAPI backend that also powers the family website and weekly Gmail reports"
                 className="w-full h-auto object-contain"
               />
+              <p className="text-sm text-slate-500 mt-3 text-center">
+                The extension classifies content inside YouTube and Instagram frames; Firebase and FastAPI back the family website and the weekly report emails.
+              </p>
             </div>
           </div>
         </div>

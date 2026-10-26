@@ -1,11 +1,8 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
 import { Award, ExternalLink, Github } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function Findr() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   usePageViewMetric("SWE/Findr");
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
@@ -84,7 +81,7 @@ function Findr() {
                 <h3 className="text-xl font-semibold mb-4 text-slate-900">Key Technologies</h3>
                 <div className="flex flex-wrap gap-2">
                   {["Gemini API", "React Native", "Supabase", "Geolocation", "Image Recognition", "Gamification", "Species Database"].map((skill) => (
-                    <span key={skill} className="px-4 py-2 bg-gradient-to-r from-green-50 to-teal-100 text-teal-700 border border-teal-200 rounded-lg text-sm font-medium">
+                    <span key={skill} className="px-4 py-2 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                       {skill}
                     </span>
                   ))}
@@ -99,11 +96,14 @@ function Findr() {
               <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
             </div>
             <div className="bg-slate-50 p-6">
-              <img 
-                src="/photos/Projects/Findr/DivHacks_System_Architecture.png" 
-                alt="System Architecture"
+              <img
+                src="/photos/Projects/Findr/DivHacks_System_Architecture.png"
+                alt="Findr sketch flow: Firebase auth and a FastAPI backend pass a user's photo to Gemini, whose response feeds the sightings database, community feed, and leaderboard, with each sighting pinned on Google Maps"
                 className="w-full h-auto object-contain rounded-lg"
               />
+              <p className="text-sm text-slate-500 mt-3 text-center">
+                From sign-in to the map: photos are analyzed by Gemini, stored as sightings, and surfaced in the community feed, stats, and leaderboard.
+              </p>
             </div>
           </div>
         </div>

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, Download, ChevronLeft, ChevronRight } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function FoodTracker() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("SWE/FoodTracker");
 
@@ -104,7 +101,7 @@ function FoodTracker() {
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["React", "Node.js", "Express", "MongoDB", "REST API", "Authentication"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-indigo-50 to-purple-100 text-indigo-700 border border-indigo-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
@@ -126,8 +123,8 @@ function FoodTracker() {
                   <p className="text-sm text-slate-600">Uses API-driven state updates and database-backed persistence instead of isolated front-end state.</p>
                 </div>
                 <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
-                  <h3 className="font-semibold text-slate-900 mb-2">Analytics Mindset</h3>
-                  <p className="text-sm text-slate-600">Treats nutrition tracking as a product problem where clarity and consistency matter as much as raw CRUD functionality.</p>
+                  <h3 className="font-semibold text-slate-900 mb-2">Daily Summaries</h3>
+                  <p className="text-sm text-slate-600">Rolls logged meals up into daily nutrition totals so progress is easy to review over time.</p>
                 </div>
               </div>
             </div>

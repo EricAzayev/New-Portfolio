@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Github, ExternalLink } from "lucide-react";
 import ProjectHeader from "../ProjectHeader.jsx";
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 
 function TheThankfulForestMod() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("SWE/TheThankfulForestMod");
   
@@ -43,7 +40,7 @@ function TheThankfulForestMod() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           {/* Top Left - Demo Images or Placeholder (takes 2 columns) */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="relative aspect-video bg-gradient-to-br from-orange-100 via-amber-100 to-yellow-100 flex items-center justify-center">
+            <div className="relative aspect-video bg-slate-100 flex items-center justify-center">
               {demoImages.length > 0 ? (
                 <>
                   <img 
@@ -102,7 +99,7 @@ function TheThankfulForestMod() {
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["Minecraft Forge 47.3.0", "Java", "Gradle", "TerraBLender", "3D Modeling"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-orange-50 to-amber-100 text-orange-700 border border-orange-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}

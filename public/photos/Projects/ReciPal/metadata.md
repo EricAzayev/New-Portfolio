@@ -3,6 +3,7 @@
 ## Program Analysis
 
 ### GitHub Repository: https://github.com/EricAzayev/reciPal
+### Demo Video: https://youtu.be/7EKcPbCa5ow
 
 **Frontend Stack:**
 - **React 18** with Hooks (functional components)

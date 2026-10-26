@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function ReciPal() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("SWE/ReciPal");
+  // Ordered strongest-first: collection → extracted recipe → pantry → grocery list → add form
   const demoImages = [
-    "/photos/Projects/ReciPal/recipalDemo2.png",
-    "/photos/Projects/ReciPal/recipalDemo3.png",
-    "/photos/Projects/ReciPal/recipalDemo4.png",
-    "/photos/Projects/ReciPal/reciPalDemo5.png",
-    "/photos/Projects/ReciPal/reciPalDemo6.png",
-    "/photos/Projects/ReciPal/reciPalDemo7.png"
+    { src: "/photos/Projects/ReciPal/recipalDemo3.png", caption: "Recipe collection built from video URLs" },
+    { src: "/photos/Projects/ReciPal/recipalDemo4.png", caption: "A recipe extracted from an Instagram reel by Gemini" },
+    { src: "/photos/Projects/ReciPal/reciPalDemo5.png", caption: "Pantry tracking with barcode scanning" },
+    { src: "/photos/Projects/ReciPal/reciPalDemo6.png", caption: "Grocery list of missing ingredients" },
+    { src: "/photos/Projects/ReciPal/recipalDemo2.png", caption: "Adding a recipe from an Instagram reel URL" }
   ];
 
   const nextImage = () => {
@@ -56,11 +53,14 @@ function ReciPal() {
           {/* Top Left - Demo Images (takes 2 columns) */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="relative aspect-video bg-slate-100">
-              <img 
-                src={demoImages[currentImageIndex]} 
-                alt={`Demo ${currentImageIndex + 1}`}
+              <img
+                src={demoImages[currentImageIndex].src}
+                alt={demoImages[currentImageIndex].caption}
                 className="w-full h-full object-contain"
               />
+              <p className="absolute bottom-4 left-4 bg-white/90 text-slate-700 text-xs px-3 py-1.5 rounded-md shadow-sm">
+                {demoImages[currentImageIndex].caption}
+              </p>
               {demoImages.length > 1 && (
                 <>
                   <button
@@ -75,7 +75,7 @@ function ReciPal() {
                   >
                     <ChevronRight size={24} className="text-slate-700" />
                   </button>
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  <div className="absolute bottom-4 right-4 flex gap-2">
                     {demoImages.map((_, idx) => (
                       <div
                         key={idx}
@@ -104,7 +104,7 @@ function ReciPal() {
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["React", "Video Parsing", "Ollama Whisper", "Reasoning Models", "Instagram Workflow"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-orange-50 to-red-100 text-orange-700 border border-orange-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
