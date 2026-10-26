@@ -86,11 +86,11 @@ const LeftSection = () => {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-slate-200">
             <div className="text-center">
-              <div className="text-lg font-bold text-slate-900">10+</div>
+              <div className="text-lg font-bold text-slate-900">10</div>
               <div className="text-xs text-slate-500 font-mono">Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-bold text-slate-900">15+</div>
+              <div className="text-lg font-bold text-slate-900">15</div>
               <div className="text-xs text-slate-500 font-mono">Teams</div>
             </div>
             <div className="text-center">
