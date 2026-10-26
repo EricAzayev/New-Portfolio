@@ -33,7 +33,6 @@ import GroupWisdom from "./components/Data/GroupWisdom.jsx";
 // Programmatics Project Pages
 import NASALSPACEMCA from "./components/Programmatics/NASALSPACEMCA.jsx";
 import NASAProposalWriting from "./components/Programmatics/NASAProposalWriting.jsx";
-import NPWEE from "./components/Programmatics/NPWEE.jsx";
 import MinecraftMoon from "./components/Programmatics/MinecraftMoon.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -67,7 +66,6 @@ createRoot(document.getElementById("root")).render(
           {/* Programmatics Project Routes */}
           <Route path="/programmatics/nasa-lspace-mca" element={<NASALSPACEMCA />} />
           <Route path="/programmatics/nasa-proposal-writing" element={<NASAProposalWriting />} />
-          <Route path="/programmatics/npwee" element={<NPWEE />} />
           <Route path="/programmatics/minecraft-moon" element={<MinecraftMoon />} />
           
           <Route path="*" element={<NotFound />} />
