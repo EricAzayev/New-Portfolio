@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="FocusTube logo: a koala whose nose is a pause bar">
+  <!-- ears: wider than the head, set low at the sides, with fluff bumps so the silhouette is koala, not mouse -->
+  <g fill="#97A5AE">
+    <circle cx="7"    cy="21.5" r="5"/>
+    <circle cx="4.5"  cy="31"   r="4.5"/>
+    <circle cx="12"   cy="30"   r="12"/>
+    <circle cx="57"   cy="21.5" r="5"/>
+    <circle cx="59.5" cy="31"   r="4.5"/>
+    <circle cx="52"   cy="30"   r="12"/>
+  </g>
+  <!-- head: lighter face fur -->
+  <circle cx="32" cy="33" r="16.5" fill="#C9D0D3"/>
+  <!-- nose: two vertical bars — koala nose groove at large sizes, pause symbol at small sizes -->
+  <g fill="#24313B">
+    <rect x="25"   y="27" width="5.5" height="16" rx="2.75"/>
+    <rect x="33.5" y="27" width="5.5" height="16" rx="2.75"/>
+  </g>
+</svg>
