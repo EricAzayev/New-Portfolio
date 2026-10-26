@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 function StellarSearch() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   usePageViewMetric("Data/StellarSearch");
   
   const demoImages = [
-    "/photos/Projects/StellarSearch/StellarSearch_Demoable_1.png",
+    "/photos/Projects/StellarSearch/StellarSearch_Demo_1.png",
     "/photos/Projects/StellarSearch/StellarSearch_User_Stories.png"
   ];
 
@@ -82,16 +79,16 @@ function StellarSearch() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              Are you ever frustrated finding messages on Slack? Let's admit it, modern message search algorithms are plain outdated. Linearly searching for keywords is inefficient and frequently misses the target purpose of message searching.
+              Finding a message in a large Slack or Discord community usually means scrolling through channels or guessing keywords. Stellar Search instead groups messages by what they are actually about, automatically surfacing the topics inside a server's history.
             </p>
             <p className="text-slate-600 mb-4">
-              The goal of Stellar Search is to move beyond simple channel analysis to deliver actionable insights by automatically identifying and grouping latent topic clusters within large, active Slack and Discord communities. Server owners can store messages on our Supabase database or set up their own for full data ownership. Users connect to clusters, approaching each group chat like stellar systems in a galaxy. Find messages, and opportunities, faster!
+              Stellar Search identifies and groups topic clusters within large, active Slack and Discord communities. Messages are stored in Supabase — our instance or one you host yourself — so server owners keep full data ownership. Users browse clusters the way you might explore stellar systems in a galaxy.
             </p>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["Natural Language Processing", "Topic Clustering", "Supabase", "Slack API", "Discord API", "Machine Learning"].map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg text-sm font-medium">
+                  <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                     {skill}
                   </span>
                 ))}
@@ -105,9 +102,9 @@ function StellarSearch() {
               <h2 className="text-2xl font-semibold mb-4">System Architecture</h2>
             </div>
             <div className="bg-slate-50 p-4">
-              <img 
-                src="/photos/Projects/StellarSearch/SlackClusterFinder System Architecture.png" 
-                alt="System Architecture"
+              <img
+                src="/photos/Projects/StellarSearch/SlackClusterFinder_System_Architecture.png"
+                alt="Architecture diagram of StellarSearch: Slack and Discord messages are ingested into Supabase, clustered by topic, and served to users as browsable message groups"
                 className="w-full h-auto object-contain"
               />
             </div>
