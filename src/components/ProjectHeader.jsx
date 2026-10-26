@@ -14,7 +14,8 @@ const ProjectHeader = ({
   tags = [],
   projectLink = null,
   recognition = null,
-  hidePreview = false
+  hidePreview = false,
+  mediaFit = "cover"
 }) => {
   const navigate = useNavigate();
 
@@ -49,7 +50,8 @@ const ProjectHeader = ({
             <img
               src={mediaSrc}
               alt={title}
-              className="w-full h-full object-cover rounded-lg"
+              // Tailwind can't see interpolated classes, so keep both literals
+              className={`w-full h-full ${mediaFit === "contain" ? "object-contain" : "object-cover"} rounded-lg`}
             />
           )
         ) : (
