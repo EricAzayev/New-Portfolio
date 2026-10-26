@@ -1,12 +1,9 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
 import { Puzzle } from "lucide-react";
 import ProjectHeader from "../ProjectHeader.jsx";
 import usePageViewMetric from "../../hooks/usePageViewMetric";
 
 function FocusTube() {
-  const [searchParams] = useSearchParams();
-  const inSlideshow = searchParams.get('mode') === 'slideshow';
   usePageViewMetric("SWE/FocusTube");
 
   // Demo videos from the GitHub README (hosted on GitHub's CDN, not duplicated in this repo)
@@ -36,7 +33,7 @@ function FocusTube() {
     }
   ];
 
-  const koalaLogo = "https://raw.githubusercontent.com/luoshuyi1124/google-project/main/extension/images/cute_koala.png";
+  const koalaLogo = "/photos/Projects/FocusTube/cute_koala.png";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
@@ -99,12 +96,7 @@ function FocusTube() {
           <div className="lg:col-span-2 bg-white rounded-xl shadow-sm p-6 border border-slate-200">
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
             <p className="text-slate-600 mb-4">
-              FocusTube is a Chrome extension that removes distractions from YouTube so you can stay productive. 
-              Take back your focus with productivity mode, shorts blocking, and experimental AI filtering.
-            </p>
-            <p className="text-slate-600 mb-4">
-              The average person loses 2+ hours a day to YouTube recommendations and Shorts. 
-              FocusTube gives you control back—no distractions, no rabbit holes, just intentional viewing.
+              FocusTube is a Chrome extension with productivity mode, shorts blocking, and an experimental AI filter. Its koala mascot stands in for clickbait thumbnails so browsing stays calm.
             </p>
           </div>
 
@@ -124,7 +116,7 @@ function FocusTube() {
             <h3 className="text-lg font-semibold mb-3">Key Technologies</h3>
             <div className="flex flex-wrap gap-2">
               {["Chrome Extension", "Vanilla JavaScript", "React 19 + Vite", "Node.js + Express", "Phi-3 AI Model"].map((skill) => (
-                <span key={skill} className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-700 border border-blue-200 rounded-lg text-sm font-medium">
+                <span key={skill} className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium">
                   {skill}
                 </span>
               ))}
@@ -139,6 +131,9 @@ function FocusTube() {
               alt="FocusTube system architecture: React frontend and the extension exchange video HTML with Google, backed by a Node.js server using the YouTube Data API v3, Ollama, and a request cache"
               className="w-full max-w-3xl mx-auto rounded-lg border border-slate-200"
             />
+            <p className="text-sm text-slate-500 mt-3 text-center">
+              Search requests hit the backend (YouTube Data API, Ollama, and a cache); the extension uses the blocked-video list to rewrite video pages in the browser.
+            </p>
           </div>
 
           {/* Bottom Section - Key Features & Implementation */}
