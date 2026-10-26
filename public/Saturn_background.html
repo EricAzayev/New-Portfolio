@@ -34,6 +34,44 @@
       opacity: 0;
       pointer-events: none; /* purely decorative reveal layer, opacity driven by JS as the camera zooms in */
     }
+
+    /* WIP overlays: clickable Back, non-clickable labels (pointer-events pass scroll to the scene) */
+    .wip-pill {
+      position: absolute;
+      z-index: 3;
+      pointer-events: none;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: rgba(10, 10, 18, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.95);
+      font: 500 15px -apple-system, 'Segoe UI', system-ui, sans-serif;
+      backdrop-filter: blur(6px);
+      transition: opacity 0.4s ease;
+      white-space: nowrap;
+    }
+    #saturn-back-btn {
+      position: absolute;
+      z-index: 3;
+      top: 24px;
+      left: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #0b0b14;
+      font: 700 18px -apple-system, 'Segoe UI', system-ui, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    #saturn-back-btn:hover {
+      transform: scale(1.05);
+      background: #ffffff;
+    }
+    /* temporary: oversized so leaving the WIP page is never missed */
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -41,6 +79,16 @@
 
   <canvas id="webgl-canvas-saturn"></canvas>
   <canvas id="webgl-canvas-moon"></canvas>
+
+  <!-- Work-in-progress overlays; a real content plan will replace these -->
+  <a id="saturn-back-btn" href="/">&#8592; Back to Home</a>
+
+  <div id="wip-moon" class="wip-pill" style="bottom: 34px; left: 50%; transform: translateX(-50%); opacity: 0;">
+    In progress &mdash; the NASA L'SPACE MCA experience goes here &middot; more scroll-downs to come
+  </div>
+  <div id="wip-saturn" class="wip-pill" style="top: 24px; right: 24px;">
+    Work in progress &mdash; NPWEE will live on this slide &middot; scroll to travel to the Moon
+  </div>
 
   <script>
   (function initSaturnScene() {
@@ -371,6 +419,11 @@
       // Reveal the detailed Moon canvas only once the dolly has essentially arrived.
       moonCanvasEl.style.opacity = smoothstep(0.85, 1, zoomProgress);
       saturnCanvasEl.style.opacity = 1 - smoothstep(0.94, 1, zoomProgress);
+
+      // Swap the WIP copy in step with the same crossfade
+      const atMoonProgress = smoothstep(0.85, 1, zoomProgress);
+      document.getElementById('wip-moon').style.opacity = atMoonProgress;
+      document.getElementById('wip-saturn').style.opacity = 1 - atMoonProgress;
 
       renderer.render(scene, camera);
     }
