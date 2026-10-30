@@ -61,7 +61,7 @@ function NASALSPACEMCA() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
+    <div className="min-h-screen bg-slate-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h1 className="text-4xl font-bold text-slate-900 mb-2">NASA LSPACE MCA</h1>
@@ -74,25 +74,25 @@ function NASALSPACEMCA() {
 
         {/* Impressive Stats Banner */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-6 text-white shadow-lg">
+          <div className="band-graphite rounded-xl p-6 text-white shadow-lg">
             <DollarSign className="mb-2" size={32} />
             <div className="text-3xl font-bold mb-1">$225M</div>
-            <div className="text-sm text-indigo-100">Mission Budget</div>
+            <div className="text-sm text-zinc-400">Mission Budget</div>
           </div>
-          <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl p-6 text-white shadow-lg">
+          <div className="band-graphite rounded-xl p-6 text-white shadow-lg">
             <FileText className="mb-2" size={32} />
             <div className="text-3xl font-bold mb-1">187</div>
-            <div className="text-sm text-blue-100">Page PDR</div>
+            <div className="text-sm text-zinc-400">Page PDR</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl p-6 text-white shadow-lg">
+          <div className="band-graphite rounded-xl p-6 text-white shadow-lg">
             <Rocket className="mb-2" size={32} />
             <div className="text-3xl font-bold mb-1">First</div>
-            <div className="text-sm text-purple-100">Subsurface Exploration</div>
+            <div className="text-sm text-zinc-400">Subsurface Exploration</div>
           </div>
-          <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-xl p-6 text-white shadow-lg">
+          <div className="band-graphite rounded-xl p-6 text-white shadow-lg">
             <Users className="mb-2" size={32} />
             <div className="text-3xl font-bold mb-1">11</div>
-            <div className="text-sm text-green-100">Team Members</div>
+            <div className="text-sm text-zinc-400">Team Members</div>
           </div>
         </div>
         
@@ -100,7 +100,7 @@ function NASALSPACEMCA() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Left - Project Brief Slider (takes 2 columns) */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
-            <div className="p-6 border-b border-slate-200 bg-gradient-to-r from-indigo-50 to-blue-50">
+            <div className="p-6 border-b border-slate-200 bg-slate-50">
               <h3 className="text-2xl font-bold text-slate-900">Preliminary Design Review</h3>
               <p className="text-sm text-slate-600 mt-1">Comprehensive mission documentation</p>
             </div>
@@ -166,7 +166,7 @@ function NASALSPACEMCA() {
                 <p className="text-sm text-slate-700">Reviewed <strong>70+ pages per deliverable</strong> to ensure consistency and quality across all documentation</p>
               </div>
               
-              <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+              <div className="bg-blue-50 rounded-lg p-4 border border-slate-200">
                 <h4 className="font-semibold text-blue-900 mb-2">📅 Scheduling & Scoping</h4>
                 <p className="text-sm text-slate-700">Developed Gantt Charts and N² Charts using NASA best practices for complex mission planning</p>
               </div>
@@ -176,7 +176,7 @@ function NASALSPACEMCA() {
                 <p className="text-sm text-slate-700">Created budget calculations and bases of estimate to maintain $225M mission within scope</p>
               </div>
               
-              <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+              <div className="bg-green-50 rounded-lg p-4 border border-slate-200">
                 <h4 className="font-semibold text-green-900 mb-2">🔄 Change Control</h4>
                 <p className="text-sm text-slate-700">Implemented NASA-aligned change control and risk management strategies</p>
               </div>
@@ -186,7 +186,7 @@ function NASALSPACEMCA() {
 
         {/* Key Achievements Grid */}
         <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden mb-8">
-          <div className="p-6 bg-gradient-to-r from-slate-800 to-indigo-900 text-white">
+          <div className="p-6 band-graphite text-white">
             <h3 className="text-2xl font-bold">Mission Overview & Objectives</h3>
           </div>
           <div className="p-8">
@@ -228,13 +228,13 @@ function NASALSPACEMCA() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-xl shadow-lg p-6 text-white">
+          <div className="band-graphite rounded-xl shadow-lg p-6 text-white">
             <div className="flex items-start gap-4">
               <FileText size={48} className="flex-shrink-0" />
               <div>
                 <h4 className="font-bold text-xl mb-2">Complete PDR Document</h4>
-                <p className="text-indigo-100 mb-4 text-sm">The full 187-page Preliminary Design Review with detailed mission architecture, risk analysis, and budget planning.</p>
-                <p className="text-indigo-100 text-sm italic">Available upon request.</p>
+                <p className="text-zinc-400 mb-4 text-sm">The full 187-page Preliminary Design Review with detailed mission architecture, risk analysis, and budget planning.</p>
+                <p className="text-zinc-400 text-sm italic">Available upon request.</p>
               </div>
             </div>
           </div>

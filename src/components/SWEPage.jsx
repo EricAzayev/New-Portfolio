@@ -1,9 +1,5 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Code2, Database, Server, Layers,
-  Zap, GitBranch, Terminal
-} from "lucide-react";
 import ProjectHeader from "./ProjectHeader.jsx";
 
 const SWEPage = () => {
@@ -15,14 +11,6 @@ const SWEPage = () => {
 
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  const techStack = {
-    languages: ["JavaScript", "TypeScript", "Python", "Java", "C++", "C#", "HTML/CSS"],
-    frameworks: ["React", "React Native", "Node.js", "Express.js", "ASP.NET Core", "Django", "Vite"],
-    databases: ["PostgreSQL", "MongoDB", "Microsoft SQL Server", "Supabase", "Redis"],
-    tools: ["Git", "GitHub", "Jira", "Figma", "PyCharm", "NuGet"],
-    apis: ["REST API", "Slack API", "Gemini API", "Supabase API"]
-  };
 
   // Certifications & Achievements
   const certifications = [
@@ -46,82 +34,27 @@ const SWEPage = () => {
     }
   ];
 
-  // Literal class strings per color — Tailwind can't see interpolated class names
-  const badgeStyles = {
-    blue: "from-blue-50 to-blue-100 text-blue-700 border-blue-200",
-    purple: "from-purple-50 to-purple-100 text-purple-700 border-purple-200",
-    green: "from-green-50 to-green-100 text-green-700 border-green-200",
-    orange: "from-orange-50 to-orange-100 text-orange-700 border-orange-200",
-    indigo: "from-indigo-50 to-indigo-100 text-indigo-700 border-indigo-200"
-  };
-
-  const SkillBadge = ({ skill, index, color = "indigo" }) => {
-    return (
-      <motion.span
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.3, delay: index * 0.03 }}
-        className={`inline-block px-4 py-2 bg-gradient-to-r border ${badgeStyles[color]} rounded-lg text-sm font-medium hover:shadow-md transition-all cursor-default`}
-      >
-        {skill}
-      </motion.span>
-    );
-  };
-
   return (
-    <div ref={containerRef} className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div ref={containerRef} className="min-h-screen bg-slate-50">
       
-      {/* Hero Section with Parallax */}
-      <motion.section 
+      {/* Hero band */}
+      <motion.section
         style={{ y: heroY, opacity: heroOpacity }}
-        className="relative h-[60vh] flex items-center justify-center overflow-hidden"
+        className="relative h-[40vh] min-h-[320px] flex items-center overflow-hidden band-graphite"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 opacity-90" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20" />
-        
-        <div className="relative z-10 text-center px-6">
+        <div className="max-w-7xl mx-auto px-6 text-white">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Code2 className="text-white" size={48} />
-              <Server className="text-white" size={48} />
-              <Database className="text-white" size={48} />
-            </div>
-            <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">
               Software Engineering
             </h1>
-            <p className="text-2xl text-white/90 font-light max-w-3xl mx-auto">
+            <p className="text-xl text-zinc-300 max-w-2xl">
               Building complete solutions from database to user interface
             </p>
           </motion.div>
-        </div>
-
-        {/* Floating particles effect */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-white rounded-full"
-              initial={{ 
-                x: Math.random() * window.innerWidth, 
-                y: Math.random() * 500,
-                opacity: 0.3 
-              }}
-              animate={{
-                y: [null, Math.random() * 500 - 250],
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
         </div>
       </motion.section>
 
@@ -230,125 +163,6 @@ const SWEPage = () => {
           </div>
         </motion.div>
 
-        {/* Tech Stack Section */}
-        <section className="mb-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Technical Expertise</h2>
-            <p className="text-gray-600 text-lg">Languages, frameworks, and tools used across the projects above</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Languages */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg p-3">
-                  <Terminal className="text-white" size={24} />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800">Languages</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {techStack.languages.map((skill, index) => (
-                  <SkillBadge key={skill} skill={skill} index={index} color="blue" />
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Frameworks */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg p-3">
-                  <Layers className="text-white" size={24} />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800">Frameworks</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {techStack.frameworks.map((skill, index) => (
-                  <SkillBadge key={skill} skill={skill} index={index} color="purple" />
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Databases */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-lg p-3">
-                  <Database className="text-white" size={24} />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800">Databases & Storage</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {techStack.databases.map((skill, index) => (
-                  <SkillBadge key={skill} skill={skill} index={index} color="green" />
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Development Tools */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-lg p-3">
-                  <GitBranch className="text-white" size={24} />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800">Development Tools</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {techStack.tools.map((skill, index) => (
-                  <SkillBadge key={skill} skill={skill} index={index} color="orange" />
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* API Integration */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-3">
-                <Zap className="text-white" size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800">API Integration & Services</h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {techStack.apis.map((skill, index) => (
-                <SkillBadge key={skill} skill={skill} index={index} color="indigo" />
-              ))}
-            </div>
-          </motion.div>
-        </section>
 
         {/* Certifications & Achievements */}
         <section className="mb-20">
@@ -371,7 +185,7 @@ const SWEPage = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
               >
-                <div className="aspect-video bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                <div className="aspect-video bg-slate-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
                   {cert.image ? (
                     <img 
                       src={cert.image} 

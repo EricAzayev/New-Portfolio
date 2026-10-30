@@ -20,7 +20,7 @@ function StellarSearch() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
+    <div className="min-h-screen bg-slate-50 p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">Stellar Search</h1>
         <div className="flex gap-3 mb-6">

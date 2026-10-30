@@ -52,7 +52,7 @@ const BlogPage = () => {
       >
         {/* Image section - only rendered if image exists */}
         {post.image && (
-          <div className="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+          <div className="aspect-video bg-slate-100 overflow-hidden">
             <img 
               src={post.image} 
               alt={post.title}
@@ -125,9 +125,9 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-slate-50">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 px-6">
+      <div className="band-graphite text-white py-16 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}

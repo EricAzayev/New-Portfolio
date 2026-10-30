@@ -5,7 +5,7 @@ import usePageViewMetric from "../../hooks/usePageViewMetric";
 function Findr() {
   usePageViewMetric("SWE/Findr");
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
+    <div className="min-h-screen bg-slate-50 p-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap items-center gap-3 mb-4">
           <h1 className="text-4xl font-bold text-slate-900">Findr</h1>
@@ -53,7 +53,7 @@ function Findr() {
               </p>
 
               {/* Inline Image 1: American Woodcock */}
-              <div className="my-8 bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-6 border border-green-200">
+              <div className="my-8 bg-slate-50 rounded-lg p-6 border border-slate-200">
                 <img 
                   src="/photos/Projects/Findr/American_Woodcock.png" 
                   alt="American Woodcock - Example Species"
@@ -67,7 +67,7 @@ function Findr() {
               </p>
 
               {/* Inline Image 2: Migration Map */}
-              <div className="my-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
+              <div className="my-8 bg-slate-50 rounded-lg p-6 border border-slate-200">
                 <img 
                   src="/photos/Projects/Findr/Animal_migrations_US.png" 
                   alt="Animal Migration Patterns Across the US"

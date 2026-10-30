@@ -23,7 +23,7 @@ function FoodTracker() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8 pt-32">
+    <div className="min-h-screen bg-slate-50 p-8 pt-32">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-4">

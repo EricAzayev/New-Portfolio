@@ -4,33 +4,25 @@ import ProjectHeader from "./ProjectHeader.jsx";
 
 const ProgrammaticsPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-teal-50">
+    <div className="min-h-screen bg-slate-50">
       
-      {/* Hero Section */}
-      <motion.section 
+      {/* Hero band */}
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative h-[60vh] flex items-center justify-center overflow-hidden"
+        className="relative h-[40vh] min-h-[320px] flex items-center overflow-hidden band-graphite"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-green-600 via-teal-600 to-emerald-500 opacity-90" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20" />
-        
-        <div className="relative z-10 text-center px-6">
+        <div className="max-w-7xl mx-auto px-6 text-white">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Target className="text-white" size={48} />
-              <Users className="text-white" size={48} />
-              <Lightbulb className="text-white" size={48} />
-            </div>
-            <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">
               Programmatics
             </h1>
-            <p className="text-2xl text-white/90 font-light max-w-3xl mx-auto">
+            <p className="text-xl text-zinc-300 max-w-2xl">
               Product Management, Strategy, and Mission Planning
             </p>
           </motion.div>

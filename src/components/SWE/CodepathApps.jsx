@@ -6,18 +6,18 @@ import usePageViewMetric from "../../hooks/usePageViewMetric";
 function CodepathApps() {
   usePageViewMetric("SWE/CodepathApps");
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-slate-50 p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">CodePath Apps Collection</h1>
         <p className="text-xl text-slate-600 mb-8">Software Engineering Web Development Journey</p>
         
         {/* Dashboard CTA */}
-        <div className="mb-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-xl overflow-hidden">
+        <div className="mb-12 band-graphite rounded-2xl shadow-xl overflow-hidden">
           <div className="p-8 text-white">
             <div className="flex items-start justify-between">
               <div>
                 <h2 className="text-3xl font-bold mb-3">🎯 Interactive Project Dashboard</h2>
-                <p className="text-lg text-indigo-100 mb-3 max-w-2xl">
+                <p className="text-lg text-zinc-400 mb-3 max-w-2xl">
                   All of my CodePath projects in one dashboard — my progression through Web102 and Web103.
                 </p>
                 <p className="text-sm text-indigo-200 mb-6 max-w-2xl">
@@ -55,7 +55,7 @@ function CodepathApps() {
             This collection represents my journey through CodePath's comprehensive web development curriculum, spanning both foundational and advanced software engineering concepts. Through hands-on projects, I developed proficiency in modern web technologies, API design, database management, and user-centered application development.
           </p>
           <div className="grid md:grid-cols-2 gap-6 mt-6">
-            <div className="bg-purple-50 rounded-lg p-5 border border-purple-200">
+            <div className="bg-purple-50 rounded-lg p-5 border border-slate-200">
               <h3 className="font-semibold text-lg mb-2 text-purple-900">🎓 CodePath Web102</h3>
               <p className="text-slate-700">Foundations of web development, REST APIs, and client-server architecture</p>
             </div>
@@ -74,18 +74,18 @@ function CodepathApps() {
             {/* Lexington Links Card */}
             <Link to="/swe/lexington-links" className="group">
               <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-slate-200 overflow-hidden transform hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-white">
+                <div className="band-graphite p-6 text-white">
                   <div className="flex items-center justify-between mb-3">
                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">Web103</span>
                     <Code2 size={28} />
                   </div>
                   <h3 className="text-2xl font-bold mb-2">Lexington Links</h3>
-                  <p className="text-blue-100">Hangout matching platform for Hunter College students — swipe matching, groups, and chat</p>
+                  <p className="text-zinc-400">Hangout matching platform for Hunter College students — swipe matching, groups, and chat</p>
                 </div>
                 <div className="p-6">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {["React", "Tailwind CSS", "Express", "PostgreSQL"].map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-200">
+                      <span key={tech} className="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium border border-slate-200">
                         {tech}
                       </span>
                     ))}
@@ -101,18 +101,18 @@ function CodepathApps() {
             {/* FoodTracker Card */}
             <Link to="/swe/foodtracker" className="group">
               <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-slate-200 overflow-hidden transform hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 text-white">
+                <div className="band-graphite p-6 text-white">
                   <div className="flex items-center justify-between mb-3">
                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">Web102</span>
                     <Database size={28} />
                   </div>
                   <h3 className="text-2xl font-bold mb-2">FoodTracker</h3>
-                  <p className="text-purple-100">Personal nutrition tracking app with meal logging and analytics</p>
+                  <p className="text-zinc-400">Personal nutrition tracking app with meal logging and analytics</p>
                 </div>
                 <div className="p-6">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {["React", "Node.js", "Express", "MongoDB"].map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-purple-50 text-purple-700 rounded-md text-sm font-medium border border-purple-200">
+                      <span key={tech} className="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium border border-slate-200">
                         {tech}
                       </span>
                     ))}
